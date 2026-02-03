@@ -41,4 +41,18 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll();
+
+    const track = document.querySelector('.carousel-track');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    if(track && prevBtn && nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            track.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            track.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+    }
 });
