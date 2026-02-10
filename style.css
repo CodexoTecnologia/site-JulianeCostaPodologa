@@ -383,19 +383,31 @@ body {
 }
 
 .carousel-btn {
-    background: transparent;
-    color: var(--primary); 
-    border: 1px solid var(--primary);
-    width: 40px; height: 40px; border-radius: 50%;
-    cursor: pointer; 
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.2rem; transition: 0.3s;
-    opacity: 0.7;
+    background-color: var(--white);
+    color: var(--primary);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 10;
 }
-.carousel-btn:hover { 
-    background: var(--primary); 
-    color: white; 
-    opacity: 1; 
+
+.carousel-btn:hover {
+    background-color: var(--primary);
+    color: var(--white);
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(142, 68, 173, 0.4);
+}
+
+.carousel-btn:active {
+    transform: scale(0.95);
 }
 
 .insta-promo-banner {
