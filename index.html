@@ -8,12 +8,16 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet"></noscript>
     
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="assets/logo_branca.png">
+    
     <script src="script.js" defer></script>
     <script type="application/ld+json">
     {
@@ -56,14 +60,14 @@
     <header class="header">
         <div class="container nav-container">
             <a href="#" class="logo">
-                <img src="assets\logo.png" alt="Juliane Costa" class="logo-img">
+                <img src="assets\logo.png" alt="Juliane Costa" class="logo-img" width="60" height="60">
             </a>
             
-            <button class="mobile-menu-btn" aria-label="Menu">
-                <i class="ri-menu-3-line"></i>
+            <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false">
+                <i class="ri-menu-3-line" aria-hidden="true"></i>
             </button>
 
-            <nav class="nav-menu">
+            <nav class="nav-menu" role="navigation" aria-label="Menu principal">
                 <ul>
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#sobre">Sobre</a></li>
@@ -71,7 +75,7 @@
                     <li><a href="#ilib">Laserterapia</a></li>
                     <li><a href="#galeria">Galeria</a></li> 
                     <li><a href="#faq">Dúvidas</a></li>
-                    <li><a href="#contato" class="btn-highlight">Agendar <i class="ri-whatsapp-line"></i></a></li>
+                    <li><a href="#contato" class="btn-highlight">Agendar <i class="ri-whatsapp-line" aria-hidden="true"></i></a></li>
                 </ul>
             </nav>
         </div>
@@ -90,7 +94,7 @@
             </div>
             <div class="hero-image reveal">
                 <div class="blob-frame">
-                    <img src="assets/logo.png" alt="Cuidado com os pés" fetchpriority="high" width="300" height="300">
+                    <img src="assets/logo.png" alt="Cuidado com os pés" fetchpriority="high" width="400" height="400">
                 </div>
             </div>
         </div>
@@ -99,7 +103,7 @@
     <section id="sobre" class="section">
         <div class="container about-grid">
             <div class="about-img reveal">
-                 <img src="assets/juliane_costa_2.avif" alt="Juliane Costa Podóloga" loading="lazy">
+                 <img src="assets/juliane_costa_2.avif" alt="Juliane Costa Podóloga" loading="lazy" width="500" height="600">
             </div>
             <div class="about-text reveal">
                 <h2>Muito além da <span class="script-highlight">Estética</span></h2>
@@ -200,34 +204,34 @@
             </div>
 
             <div class="carousel-container reveal">
-                <button class="carousel-btn prev-btn"><i class="ri-arrow-left-s-line"></i></button>
+                <button class="carousel-btn prev-btn" aria-label="Foto anterior da galeria"><i class="ri-arrow-left-s-line" aria-hidden="true"></i></button>
                 
-                <div class="carousel-track-container">
+                <div class="carousel-track-container" role="region" aria-label="Galeria de fotos do espaço">
                     <ul class="carousel-track">
                         <li class="carousel-card">
-                            <img src="assets/studio_1.avif" alt="Venha nos Conhecer!" loading="lazy">
+                            <img src="assets/studio_1.avif" alt="Venha nos Conhecer!" loading="lazy" width="280" height="350">
                             <div class="card-caption">Venha nos Conhecer!</div>
                         </li>
                         <li class="carousel-card">
-                            <img src="assets/studio_2.avif" alt="Sala de Atendimento" loading="lazy">
+                            <img src="assets/studio_2.avif" alt="Sala de Atendimento" loading="lazy" width="280" height="350">
                             <div class="card-caption">Sala de Atendimento</div>
                         </li>
                         <li class="carousel-card">
-                            <img src="assets/studio_3.avif" alt="Equipamentos Modernos" loading="lazy">
+                            <img src="assets/studio_3.avif" alt="Equipamentos Modernos" loading="lazy" width="280" height="350">
                             <div class="card-caption">Equipamentos Modernos</div>
                         </li>
                         <li class="carousel-card">
-                            <img src="assets/studio_4.avif" alt="Conforto e Higiene" loading="lazy">
+                            <img src="assets/studio_4.avif" alt="Conforto e Higiene" loading="lazy" width="280" height="350">
                             <div class="card-caption">Conforto e Higiene</div>
                         </li>
                         <li class="carousel-card">
-                            <img src="assets/studio_5.avif" alt="Ambiente Acolhedor" loading="lazy">
+                            <img src="assets/studio_5.avif" alt="Ambiente Acolhedor" loading="lazy" width="280" height="350">
                             <div class="card-caption">Ambiente Acolhedor</div>
                         </li>
                     </ul>
                 </div>
 
-                <button class="carousel-btn next-btn"><i class="ri-arrow-right-s-line"></i></button>
+                <button class="carousel-btn next-btn" aria-label="Próxima foto da galeria"><i class="ri-arrow-right-s-line" aria-hidden="true"></i></button>
             </div>
         </div>
     </section>
@@ -261,7 +265,7 @@
                     <a href="https://maps.google.com/?q=Rua+Francisco+Camargo,+402,+Colombo" target="_blank" class="btn btn-primary" rel="noopener">Ver rota no mapa</a>
                 </div>
                 <div class="location-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3605.658632662054!2d-49.22676762366882!3d-25.34969242998338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce7dd2add4b1d%3A0x67c293670984102d!2sR.%20Francisco%20Camargo%2C%20402%20-%20Centro%2C%20Colombo%20-%20PR%2C%2083414-010!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" title="Mapa Localização"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3605.658632662054!2d-49.22676762366882!3d-25.34969242998338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce7dd2add4b1d%3A0x67c293670984102d!2sR.%20Francisco%20Camargo%2C%20402%20-%20Centro%2C%20Colombo%20-%20PR%2C%2083414-010!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" title="Mapa de localização - Rua Francisco Camargo, 402, Colombo" aria-label="Mapa mostrando a localização da clínica"></iframe>
                 </div>
             </div>
         </div>
@@ -278,51 +282,51 @@
             </div>
 
             <div class="faq-right">
-                <div class="accordion">
-                    <div class="accordion-item">
-                        <button class="accordion-header">Qual a diferença entre Podóloga e Pedicure? <i class="ri-add-line"></i></button>
+                <div class="accordion" role="list">
+                    <div class="accordion-item" role="listitem">
+                        <button class="accordion-header">Qual a diferença entre Podóloga e Pedicure? <i class="ri-add-line" aria-hidden="true"></i></button>
                         <div class="accordion-content">
                             <p>Enquanto a pedicure foca no embelezamento superficial, a <strong>Podóloga</strong> é uma profissional da área da saúde. Somos capacitadas para tratar patologias (doenças), infecções, unhas encravadas e alterações complexas, utilizando instrumental esterilizado em autoclave e técnicas clínicas seguras.</p>
                         </div>
                     </div>
 
-                    <div class="accordion-item">
-                        <button class="accordion-header">O tratamento de unha encravada dói? <i class="ri-add-line"></i></button>
+                    <div class="accordion-item" role="listitem">
+                        <button class="accordion-header">O tratamento de unha encravada dói? <i class="ri-add-line" aria-hidden="true"></i></button>
                         <div class="accordion-content">
                             <p>Nosso objetivo é tirar a sua dor, e não causar mais! Utilizamos técnicas delicadas para o alívio imediato da pressão. O medo da dor muitas vezes agrava o quadro, pois a inflamação aumenta com o tempo. Não espere piorar, venha resolver com conforto.</p>
                         </div>
                     </div>
 
-                    <div class="accordion-item">
-                        <button class="accordion-header">Como devo cortar minhas unhas em casa? <i class="ri-add-line"></i></button>
+                    <div class="accordion-item" role="listitem">
+                        <button class="accordion-header">Como devo cortar minhas unhas em casa? <i class="ri-add-line" aria-hidden="true"></i></button>
                         <div class="accordion-content">
                             <p>Regra de Ouro: O corte deve ser reto. Jamais arredonde os cantos ou cutuque as laterais com alicates, pois isso causa o encravamento. Use uma lixa para suavizar as pontas e deixe a limpeza profunda dos cantos para a profissional.</p>
                         </div>
                     </div>
 
-                    <div class="accordion-item">
-                        <button class="accordion-header">Atendimento a Diabéticos e Idosos <i class="ri-add-line"></i></button>
+                    <div class="accordion-item" role="listitem">
+                        <button class="accordion-header">Atendimento a Diabéticos e Idosos <i class="ri-add-line" aria-hidden="true"></i></button>
                         <div class="accordion-content">
                             <p>Sim! O Pé Diabético exige vigilância constante pois a sensibilidade pode estar diminuída. Realizamos o corte técnico seguro, hidratação específica e monitoramento de feridas. Para idosos, cuidamos do espessamento das unhas (onicogrifose) com todo carinho.</p>
                         </div>
                     </div>
 
-                    <div class="accordion-item">
-                        <button class="accordion-header">Calçados e Meias: O que evitar? <i class="ri-add-line"></i></button>
+                    <div class="accordion-item" role="listitem">
+                        <button class="accordion-header">Calçados e Meias: O que evitar? <i class="ri-add-line" aria-hidden="true"></i></button>
                         <div class="accordion-content">
                             <p>Evite sapatos de bico fino para uso diário, pois eles comprimem os dedos e causam calos e encravamentos. Prefira sapatos de bico largo (box amplo). Opte sempre por meias de algodão, que absorvem o suor e evitam fungos e mau cheiro (bromidrose).</p>
                         </div>
                     </div>
 
-                    <div class="accordion-item">
-                        <button class="accordion-header">Quanto tempo demora para curar micose? <i class="ri-add-line"></i></button>
+                    <div class="accordion-item" role="listitem">
+                        <button class="accordion-header">Quanto tempo demora para curar micose? <i class="ri-add-line" aria-hidden="true"></i></button>
                         <div class="accordion-content">
                             <p>O tratamento de fungos (Onicomicose) é um processo que exige paciência e disciplina. Com a nossa tecnologia de Laser, o tempo é reduzido, mas depende do crescimento da unha (que é lento). O tratamento contínuo é o único caminho para o sucesso.</p>
                         </div>
                     </div>
 
-                    <div class="accordion-item">
-                        <button class="accordion-header"> <strong>Política de Cancelamento e Atrasos</strong><i class="ri-add-line"></i></button>
+                    <div class="accordion-item" role="listitem">
+                        <button class="accordion-header"> <strong>Política de Cancelamento e Atrasos</strong><i class="ri-add-line" aria-hidden="true"></i></button>
                         <div class="accordion-content">
                             <p>Para manter a qualidade e pontualidade do nosso atendimento, pedimos que cancelamentos ou reagendamentos sejam feitos com <strong>pelo menos 24h de antecedência</strong>. Lembre-se também que atrasos podem inviabilizar o procedimento completo.</p>
                         </div>
@@ -338,7 +342,7 @@
             
             <div class="footer-col brand-col">
                 <div class="footer-brand">
-                    <img src="assets\logo_branca.png" alt="Juliane Costa" class="logo-img" style="margin-bottom: 15px;" loading="lazy">                   
+                    <img src="assets\logo_branca.png" alt="Juliane Costa" class="logo-img" style="margin-bottom: 15px;" loading="lazy" width="60" height="60">                   
                     <p>Cuidando da sua base com amor e ciência. Sua referência em <strong>Podologia Clínica e Estética em Colombo</strong>.</p>
                 </div>
                 <div class="socials">
@@ -348,17 +352,20 @@
             </div>
 
             <div class="footer-col">
-                <h4>Navegação</h4>
+                <h3>Navegação</h3>
                 <ul class="footer-links-list">
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#procedimentos">Tratamentos</a></li>
-                    <li><a href="#ilib">ILIB</a></li>
+                    <li><a href="#ilib">Laserterapia</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#faq">Dúvidas</a></li>
+                    <li><a href="#contato">Contato</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h4>Informações</h4>
+                <h3>Informações</h3>
                 <ul class="footer-contact-list">
                     <li>
                         <i class="ri-map-pin-line"></i>
@@ -366,7 +373,7 @@
                     </li>
                     <li>
                         <i class="ri-time-line"></i>
-                        <span>Seg a Sex: 09h às 18h<br>Sáb: 09h às 13h</span>
+                        <span>Segunda a Sábado: <br>Via agendamento</span>
                     </li>
                     <li>
                         <i class="ri-whatsapp-line"></i>
@@ -376,10 +383,10 @@
             </div>
 
             <div class="footer-col footer-dev">
-                <h4>Desenvolvido por</h4>
+                <h3>Desenvolvido por</h3>
                 <div class="developer-badge">
                     <a href="https://codexo.com.br" target="_blank" aria-label="Desenvolvido por Codexo">
-                        <img src="assets\logo_codexo_nome_branco.svg" alt="Codexo" style="height: 35px; margin-top:5px;" loading="lazy">
+                        <img src="assets\logo_codexo_nome_branco.svg" alt="Codexo" style="height: 35px; margin-top:5px;" loading="lazy" width="120" height="35">
                     </a>
                 </div>
             </div>

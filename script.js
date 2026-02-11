@@ -5,33 +5,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if(btnMobile) {
         btnMobile.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
+            const isOpen = navMenu.classList.toggle('active');
+            btnMobile.setAttribute('aria-expanded', isOpen);
+        }, { passive: true });
         
         document.querySelectorAll('.nav-menu a').forEach(l => {
-            l.addEventListener('click', () => navMenu.classList.remove('active'));
+            l.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                btnMobile.setAttribute('aria-expanded', 'false');
+            }, { passive: true });
         });
     }
 
     const accHeaders = document.querySelectorAll('.accordion-header');
     accHeaders.forEach(header => {
         header.addEventListener('click', () => {
-            header.classList.toggle('active');
-            const content = header.nextElementSibling;
-            if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-                content.style.paddingBottom = null;
-            } else {
+            const isActive = header.classList.contains('active');
+            
+            accHeaders.forEach(h => {
+                h.classList.remove('active');
+                const c = h.nextElementSibling;
+                c.style.maxHeight = null;
+                c.style.paddingBottom = null;
+            });
+            
+            if (!isActive) {
+                header.classList.add('active');
+                const content = header.nextElementSibling;
                 content.style.maxHeight = content.scrollHeight + 20 + "px";
                 content.style.paddingBottom = "15px";
             }
-        });
+        }, { passive: true });
     });
 
-
     const observerOptions = {
-        threshold: 0.15, 
-        rootMargin: "0px 0px -50px 0px"
+        threshold: 0.1,
+        rootMargin: "0px 0px -80px 0px"
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -46,6 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         child.classList.add('active');
                     });
                 }
+                
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -56,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const staggerGrids = document.querySelectorAll('.stagger-grid');
     staggerGrids.forEach((grid) => observer.observe(grid));
 
-
     const track = document.querySelector('.carousel-track');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
@@ -64,10 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if(track && prevBtn && nextBtn) {
         nextBtn.addEventListener('click', () => {
             track.scrollBy({ left: 300, behavior: 'smooth' });
-        });
+        }, { passive: true });
 
         prevBtn.addEventListener('click', () => {
             track.scrollBy({ left: -300, behavior: 'smooth' });
-        });
+        }, { passive: true });
     }
 });
