@@ -148,6 +148,64 @@ body {
 }
 .ilib-card:hover { background: var(--primary); color: white; transform: translateY(-5px); box-shadow: 0 5px 15px rgba(142, 68, 173, 0.2); border-color: var(--primary); }
 
+.insta-promo-banner {
+    background: var(--bg-main); 
+    border: 1px solid var(--accent); 
+    border-radius: 100px;
+    padding: 10px; 
+    max-width: 700px; 
+    margin: 40px auto 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+}
+
+.promo-content {
+    background: transparent;
+    padding: 10px 30px;
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    flex-wrap: wrap; text-align: left;
+}
+
+.promo-grid-layout {
+    display: flex; align-items: center; gap: 15px;
+}
+
+.promo-icon i {
+    font-size: 2rem;
+    color: var(--primary); 
+}
+
+.promo-text h3 { 
+    font-size: 1.1rem; 
+    color: var(--primary-dark); 
+    margin-bottom: 2px; 
+    font-weight: 600;
+}
+.promo-text p { 
+    font-size: 0.85rem; 
+    color: var(--text-light); 
+    margin: 0;
+}
+
+.btn-insta {
+    background: white;
+    color: var(--primary); 
+    border: 1px solid var(--primary);
+    text-decoration: none;
+    padding: 10px 24px; border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500; 
+    transition: 0.3s; 
+    white-space: nowrap;
+    display: inline-flex; align-items: center; gap: 8px;
+}
+
+.btn-insta:hover { 
+    background: var(--primary); 
+    color: white; 
+    transform: translateY(-2px); 
+    box-shadow: 0 5px 15px rgba(142, 68, 173, 0.2);
+}
+
 .faq-container { display: flex; gap: 50px; flex-wrap: wrap; }
 .faq-left, .faq-right { flex: 1; min-width: 300px; }
 
@@ -287,6 +345,11 @@ body {
     .nav-menu ul { flex-direction: column; gap: 20px; }
     .mobile-menu-btn { display: block; }
     .stats-box { justify-content: center; }
+    
+    .insta-promo-banner { border-radius: 20px; padding: 20px; }
+    .promo-content { flex-direction: column; text-align: center; gap: 15px; }
+    .promo-grid-layout { flex-direction: column; }
+    .carousel-card { height: 320px; }
 }
 @media (max-width: 900px) {
     .location-card {
