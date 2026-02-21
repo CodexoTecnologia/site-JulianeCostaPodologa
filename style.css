@@ -1,3 +1,33 @@
+@font-face {
+  font-family: 'remixicon';
+  src: url('https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.woff2?t=1690730386070') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+[class^="ri-"], [class*=" ri-"] {
+  font-family: 'remixicon' !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.ri-menu-3-line:before { content: "\ef34"; }
+.ri-whatsapp-line:before { content: "\f2bc"; }
+.ri-heart-pulse-fill:before { content: "\ee10"; }
+.ri-user-star-fill:before { content: "\f275"; }
+.ri-first-aid-kit-line:before { content: "\ed37"; }
+.ri-focus-3-line:before { content: "\ed4c"; }
+.ri-sparkling-fill:before { content: "\f36c"; }
+.ri-arrow-left-s-line:before { content: "\ea64"; }
+.ri-arrow-right-s-line:before { content: "\ea6e"; }
+.ri-instagram-line:before { content: "\ee66"; }
+.ri-arrow-right-line:before { content: "\ea6c"; }
+.ri-map-pin-user-fill:before { content: "\ef19"; }
+.ri-time-fill:before { content: "\f20e"; }
+.ri-map-pin-line:before { content: "\ef14"; }
+.ri-time-line:before { content: "\f20f"; }
+.ri-add-line:before { content: "\ea13"; }
+
 :root {
     --primary: #8e44ad;
     --primary-dark: #6c3483;
