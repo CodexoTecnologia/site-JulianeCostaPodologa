@@ -3,7 +3,7 @@
   src: url('https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.woff2?t=1690730386070') format('woff2');
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: fallback;
 }
 [class^="ri-"], [class*=" ri-"] {
   font-family: 'remixicon' !important;
