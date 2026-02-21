@@ -70,4 +70,23 @@ document.addEventListener('DOMContentLoaded', () => {
             track.scrollBy({ left: -300, behavior: 'smooth' });
         }, { passive: true });
     }
+
+    const mapWrapper = document.getElementById('map-wrapper');
+    if (mapWrapper && mapWrapper.dataset.src) {
+        const mapObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                const iframe = document.createElement('iframe');
+                iframe.src = mapWrapper.dataset.src;
+                iframe.width = '100%';
+                iframe.height = '100%';
+                iframe.style.border = '0';
+                iframe.allowFullscreen = true;
+                iframe.title = 'Mapa de localização - Rua Francisco Camargo, 402, Colombo';
+                iframe.setAttribute('aria-label', 'Mapa mostrando a localização da clínica');
+                mapWrapper.appendChild(iframe);
+                mapObserver.disconnect();
+            }
+        }, { rootMargin: '200px' });
+        mapObserver.observe(mapWrapper);
+    }
 });
