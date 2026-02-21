@@ -21,19 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     accHeaders.forEach(header => {
         header.addEventListener('click', () => {
             const isActive = header.classList.contains('active');
-            
-            accHeaders.forEach(h => {
-                h.classList.remove('active');
-                const c = h.nextElementSibling;
-                c.style.maxHeight = null;
-                c.style.paddingBottom = null;
-            });
-            
+            accHeaders.forEach(h => h.classList.remove('active'));
             if (!isActive) {
                 header.classList.add('active');
-                const content = header.nextElementSibling;
-                content.style.maxHeight = content.scrollHeight + 20 + "px";
-                content.style.paddingBottom = "15px";
             }
         }, { passive: true });
     });

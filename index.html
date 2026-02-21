@@ -5,19 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Juliane Costa Podóloga - Especialista em Podologia em Colombo/PR. Tratamentos para unha encravada, saúde e estética dos pés.">
     <title>Juliane Costa | Podóloga em Colombo - Saúde dos Pés</title>
+    <style>
+      *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+      html{scroll-behavior:smooth}
+      body{font-family:var(--font-main, sans-serif);background-color:var(--bg-main);color:var(--text-dark);line-height:1.6;overflow-x:hidden}
+      img{max-width:100%;height:auto}
+      .header{position:fixed;top:0;width:100%;z-index:1000;background:rgba(255,255,255,0.9);backdrop-filter:blur(10px);padding:15px 0;border-bottom:1px solid rgba(0,0,0,0.05)}
+      .container{max-width:1100px;margin:0 auto;padding:0 24px}
+      .nav-container{display:flex;justify-content:space-between;align-items:center}
+    </style>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet"></noscript>
-    
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+
+    <style>
+    @font-face {
+      font-family: 'remixicon';
+      src: url('https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.woff2?t=1690730386070') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+    [class^="ri-"], [class*=" ri-"] {
+      font-family: 'remixicon' !important;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .ri-menu-3-line:before { content: "\ef34"; }
+    .ri-whatsapp-line:before { content: "\f2bc"; }
+    .ri-heart-pulse-fill:before { content: "\ee10"; }
+    .ri-user-star-fill:before { content: "\f275"; }
+    .ri-first-aid-kit-line:before { content: "\ed37"; }
+    .ri-focus-3-line:before { content: "\ed4c"; }
+    .ri-sparkling-fill:before { content: "\f36c"; }
+    .ri-arrow-left-s-line:before { content: "\ea64"; }
+    .ri-arrow-right-s-line:before { content: "\ea6e"; }
+    .ri-instagram-line:before { content: "\ee66"; }
+    .ri-arrow-right-line:before { content: "\ea6c"; }
+    .ri-map-pin-user-fill:before { content: "\ef19"; }
+    .ri-time-fill:before { content: "\f20e"; }
+    .ri-map-pin-line:before { content: "\ef14"; }
+    .ri-time-line:before { content: "\f20f"; }
+    .ri-add-line:before { content: "\ea13"; }
+    </style>
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+
+    <link rel="preload" href="assets/logo.png" as="image">
+    <link rel="preload" href="assets/juliane_costa_2.avif" as="image">
+    <link rel="preload" href="script.js" as="script">
+
     <link rel="icon" type="image/png" href="assets/logo_branca.png">
-    
+
     <script src="script.js" defer></script>
     <script type="application/ld+json">
     {
@@ -102,7 +148,12 @@
     <section id="sobre" class="section">
         <div class="container about-grid">
             <div class="about-img reveal">
-                 <img src="assets/juliane_costa_2.avif" alt="Juliane Costa Podóloga" loading="lazy" width="500" height="600">
+                 <img src="assets/juliane_costa_2.avif"
+     srcset="assets/juliane_costa_2.avif 500w"
+     sizes="(max-width:600px) 90vw, 50vw"
+     alt="Juliane Costa Podóloga"
+     fetchpriority="high"
+     width="500" height="600">
             </div>
             <div class="about-text reveal">
                 <h2>Muito além da <span class="script-highlight">Estética</span></h2>
