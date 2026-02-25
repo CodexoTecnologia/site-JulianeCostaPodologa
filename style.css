@@ -3,7 +3,7 @@
   src: url('https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.woff2?t=1690730386070') format('woff2');
   font-weight: normal;
   font-style: normal;
-  font-display: fallback;
+  font-display: swap;
 }
 [class^="ri-"], [class*=" ri-"] {
   font-family: 'remixicon' !important;
@@ -363,10 +363,6 @@ body {
     .pill-badge {
         animation: none !important;
     }
-    
-    * {
-        transition-duration: 0.2s !important;
-    }
 
     .hero-grid, .about-grid { grid-template-columns: 1fr; text-align: center; }
     .hero-content h1 { font-size: 2.5rem; }
@@ -425,7 +421,7 @@ body {
 }
 
 .ilib-card {
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .ilib-card:hover { 
@@ -434,10 +430,6 @@ body {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(142, 68, 173, 0.2); 
     border-color: var(--primary); 
-}
-
-.blob-frame img {
-    animation: floatImage 6s ease-in-out infinite;
 }
 
 .carousel-container {
