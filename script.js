@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 iframe.height = '100%';
                 iframe.style.border = '0';
                 iframe.allowFullscreen = true;
-                iframe.title = 'Mapa de localização - Rua Francisco Camargo, 402, Colombo';
+                iframe.title = 'Mapa de localização - Rua Venâncio Trevisan, 137, Colombo';
                 iframe.setAttribute('aria-label', 'Mapa mostrando a localização da clínica');
                 mapWrapper.appendChild(iframe);
                 mapObserver.disconnect();
