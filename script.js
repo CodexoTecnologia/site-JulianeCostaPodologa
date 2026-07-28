@@ -71,6 +71,42 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     }
 
+    const lightbox = document.getElementById('image-lightbox');
+    const lightboxImage = lightbox?.querySelector('.lightbox-image');
+    const lightboxCaption = lightbox?.querySelector('.lightbox-caption');
+    const lightboxClose = lightbox?.querySelector('.lightbox-close');
+
+    const openLightbox = (img) => {
+        if (!lightbox || !lightboxImage || !lightboxCaption || !img) return;
+        lightboxImage.src = img.currentSrc || img.src;
+        lightboxImage.alt = img.alt || '';
+        lightboxCaption.textContent = img.closest('.carousel-card')?.querySelector('.card-caption')?.textContent || img.alt || '';
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeLightbox = () => {
+        if (!lightbox || !lightboxImage) return;
+        lightbox.classList.remove('active');
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightboxImage.src = '';
+        document.body.style.overflow = '';
+    };
+
+    document.querySelectorAll('.carousel-card img').forEach((img) => {
+        img.addEventListener('click', () => openLightbox(img));
+    });
+
+    lightboxClose?.addEventListener('click', closeLightbox);
+    lightbox?.addEventListener('click', (event) => {
+        if (event.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeLightbox();
+    });
+
     const mapWrapper = document.getElementById('map-wrapper');
     if (mapWrapper && mapWrapper.dataset.src) {
         const mapObserver = new IntersectionObserver((entries) => {
