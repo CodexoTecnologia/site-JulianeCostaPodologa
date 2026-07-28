@@ -74,8 +74,8 @@
 
       .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 
-    .blob-frame{width:100%;max-width:480px;margin:0 auto;aspect-ratio:400 / 265;display:flex;align-items:center;justify-content:center}
-    .blob-frame img{width:100%;height:100%;object-fit:cover;border-radius:30px;transform:rotate(2deg);border:8px solid #fff;box-shadow:0 10px 30px rgba(142,68,173,0.1)}
+    .blob-frame{width:100%;max-width:420px;margin:0 auto;aspect-ratio:4 / 5;display:flex;align-items:center;justify-content:center}
+    .blob-frame img{width:100%;height:100%;object-fit:cover;object-position:center 18%;border-radius:30px;transform:rotate(2deg);border:8px solid #fff;box-shadow:0 10px 30px rgba(142,68,173,0.1)}
 
       .about-img img{width:100%;border-radius:16px;box-shadow:0 10px 30px rgba(142,68,173,0.1)}
 
@@ -102,7 +102,7 @@
     <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="style.css"></noscript>
 
-    <link rel="preload" href="assets/logo.png" as="image">
+    <link rel="preload" href="assets/juliane_costa_2.avif" as="image">
     <link rel="preload" href="script.js" as="script">
 
     <link rel="icon" type="image/png" href="assets/icon.avif">
@@ -188,7 +188,7 @@
             </div>
             <div class="hero-image reveal active">
                 <div class="blob-frame">
-                    <img src="assets/logo.png" alt="Juliane Costa - Clínica de Podologia em Colombo PR" width="400" height="265" fetchpriority="high">
+                    <img src="assets/juliane_costa_1.avif" alt="Juliane Costa - Podóloga em Colombo PR" width="400" height="265" fetchpriority="high" style="object-position:center 28%; transform:rotate(2deg) scale(1.06);">
                 </div>
             </div>
         </div>
@@ -315,24 +315,28 @@
                             <div class="card-caption">Nossos principais tratamentos</div>
                         </li>
                         <li class="carousel-card">
-                            <img src="assets/studio_1.avif" alt="Venha nos Conhecer!" loading="lazy" width="280" height="350">
+                            <img src="assets/juliane_costa_1.avif" alt="Juliane Costa atendendo em Colombo" loading="lazy" width="280" height="350" class="zoomable">
+                            <div class="card-caption">Trate-se com a Juliane</div>
+                        </li>
+                        <li class="carousel-card">
+                            <img src="assets/studio_1.avif" alt="Venha nos Conhecer!" loading="lazy" width="280" height="350" class="zoomable">
                             <div class="card-caption">Venha nos Conhecer!</div>
                         </li>
                         <li class="carousel-card">
-                            <img src="assets/studio_2.avif" alt="Sala de atendimento de podologia clínica em Colombo, Juliane Costa" loading="lazy" width="280" height="350">
+                            <img src="assets/juliane_costa_3.avif" alt="Juliane Costa em imagem promocional" loading="lazy" width="280" height="350" class="zoomable">
+                            <div class="card-caption">Cuide da sua saúde</div>
+                        </li>
+                        <li class="carousel-card">
+                            <img src="assets/studio_2.avif" alt="Sala de atendimento de podologia clínica em Colombo, Juliane Costa" loading="lazy" width="280" height="350" class="zoomable">
                             <div class="card-caption">Sala de Atendimento</div>
                         </li>
                         <li class="carousel-card">
-                            <img src="assets/studio_3.avif" alt="Tratamento a laser ILIB e autoclave para esterilização na podologia" loading="lazy" width="280" height="350">
+                            <img src="assets/studio_3.avif" alt="Tratamento a laser ILIB e autoclave para esterilização na podologia" loading="lazy" width="280" height="350" class="zoomable">
                             <div class="card-caption">Equipamentos Modernos</div>
                         </li>
                         <li class="carousel-card">
-                            <img src="assets/studio_4.avif" alt="Conforto e Higiene" loading="lazy" width="280" height="350">
+                            <img src="assets/studio_4.avif" alt="Conforto e Higiene" loading="lazy" width="280" height="350" class="zoomable">
                             <div class="card-caption">Conforto e Higiene</div>
-                        </li>
-                        <li class="carousel-card">
-                            <img src="assets/studio_5.avif" alt="Ambiente Acolhedor" loading="lazy" width="280" height="350">
-                            <div class="card-caption">Ambiente Acolhedor</div>
                         </li>
                     </ul>
                 </div>
@@ -454,6 +458,41 @@
                     </div>
 
                     <div class="accordion-item" role="listitem">
+                        <button class="accordion-header">Vocês atendem podologia em Colombo e região? <i class="ri-add-line" aria-hidden="true"></i></button>
+                        <div class="accordion-content">
+                            <p>Sim. Atendemos em <strong>Colombo/PR</strong>, no <strong>Centro</strong>, com foco em podologia clínica e estética. Nosso espaço é uma boa opção para quem busca podóloga em Colombo, especialmente para unhas encravadas, calos, fissuras, podologia preventiva e cuidados com os pés no dia a dia.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item" role="listitem">
+                        <button class="accordion-header">Onde fica a clínica de podologia em Colombo? <i class="ri-add-line" aria-hidden="true"></i></button>
+                        <div class="accordion-content">
+                            <p>Estamos na <strong>Rua Venâncio Trevisan, 137 - Centro, Colombo - PR</strong>, no <strong>Malleabile Pilates e Bem-Estar</strong>, CEP <strong>83414-020</strong>. O atendimento é com hora marcada para garantir mais conforto e atenção em cada procedimento.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item" role="listitem">
+                        <button class="accordion-header">A podologia ajuda em unha encravada com inflamação? <i class="ri-add-line" aria-hidden="true"></i></button>
+                        <div class="accordion-content">
+                            <p>Ajuda sim. A avaliação correta é essencial para aliviar a dor, desinflamar e orientar o melhor cuidado. Quanto mais cedo o atendimento, menor a chance de piora, infecção e recorrência da unha encravada.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item" role="listitem">
+                        <button class="accordion-header">Posso fazer podologia se sou diabético? <i class="ri-add-line" aria-hidden="true"></i></button>
+                        <div class="accordion-content">
+                            <p>Sim, e o cuidado com o <strong>pé diabético</strong> é um dos atendimentos mais importantes na podologia. O acompanhamento profissional ajuda na prevenção de feridas, cortes inadequados, infecções e complicações nos pés.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item" role="listitem">
+                        <button class="accordion-header">Quais tratamentos de podologia vocês fazem em Colombo? <i class="ri-add-line" aria-hidden="true"></i></button>
+                        <div class="accordion-content">
+                            <p>Realizamos podologia preventiva, tratamento de unha encravada, calos, fissuras, curativos especializados, atendimento para idosos, podopediatria, cuidados com pé diabético, reflexologia podal e laserterapia.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item" role="listitem">
                         <button class="accordion-header"> <strong>Política de Cancelamento e Atrasos</strong><i class="ri-add-line" aria-hidden="true"></i></button>
                         <div class="accordion-content">
                             <p>Para manter a qualidade e pontualidade do nosso atendimento, pedimos que cancelamentos ou reagendamentos sejam feitos com <strong>pelo menos 24h de antecedência</strong>. Lembre-se também que atrasos podem inviabilizar o procedimento completo.</p>
@@ -523,6 +562,12 @@
             &copy; 2026 Juliane Costa Podóloga. Todos os direitos reservados.
         </div>
     </footer>
+
+    <div class="image-lightbox" id="image-lightbox" aria-hidden="true">
+        <button class="lightbox-close" type="button" aria-label="Fechar imagem ampliada">×</button>
+        <img class="lightbox-image" alt="">
+        <p class="lightbox-caption"></p>
+    </div>
 
 </body>
 </html>
