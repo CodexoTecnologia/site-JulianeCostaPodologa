@@ -71,13 +71,15 @@
 
       .hero{padding:140px 0 80px;min-height:90vh;display:flex;align-items:center}
       .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+      .hero-image{min-width:0}
 
       .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 
-    .blob-frame{width:100%;max-width:420px;margin:0 auto;aspect-ratio:4 / 5;display:flex;align-items:center;justify-content:center}
+    .blob-frame{width:100%;max-width:420px;margin:0 auto;aspect-ratio:4 / 5;display:flex;align-items:center;justify-content:center;contain:layout}
     .blob-frame img{width:100%;height:100%;object-fit:cover;object-position:center 18%;border-radius:30px;transform:rotate(2deg);border:8px solid #fff;box-shadow:0 10px 30px rgba(142,68,173,0.1)}
 
-      .about-img img{width:100%;border-radius:16px;box-shadow:0 10px 30px rgba(142,68,173,0.1)}
+      .about-img{aspect-ratio:1 / 1}
+      .about-img img{width:100%;height:100%;object-fit:cover;border-radius:16px;box-shadow:0 10px 30px rgba(142,68,173,0.1)}
 
       .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.5s ease,transform 0.5s ease}
       .reveal.active{opacity:1;transform:translateY(0)}
@@ -102,8 +104,7 @@
     <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="style.css"></noscript>
 
-    <link rel="preload" href="assets/juliane_costa_2.avif" as="image">
-    <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="assets/juliane_costa_1-mobile.avif" imagesrcset="assets/juliane_costa_1-mobile.avif 800w, assets/juliane_costa_1.avif 2544w" imagesizes="(max-width: 768px) calc(100vw - 48px), 420px" as="image" fetchpriority="high">
 
     <link rel="icon" type="image/png" href="assets/icon.avif">
 
@@ -155,7 +156,7 @@
     <header class="header">
         <div class="container nav-container">
             <a href="#" class="logo">
-                <img src="assets/logo.png" alt="Juliane Costa - Clínica de Podologia em Colombo PR" class="logo-img" width="91" height="60">
+                <img src="assets/logo.png" alt="Juliane Costa - Clínica de Podologia em Colombo PR" class="logo-img" width="91" height="60" decoding="async">
             </a>
             
             <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false">
@@ -188,7 +189,7 @@
             </div>
             <div class="hero-image reveal active">
                 <div class="blob-frame">
-                    <img src="assets/juliane_costa_1.avif" alt="Juliane Costa - Podóloga em Colombo PR" width="400" height="265" fetchpriority="high" style="object-position:center 28%; transform:rotate(2deg) scale(1.06);">
+                    <img src="assets/juliane_costa_1-mobile.avif" srcset="assets/juliane_costa_1-mobile.avif 800w, assets/juliane_costa_1.avif 2544w" sizes="(max-width: 768px) calc(100vw - 48px), 420px" alt="Juliane Costa - Podóloga em Colombo PR" width="609" height="827" fetchpriority="high" decoding="async" style="object-position:center 28%; transform:rotate(2deg) scale(1.06);">
                 </div>
             </div>
         </div>
@@ -197,10 +198,10 @@
     <section id="sobre" class="section">
         <div class="container about-grid">
             <div class="about-img reveal">
-                 <img src="assets/juliane_costa_2.avif"
+                 <img src="assets/juliane_costa_2-mobile.avif" srcset="assets/juliane_costa_2-mobile.avif 800w, assets/juliane_costa_2.avif 899w" sizes="(max-width: 768px) calc(100vw - 48px), 500px"
      alt="Juliane Costa - Especialista em tratar unha encravada e pé diabético em Colombo"
-     width="500" height="600"
-     loading="lazy">
+     width="899" height="899"
+     loading="lazy" decoding="async">
             </div>
             <div class="about-text reveal">
                 <h2>Especialista em <span class="script-highlight">Podologia</span></h2>
@@ -304,10 +305,10 @@
             <div class="carousel-container reveal">
                 <button class="carousel-btn prev-btn" aria-label="Foto anterior da galeria"><i class="ri-arrow-left-s-line" aria-hidden="true"></i></button>
                 
-                <div class="carousel-track-container" role="region" aria-label="Galeria de fotos">
+                <div class="carousel-track-container" role="region" aria-label="Galeria de fotos. Deslize horizontalmente para ver mais fotos." tabindex="0">
                     <ul class="carousel-track">
                         <li class="carousel-card">
-                            <img src="assets/tratamentos_juliane_costa.avif" alt="Serviços de Podologia" loading="lazy" width="280" height="350">
+                            <img src="assets/tratamentos_juliane_costa-mobile.avif" srcset="assets/tratamentos_juliane_costa-mobile.avif 800w, assets/tratamentos_juliane_costa.avif 1080w" sizes="(max-width: 768px) calc(100vw - 48px), 613px" alt="Serviços de Podologia" loading="lazy" decoding="async" width="1080" height="1080">
                             <div class="card-caption">Nossos principais tratamentos</div>
                         </li>
                         <li class="carousel-card">
@@ -338,6 +339,10 @@
                 </div>
 
                 <button class="carousel-btn next-btn" aria-label="Próxima foto da galeria"><i class="ri-arrow-right-s-line" aria-hidden="true"></i></button>
+            </div>
+            <div class="carousel-hint" aria-hidden="true">
+                <span>Deslize para ver mais fotos</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
 
             <div class="insta-promo-banner reveal">
@@ -505,12 +510,16 @@
             
             <div class="footer-col brand-col">
                 <div class="footer-brand">
-                    <img src="assets/logo_branca.png" alt="Juliane Costa" class="logo-img" style="margin-bottom: 15px;" width="91" height="60">                   
+                    <img src="assets/logo_branca.png" alt="Juliane Costa" class="logo-img" style="margin-bottom: 15px;" width="91" height="60" loading="lazy" decoding="async">
                     <p>Cuidando da sua base com amor e ciência. Sua referência em <strong>Podologia Clínica e Estética em Colombo</strong>.</p>
                 </div>
                 <div class="socials">
-                    <a href="https://instagram.com/jupodologa46" target="_blank" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
-                    <a href="https://wa.me/5541995726923?text=Ol%C3%A1%2C%20Ju%21%20Te%20encontrei%20pelo%20site%20e%20gostaria%20de%20agendar%20meu%20hor%C3%A1rio%21" target="_blank" aria-label="WhatsApp"><i class="ri-whatsapp-line"></i></a>
+                    <a href="https://instagram.com/jupodologa46" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+                    </a>
+                    <a href="https://wa.me/5541995726923?text=Ol%C3%A1%2C%20Ju%21%20Te%20encontrei%20pelo%20site%20e%20gostaria%20de%20agendar%20meu%20hor%C3%A1rio%21" target="_blank" rel="noopener" aria-label="WhatsApp">
+                        <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.5 4.1 1.6 5.9L.2 24l6.5-1.7a11.8 11.8 0 0 0 5.4 1.3h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.3Zm-8.4 18.1h-.1c-1.7 0-3.3-.5-4.8-1.3l-.3-.2-3.8 1 1-3.7-.2-.3a9.8 9.8 0 1 1 8.2 4.5Zm5.4-7.3c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.6-.8-2.7-1.4-3.8-3.2-.3-.5.3-.5.8-1.5.1-.2.1-.4 0-.6-.1-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.1 3.1c.1.2 2 3.1 4.9 4.3 1.8.8 2.5.9 3.4.8.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.1-1.3-.2-.2-.4-.3-.7-.4Z" fill="currentColor"/></svg>
+                    </a>
                 </div>
             </div>
 
@@ -530,15 +539,15 @@
                 <h3>Informações</h3>
                 <ul class="footer-contact-list">
                     <li>
-                        <i class="ri-map-pin-line"></i>
+                        <svg class="footer-icon footer-contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-12A7 7 0 0 0 5 9c0 5.8 7 12 7 12Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
                         <span>Rua Venâncio Trevisan, 137<br>Centro - Colombo, PR<br>Malleabile Pilates e Bem-Estar<br>CEP 83414-020</span>
                     </li>
                     <li>
-                        <i class="ri-time-line"></i>
+                        <svg class="footer-icon footer-contact-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
                         <span>Segunda a Sábado: <br>Via agendamento</span>
                     </li>
                     <li>
-                        <i class="ri-whatsapp-line"></i>
+                        <svg class="footer-icon footer-contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.5 4.1 1.6 5.9L.2 24l6.5-1.7a11.8 11.8 0 0 0 5.4 1.3h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.3Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 7.5c.3 0 .5.2.7.6l.7 1.7c.1.3.1.5-.1.7l-.7.8c.6 1.1 1.5 2 2.6 2.6l.8-.7c.2-.2.5-.2.7-.1l1.7.7c.4.2.6.4.6.7v.7c0 .4-.2.7-.6.9-.5.2-1.1.3-1.7.1-3.3-.8-5.9-3.4-6.7-6.7-.2-.6-.1-1.2.1-1.7.2-.4.5-.6.9-.6H9Z" fill="currentColor"/></svg>
                         <span>(41) 99572-6923</span>
                     </li>
                 </ul>
