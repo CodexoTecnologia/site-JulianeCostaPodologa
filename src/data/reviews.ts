@@ -108,6 +108,19 @@ const selected: ReadonlyArray<readonly [string, string, string, boolean?]> = [
     'Ótima profissional, carismática e muito cuidadosa com seus clientes. Obrigada.',
   ],
 ];
+// Texto integral dos comentários apresentados como trecho no carrossel.
+const completeText: Record<string, string> = {
+  '104830249491264788325':
+    'Fiz uma sessão de podologia preventiva e também experimentei a laserterapia ILIB. Além de sair com as unhas perfeitas, saí super relaxada! O espaço é muito limpo e moderno, e o atendimento é maravilhoso. A Ju é uma profissional excelente, muito atenciosa e querida. Recomendo muito!✨💕',
+  '102578445195843862016':
+    'Tive uma experiência ótima com a Ju! Ela foi super cuidadosa, atenciosa e resolveu minhas dores muito bem. As mãos dela são leves e precisas, dá muita confiança e conforto durante todo o atendimento. Dá pra ver que ela entende muito do que faz e realmente se preocupa com a gente.\nCom certeza volto e recomendo muito!!',
+  '100915973430648910464':
+    'Muito obrigada pelo atendimento excepcional! Sinto meus pés renovados e leves.\nProfissional atenciosa e competente. Agradeço por cuidar dos meus pés com tanto carinho e profissionalismo( Uns 5 anos). Sua dedicação faz toda a diferença!!',
+  '115604475018887287728':
+    'Juliane é uma profissional incrível. Tenho unhas encravadas e ela, com todo cuidado e profissionalismo, resolveu meu problema em questão de minutos. Recomendo bastante.',
+  '115675839367909024702':
+    'Juliane excelente profissional e pessoa, , recomendo a Ju com toda certeza , fizemos o tratamento com o laser em minha unha e vi um ótimo resultado.',
+};
 export const reviews = selected.map(([author, id, text, excerpt]) => ({
   author,
   initials: author
@@ -118,6 +131,7 @@ export const reviews = selected.map(([author, id, text, excerpt]) => ({
     .join('')
     .toUpperCase(),
   text,
+  fullText: completeText[id] || text,
   excerpt: Boolean(excerpt),
   url: `https://www.google.com/maps/contrib/${id}/reviews?hl=pt-BR`,
 }));

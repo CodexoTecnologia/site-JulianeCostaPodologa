@@ -40,6 +40,30 @@ import Carousel from './Carousel.astro';
               {review.excerpt && ' […]'}
             </p>
           </blockquote>
+          {review.excerpt && (
+            <>
+              <button
+                class="review-read-more"
+                type="button"
+                hidden
+                aria-haspopup="dialog"
+                aria-controls="review-dialog"
+                aria-label={`Ver avaliação completa de ${review.author}`}
+              >
+                Ver avaliação completa <Icon name="plus" size={15} />
+              </button>
+              <details class="review-disclosure" data-author={review.author}>
+                <summary>
+                  Ver avaliação completa <Icon name="plus" size={15} />
+                </summary>
+                <div class="review-full-text">
+                  {review.fullText.split('\n').map((paragraph) => (
+                    <p>{paragraph}</p>
+                  ))}
+                </div>
+              </details>
+            </>
+          )}
           <figcaption>
             <span class="review-initials" aria-hidden="true">
               {review.initials}
@@ -62,3 +86,74 @@ import Carousel from './Carousel.astro';
     </div>
   </div>
 </section>
+<dialog class="review-dialog" id="review-dialog" aria-labelledby="review-dialog-title">
+  <header class="review-dialog-header">
+    <div>
+      <p class="eyebrow">AVALIAÇÃO COMPLETA · GOOGLE</p>
+      <h2 id="review-dialog-title">Avaliação completa</h2>
+    </div>
+    <form method="dialog">
+      <button type="submit" aria-label="Fechar avaliação">
+        <Icon name="close" />
+      </button>
+    </form>
+  </header>
+  <div
+    class="review-dialog-content"
+    tabindex="0"
+    role="region"
+    aria-label="Texto completo da avaliação"
+  ></div>
+  <p class="review-dialog-source">
+    Avaliação pública · texto original · conferido em {googleSnapshot.checked}.
+  </p>
+</dialog>
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>('#review-dialog');
+  const title = dialog?.querySelector<HTMLElement>('#review-dialog-title');
+  const content = dialog?.querySelector<HTMLElement>('.review-dialog-content');
+  if (dialog && title && content && typeof dialog.showModal === 'function') {
+    let opener: HTMLElement | null = null;
+    document.querySelectorAll<HTMLDetailsElement>('.review-disclosure').forEach((details) => {
+      const trigger = details
+        .closest('.review-card')
+        ?.querySelector<HTMLButtonElement>('.review-read-more');
+      const fullText = details.querySelector<HTMLElement>('.review-full-text');
+      if (!trigger || !fullText) return;
+      trigger.hidden = false;
+      details.hidden = true;
+      trigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        opener = trigger;
+        title.textContent = details.dataset.author || 'Avaliação completa';
+        content.replaceChildren(
+          ...Array.from(fullText.childNodes).map((node) => node.cloneNode(true)),
+        );
+        dialog.showModal();
+        content.scrollTop = 0;
+        document.body.classList.add('review-modal-open');
+      });
+    });
+    dialog.addEventListener('close', () => {
+      document.body.classList.remove('review-modal-open');
+      opener?.focus({ preventScroll: true });
+    });
+    let startedOutside = false;
+    const outside = (event: MouseEvent) => {
+      const rect = dialog.getBoundingClientRect();
+      return (
+        event.clientX < rect.left ||
+        event.clientX > rect.right ||
+        event.clientY < rect.top ||
+        event.clientY > rect.bottom
+      );
+    };
+    dialog.addEventListener('pointerdown', (event) => {
+      startedOutside = event.target === dialog && outside(event);
+    });
+    dialog.addEventListener('click', (event) => {
+      if (startedOutside && event.target === dialog && outside(event)) dialog.close();
+      startedOutside = false;
+    });
+  }
+</script>

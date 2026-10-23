@@ -2,7 +2,7 @@
 
 - Home reorganizada: quatro entradas de atendimento, ILIB depois da primeira visita, 20 avaliações, galeria com quatro fotos, Google Maps, seis produtos e sete perguntas frequentes.
 - Localização com mapa real e carrossel de fotos. Catálogo `/produtos/`, FAQ com 22 perguntas e blog com nove artigos. Build com **22 páginas**.
-- Check Astro: zero erros, avisos ou hints. Formatação verificada. **Oito testes passam** em preview e no build de produção isolado; sitemap de produção com 21 URLs. A pasta `dist/` permanece no modo preview, sem indexação.
+- Check Astro: zero erros, avisos ou hints. Formatação verificada. Oito testes passaram em preview e no build de produção isolado; sitemap de produção com 21 URLs. A atualização de leitura completa das avaliações passou em **nove testes no preview**. A pasta `dist/` permanece no modo preview, sem indexação.
 - QA no navegador: home e componentes em 1000/1280px; produtos e localização em 390px; home, produtos, localização, blog e FAQ em 320px, sem overflow horizontal do documento. Artigo novo inspecionado em 320px.
 - Carrosséis de avaliações, produtos e fotos responderam aos botões. Setas no teclado mudam o produto; End chega à avaliação 20 e desabilita o botão seguinte. FAQ abre por Espaço. Nenhum erro/aviso no console observado nessa jornada.
 - Mapas Google carregaram com o nome e endereço atuais, em português, na home e na página de localização. Identificador público do negócio retornado pelo mapa: `52133834769892366`.
@@ -11,6 +11,14 @@
 - Sem push, deploy ou alteração de domínio. Vídeo continua desativado. PageSpeed e CWV precisam ser avaliados na HOM; não há promessa de impacto zero de mapas ou mídia.
 
 Fontes das fotografias, decisões editoriais e motivo da ampliação da home: `docs/ITERACAO-HOME.md`.
+
+### Leitura integral das avaliações
+
+- Os cinco comentários que tinham trechos agora guardam também o texto integral conferido no Google. O trecho continua no carrossel, com botão “Ver avaliação completa”.
+- Um `<dialog>` nativo compartilhado apresenta autor e texto completo, sem biblioteca nova ou requisição para buscar o comentário. Escape, botão de fechar e clique no fundo fecham a leitura; o foco volta ao botão de origem.
+- Conteúdo integral já está no HTML. Sem JavaScript ou suporte a dialog, o controle nativo `<details>` expande o comentário no card.
+- QA: modal inspecionado em 1000px e 320px, sem overflow horizontal; Tab entra na região de leitura, Escape fecha e restaura foco. Os cinco autores/textos foram conferidos no navegador; fechar por botão e teclado funcionou. Sem erros/avisos no console observado.
+- Screenshot: `artifacts/avaliacao-completa-desktop.jpg` (artefato local, fora do Git).
 
 ## Histórico da primeira versão
 

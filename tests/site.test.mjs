@@ -150,7 +150,9 @@ test('mapas integrados são adiados e os produtos abrem uma consulta específica
 test('conteúdos educativos indicam fontes e a home mantém uma decisão clara', async () => {
   const home = await readFile(join(root, 'index.html'), 'utf8');
   assert.ok(home.indexOf('SUA PRIMEIRA VISITA') < home.indexOf('id="ilib"'));
-  assert.equal([...home.matchAll(/<details>/g)].length, 7);
+  const faqSection = home.match(/<section[^>]*id="faq"[\s\S]*?<\/section>/)?.[0];
+  assert.ok(faqSection);
+  assert.equal([...faqSection.matchAll(/<details>/g)].length, 7);
   const faq = await readFile(join(root, 'duvidas/index.html'), 'utf8');
   assert.equal([...faq.matchAll(/<details>/g)].length, 22);
   const educational = html.filter(({ body }) => body.includes('conteúdo educativo'));
@@ -162,4 +164,18 @@ test('conteúdos educativos indicam fontes e a home mantém uma decisão clara',
       /https:\/\/(www\.(sbd\.org\.br|aad\.org|nhs\.uk|guysandstthomas\.nhs\.uk)|www\.gov\.br)/,
     );
   }
+});
+test('comentários resumidos têm a íntegra disponível sem requisição adicional', async () => {
+  const home = await readFile(join(root, 'index.html'), 'utf8');
+  assert.match(home, /<dialog[^>]+aria-labelledby="review-dialog-title"/);
+  assert.equal([...home.matchAll(/aria-label="Ver avaliação completa de /g)].length, 5);
+  for (const ending of [
+    'Recomendo muito!✨💕',
+    'Com certeza volto e recomendo muito!!',
+    'Sua dedicação faz toda a diferença!!',
+    'Juliane é uma profissional incrível.',
+    'fizemos o tratamento com o laser em minha unha e vi um ótimo resultado.',
+  ])
+    assert.ok(home.includes(ending), ending);
+  assert.equal([...home.matchAll(/class="review-full-text"/g)].length, 5);
 });

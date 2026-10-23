@@ -61,6 +61,8 @@ O projeto Dom Elii foi usado como referência de organização de dados e links 
 
 Não oferecer recompensa por avaliação nem alterar relatos para inserir palavras-chave. A seleção priorizou ambiente, atendimento, pontualidade, unha encravada e contexto local, presentes naturalmente nos textos.
 
+Os cinco comentários mais longos têm texto integral no HTML e botão “Ver avaliação completa”. O diálogo nativo permite ler sem alterar a altura do carrossel; fechar por botão ou Escape devolve o foco ao controle de origem. Sem JavaScript, `<details>` expande o texto no card. Não há requisição adicional nem biblioteca de modal.
+
 ## Vídeo
 
 `PUBLIC_ENABLE_VIDEO=false` é o padrão. A capa continua visível e não há botão de reprodução enganoso.
