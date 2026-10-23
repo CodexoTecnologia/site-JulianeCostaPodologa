@@ -21,3 +21,9 @@ O Dom Elii não tem integração dinâmica com Google Places na versão inspecio
 Não marcar a seleção de avaliações de terceiros como `aggregateRating` ou `Review` do próprio negócio para tentar obter estrelas de busca. Referência: [Google Search Central — review snippets](https://developers.google.com/search/docs/appearance/structured-data/review-snippet).
 
 Antes de PRD, conferir se os relatos ainda estão públicos e atualizar nota/quantidade ou optar por omiti-las.
+
+## Curadoria por detalhe da experiência
+
+Em 23/10/2026, as 58 avaliações foram carregadas até o fim. Sete textos mais genéricos foram substituídos pelos relatos de Leo Camargo, Leonardo Russo Kieras, Sandra Francisquevis, Simone Sissa, Vera Gasparin, Auto Escola Chemin Ltda. Chemin e Julia Vitória. Mantidos 20 autores diferentes, com dez relatos mais detalhados no início e leitura integral disponível. IDs e textos conferidos estão em `src/data/reviews.ts`.
+
+O critério principal é ajudar o visitante a entender a experiência de atendimento. Menções naturais a podologia, ILIB, unhas e localização foram preservadas; nenhuma palavra-chave foi inserida na fala dos autores. Texto mais comprido não implica vantagem automática de SEO. Referência: [Google — conteúdo útil, sem contagem de palavras preferida](https://developers.google.com/search/docs/fundamentals/creating-helpful-content).

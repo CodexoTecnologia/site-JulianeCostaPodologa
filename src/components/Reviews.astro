@@ -57,7 +57,7 @@ import Carousel from './Carousel.astro';
                   Ver avaliação completa <Icon name="plus" size={15} />
                 </summary>
                 <div class="review-full-text">
-                  {review.fullText.split('\n').map((paragraph) => (
+                  {review.fullText.split(/\n{2,}/).map((paragraph) => (
                     <p>{paragraph}</p>
                   ))}
                 </div>

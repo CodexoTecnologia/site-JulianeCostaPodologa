@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile, readdir, stat, access } from 'node:fs/promises';
 import { resolve, join } from 'node:path';
 import sharp from 'sharp';
+import { reviews } from '../src/data/reviews.ts';
 const root = resolve(process.env.SITE_TEST_DIR || 'dist');
 async function files(dir) {
   return (
@@ -168,14 +169,18 @@ test('conteúdos educativos indicam fontes e a home mantém uma decisão clara',
 test('comentários resumidos têm a íntegra disponível sem requisição adicional', async () => {
   const home = await readFile(join(root, 'index.html'), 'utf8');
   assert.match(home, /<dialog[^>]+aria-labelledby="review-dialog-title"/);
-  assert.equal([...home.matchAll(/aria-label="Ver avaliação completa de /g)].length, 5);
-  for (const ending of [
-    'Recomendo muito!✨💕',
-    'Com certeza volto e recomendo muito!!',
-    'Sua dedicação faz toda a diferença!!',
-    'Juliane é uma profissional incrível.',
-    'fizemos o tratamento com o laser em minha unha e vi um ótimo resultado.',
-  ])
-    assert.ok(home.includes(ending), ending);
-  assert.equal([...home.matchAll(/class="review-full-text"/g)].length, 5);
+  const expanded = reviews.filter((review) => review.excerpt);
+  assert.equal(
+    [...home.matchAll(/aria-label="Ver avaliação completa de /g)].length,
+    expanded.length,
+  );
+  assert.equal([...home.matchAll(/class="review-full-text"/g)].length, expanded.length);
+  const normalized = home.replace(/\s+/g, ' ');
+  for (const review of expanded) {
+    assert.notEqual(review.fullText, review.text, review.author);
+    for (const paragraph of review.fullText.split(/\n{2,}/)) {
+      assert.ok(normalized.includes(paragraph.replace(/\s+/g, ' ')), review.author);
+    }
+  }
+  assert.equal(new Set(reviews.map((review) => review.url)).size, 20);
 });

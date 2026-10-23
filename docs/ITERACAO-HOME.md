@@ -12,7 +12,9 @@ Foram comparados os comentários com texto na ordenação “Mais relevantes” 
 
 Nota 5,0 e 58 avaliações são uma fotografia de 23/10/2026, sem atualização automática. Experiências individuais não são promessa de resultado. Sem schema de estrelas próprias.
 
-A pedido do usuário, os cinco comentários resumidos também têm sua íntegra em `src/data/reviews.ts`. “Ver avaliação completa” abre um diálogo nativo, preservando a altura do carrossel; sem JavaScript, o texto expande no próprio card. Autoria, grafia e parágrafos do comentário são preservados. O modal tem fechamento por botão/Escape/fundo, rolagem interna quando necessária e retorno de foco ao controle de origem.
+A pedido do usuário, os comentários resumidos também têm sua íntegra em `src/data/reviews.ts`. “Ver avaliação completa” abre um diálogo nativo, preservando a altura do carrossel; sem JavaScript, o texto expande no próprio card. Autoria, grafia e parágrafos do comentário são preservados. O modal tem fechamento por botão/Escape/fundo, rolagem interna quando necessária e retorno de foco ao controle de origem.
+
+Na curadoria seguinte foram carregadas as 58 avaliações e comparados os comentários com texto, expandindo os relatos de Leonardo, Leo e Sandra. Sete relatos mais genéricos deram lugar a experiências mais específicas. A seleção mantém 20 autores, começando por dez relatos detalhados, incluindo acompanhamento de unhas, ILIB, cuidado de familiar e orientações após a visita. Os outros dez preservam variedade de atendimento e espaço. A ordem considera utilidade e variedade, sem prometer vantagem de ranking por quantidade de palavras.
 
 ## Produtos e fotografias
 

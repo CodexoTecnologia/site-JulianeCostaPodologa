@@ -14,11 +14,13 @@ Fontes das fotografias, decisões editoriais e motivo da ampliação da home: `d
 
 ### Leitura integral das avaliações
 
-- Os cinco comentários que tinham trechos agora guardam também o texto integral conferido no Google. O trecho continua no carrossel, com botão “Ver avaliação completa”.
+- Os comentários apresentados como trechos guardam também o texto integral conferido no Google. A curadoria atual tem dez relatos detalhados no início de uma seleção de 20 autores; o trecho continua no carrossel, com botão “Ver avaliação completa”.
 - Um `<dialog>` nativo compartilhado apresenta autor e texto completo, sem biblioteca nova ou requisição para buscar o comentário. Escape, botão de fechar e clique no fundo fecham a leitura; o foco volta ao botão de origem.
 - Conteúdo integral já está no HTML. Sem JavaScript ou suporte a dialog, o controle nativo `<details>` expande o comentário no card.
 - QA: modal inspecionado em 1000px e 320px, sem overflow horizontal; Tab entra na região de leitura, Escape fecha e restaura foco. Os cinco autores/textos foram conferidos no navegador; fechar por botão e teclado funcionou. Sem erros/avisos no console observado.
 - Screenshot: `artifacts/avaliacao-completa-desktop.jpg` (artefato local, fora do Git).
+
+Após comparação das 58 avaliações, sete relatos foram substituídos e a ordem foi revisada. O teste de preservação da íntegra agora verifica todos os comentários resumidos contra os dados de origem. Nove testes, build e check passaram novamente. O relato mais longo (Leo Camargo) foi inspecionado em 320 × 700px: rolagem interna funciona por teclado até o fim, cabeçalho/fechar permanecem acessíveis e não há overflow horizontal. Nova seleção conferida em 1000px; sem erros/avisos no console observado. Screenshot: `artifacts/avaliacoes-curadoria-desktop.jpg`.
 
 ## Histórico da primeira versão
 

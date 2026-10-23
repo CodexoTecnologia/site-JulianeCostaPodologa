@@ -37,6 +37,7 @@ body.review-modal-open {
   padding-top: 15px;
 }
 .review-full-text p {
+  white-space: pre-line;
   font-size: 17px;
   line-height: 1.7;
 }
@@ -100,6 +101,7 @@ body.review-modal-open {
   min-height: 0;
 }
 .review-dialog-content p {
+  white-space: pre-line;
   font-size: 19px;
   line-height: 1.8;
 }
