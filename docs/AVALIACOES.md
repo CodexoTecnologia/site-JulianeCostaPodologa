@@ -24,6 +24,11 @@ Antes de PRD, conferir se os relatos ainda estão públicos e atualizar nota/qua
 
 ## Curadoria por detalhe da experiência
 
-Em 23/10/2026, as 58 avaliações foram carregadas até o fim. Sete textos mais genéricos foram substituídos pelos relatos de Leo Camargo, Leonardo Russo Kieras, Sandra Francisquevis, Simone Sissa, Vera Gasparin, Auto Escola Chemin Ltda. Chemin e Julia Vitória. Mantidos 20 autores diferentes, com dez relatos mais detalhados no início e leitura integral disponível. IDs e textos conferidos estão em `src/data/reviews.ts`.
+Em 23/10/2026, as 58 avaliações foram carregadas até o fim. Sete textos mais genéricos foram substituídos pelos relatos de Leo Camargo, Leonardo Russo Kieras, Sandra Francisquevis, Simone Sissa, Vera Gasparin, Auto Escola Chemin Ltda. Chemin e Julia Vitória. Mantidos 20 autores diferentes, com os comprimentos intercalados e leitura integral disponível. IDs e textos conferidos estão em `src/data/reviews.ts`.
 
 O critério principal é ajudar o visitante a entender a experiência de atendimento. Menções naturais a podologia, ILIB, unhas e localização foram preservadas; nenhuma palavra-chave foi inserida na fala dos autores. Texto mais comprido não implica vantagem automática de SEO. Referência: [Google — conteúdo útil, sem contagem de palavras preferida](https://developers.google.com/search/docs/fundamentals/creating-helpful-content).
+
+
+## Ritmo de leitura
+
+A ordem começa com Jéssica Foltran e tatiele farias (curtas), seguidas de Kawanne Stadler (longa). Os demais relatos variam comprimento e assunto. A sequência é fixa e não usa sorteio em runtime. As páginas de três cards continuam misturadas; a seguinte começa com Rafael, Leo e Deh. Build e nove testes passaram; abertura e paginação conferidas em 1024px. Evidência: artifacts/avaliacoes-intercaladas.jpg.

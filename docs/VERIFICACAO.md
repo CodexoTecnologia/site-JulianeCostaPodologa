@@ -14,7 +14,7 @@ Fontes das fotografias, decisões editoriais e motivo da ampliação da home: `d
 
 ### Leitura integral das avaliações
 
-- Os comentários apresentados como trechos guardam também o texto integral conferido no Google. A curadoria atual tem dez relatos detalhados no início de uma seleção de 20 autores; o trecho continua no carrossel, com botão “Ver avaliação completa”.
+- Os comentários apresentados como trechos guardam também o texto integral conferido no Google. A curadoria atual tem dez relatos detalhados intercalados em uma seleção de 20 autores; o trecho continua no carrossel, com botão “Ver avaliação completa”.
 - Um `<dialog>` nativo compartilhado apresenta autor e texto completo, sem biblioteca nova ou requisição para buscar o comentário. Escape, botão de fechar e clique no fundo fecham a leitura; o foco volta ao botão de origem.
 - Conteúdo integral já está no HTML. Sem JavaScript ou suporte a dialog, o controle nativo `<details>` expande o comentário no card.
 - QA: modal inspecionado em 1000px e 320px, sem overflow horizontal; Tab entra na região de leitura, Escape fecha e restaura foco. Os cinco autores/textos foram conferidos no navegador; fechar por botão e teclado funcionou. Sem erros/avisos no console observado.
