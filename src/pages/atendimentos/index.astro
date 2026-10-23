@@ -1,0 +1,53 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import Contact from '../../components/Contact.astro';
+import Icon from '../../components/Icon.astro';
+import { services } from '../../data/services';
+---
+
+<Base
+  title="Atendimentos de podologia e bem-estar em Colombo"
+  description="Conheça os cuidados com os pés, o atendimento de unha encravada, ILIB, spa e bem-estar oferecidos por Juliane Costa em Colombo."
+  crumbs={[{ name: 'Atendimentos', href: '/atendimentos/' }]}
+>
+  <PageHero
+    eyebrow="UM OLHAR PARA SUA ROTINA"
+    title="Cuidar de você começa por aqui."
+    description="Conheça os atendimentos. Se ainda não souber qual escolher, a primeira conversa com a Juliane pode ajudar."
+  />
+  <section class="shell page-body service-list">
+    <article class="service-row">
+      <span>01</span>
+      <div>
+        <p class="eyebrow">CONHEÇA O ILIB</p>
+        <h2>Atendimento ILIB</h2>
+      </div>
+      <div>
+        <p>
+          Entenda a proposta, conheça um registro do atendimento e tire suas dúvidas diretamente com
+          a Juliane.
+        </p>
+        <a class="text-link" href="/ilib/">
+          Conhecer o ILIB <Icon size={16} />
+        </a>
+      </div>
+    </article>
+    {services.map((s, i) => (
+      <article class="service-row">
+        <span>{String(i + 2).padStart(2, '0')}</span>
+        <div>
+          <p class="eyebrow">{s.eyebrow}</p>
+          <h2>{s.short}</h2>
+        </div>
+        <div>
+          <p>{s.description}</p>
+          <a class="text-link" href={`/atendimentos/${s.slug}/`}>
+            Conhecer o atendimento <Icon size={16} />
+          </a>
+        </div>
+      </article>
+    ))}
+  </section>
+  <Contact />
+</Base>

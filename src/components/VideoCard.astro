@@ -1,0 +1,124 @@
+---
+import { Image } from 'astro:assets';
+import cover from '../assets/ilib-cover.jpg';
+import Icon from './Icon.astro';
+interface Props {
+  compact?: boolean;
+}
+const { compact = false } = Astro.props;
+const enabled = import.meta.env.PUBLIC_ENABLE_VIDEO === 'true';
+---
+
+<figure class:list={['video-card', { 'video-compact': compact }]} data-video-card>
+  <div class="video-stage">
+    <Image
+      src={cover}
+      alt="Demonstração de ILIB: equipamento posicionado junto ao punho durante o atendimento"
+      widths={[360, 540, 720]}
+      sizes={compact ? '(max-width: 700px) 80vw, 320px' : '(max-width: 700px) 90vw, 420px'}
+      width={540}
+      format="webp"
+      quality={80}
+      loading="lazy"
+      class="video-cover"
+    />
+    {enabled && (
+      <a
+        class="video-trigger"
+        href="/media/ilib-demonstracao.mp4"
+        data-video-trigger
+        aria-label="Assistir demonstração de ILIB, 12 segundos, sem áudio"
+      >
+        <span>
+          <Icon name="play" size={25} />
+        </span>
+        <span>
+          Veja o atendimento <small>12 segundos · sem áudio</small>
+        </span>
+      </a>
+    )}
+  </div>
+  <figcaption>Um registro do atendimento ILIB com a Juliane.</figcaption>
+  {enabled && (
+    <>
+      <p class="video-status sr-only" aria-live="polite"></p>
+      <details class="video-description">
+        <summary>Descrição do vídeo</summary>
+        <p>
+          Juliane posiciona um equipamento sobre uma pulseira azul junto ao punho. O vídeo pergunta
+          “Você conhece o ILIB? Laserterapia. Para que serve?”. É um registro demonstrativo, sem
+          áudio. Tire suas dúvidas sobre a proposta do atendimento diretamente com a Juliane.
+        </p>
+      </details>
+      <noscript>
+        <p>
+          <a href="/media/ilib-demonstracao.mp4">Abrir o vídeo demonstrativo</a>
+        </p>
+      </noscript>
+    </>
+  )}
+</figure>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-video-card]').forEach((card) => {
+    const trigger = card.querySelector<HTMLAnchorElement>('[data-video-trigger]');
+    const stage = card.querySelector<HTMLElement>('.video-stage');
+    const cover = card.querySelector<HTMLElement>('.video-cover');
+    const status = card.querySelector<HTMLElement>('.video-status');
+    if (!trigger || !stage || !cover || !status) return;
+    trigger.addEventListener('click', (event) => {
+      event.preventDefault();
+      const video = document.createElement('video');
+      video.controls = true;
+      video.playsInline = true;
+      video.preload = 'none';
+      video.tabIndex = 0;
+      video.setAttribute('aria-label', 'Demonstração de ILIB com Juliane Costa, sem áudio');
+      video.src = trigger.href;
+      const close = document.createElement('button');
+      close.type = 'button';
+      close.className = 'video-close';
+      close.textContent = 'Fechar vídeo';
+      const reset = () => {
+        video.pause();
+        video.removeAttribute('src');
+        video.load();
+        video.remove();
+        close.remove();
+        trigger.hidden = false;
+        cover.hidden = false;
+        status.textContent = 'Vídeo fechado.';
+        status.classList.add('sr-only');
+        document.removeEventListener('visibilitychange', pauseWhenHidden);
+        trigger.focus();
+      };
+      const pauseWhenHidden = () => {
+        if (document.hidden) video.pause();
+      };
+      close.addEventListener('click', reset);
+      video.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') reset();
+      });
+      video.addEventListener('error', () => {
+        if (!video.isConnected) return;
+        status.classList.remove('sr-only');
+        status.textContent = 'Não foi possível carregar o vídeo. Feche e tente novamente.';
+      });
+      video.addEventListener('playing', () => {
+        status.classList.add('sr-only');
+        status.textContent = 'Vídeo em reprodução.';
+      });
+      document.addEventListener('visibilitychange', pauseWhenHidden);
+      document.querySelectorAll('video').forEach((other) => other.pause());
+      trigger.hidden = true;
+      cover.hidden = true;
+      stage.append(video, close);
+      status.classList.remove('sr-only');
+      status.textContent = 'Carregando vídeo…';
+      video.focus();
+      void video.play().catch(() => {
+        if (!video.isConnected) return;
+        status.textContent = 'Use o controle de reprodução para começar.';
+      });
+    });
+  });
+</script>

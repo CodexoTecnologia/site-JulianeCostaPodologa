@@ -1,0 +1,60 @@
+---
+import { business } from '../data/site';
+import { googleSnapshot, reviews } from '../data/reviews';
+import Icon from './Icon.astro';
+---
+
+<section class="reviews-section section" aria-labelledby="reviews-title">
+  <div class="shell">
+    <div class="section-top">
+      <div>
+        <p class="eyebrow">QUEM JÁ FOI, CONTA</p>
+        <h2 id="reviews-title" data-reveal>
+          Cuidado que aparece
+          <br />
+          nas palavras de vocês.
+        </h2>
+      </div>
+      <a class="google-rating" href={business.google} target="_blank" rel="noopener noreferrer">
+        <span class="rating-number">
+          {googleSnapshot.rating}
+          <span class="stars" aria-hidden="true">
+            ★★★★★
+          </span>
+        </span>
+        <span>
+          {googleSnapshot.count} avaliações no Google <Icon size={14} />
+        </span>
+      </a>
+    </div>
+    <div class="review-grid">
+      {reviews.map((review) => (
+        <figure class="review-card" data-reveal>
+          <span class="quote-mark" aria-hidden="true">
+            “
+          </span>
+          <blockquote>
+            <p>{review.text}</p>
+          </blockquote>
+          <figcaption>
+            <span class="review-initials" aria-hidden="true">
+              {review.initials}
+            </span>
+            <div>
+              <strong>{review.author}</strong>
+              <a href={review.url} target="_blank" rel="noopener noreferrer">
+                Ver perfil de avaliações no Google <Icon size={12} />
+              </a>
+            </div>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+    <div class="review-footnote">
+      <p>Avaliações selecionadas. Fonte: Google · conferido em {googleSnapshot.checked}.</p>
+      <a href={business.google} target="_blank" rel="noopener noreferrer">
+        Consultar todas as avaliações <Icon size={14} />
+      </a>
+    </div>
+  </div>
+</section>

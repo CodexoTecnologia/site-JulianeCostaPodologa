@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import { business, whatsapp } from '../data/site';
+---
+
+<Base
+  title="Privacidade"
+  description="Como este site utiliza informações, recursos externos e canais de contato da Juliane Costa Podóloga."
+  crumbs={[{ name: 'Privacidade', href: '/privacidade/' }]}
+>
+  <PageHero
+    eyebrow="SUAS INFORMAÇÕES"
+    title="Privacidade, com clareza."
+    description="Informações sobre a navegação neste site e os canais usados para falar com a Juliane. Atualizado em 23 de outubro de 2026."
+  />
+  <div class="shell legal-copy">
+    <h2>Contato e agendamento</h2>
+    <p>
+      Este site apresenta os serviços de {business.name} e leva você ao WhatsApp para conversar e
+      agendar. Não há formulário de cadastro, pagamento ou coleta de histórico clínico no site.
+    </p>
+    <h2>Serviços externos</h2>
+    <p>
+      Ao abrir WhatsApp, Instagram ou Google Maps, você passa a usar esses serviços, que têm suas
+      próprias políticas de privacidade. O mapa é aberto por link; não é carregado automaticamente
+      na página.
+    </p>
+    <h2>Vídeos, imagens e fontes</h2>
+    <p>
+      As fontes e imagens são servidas pelo próprio site. Quando disponível, a reprodução de vídeo é
+      iniciada por você. Não incorporamos players de redes sociais na abertura das páginas.
+    </p>
+    <h2>Preferências e navegação</h2>
+    <p>
+      A preferência de animações pode ser guardada no armazenamento da sessão do navegador. Ela não
+      contém dados pessoais e não é enviada para terceiros. Esta versão não instala ferramentas de
+      publicidade ou analytics. A hospedagem pode processar registros técnicos necessários à entrega
+      e à segurança do site.
+    </p>
+    <h2>Avaliações públicas</h2>
+    <p>
+      O site apresenta uma seleção de avaliações públicas com autoria e link para o Google. A nota e
+      a quantidade exibidas têm data de conferência; não representam atualização automática.
+    </p>
+    <h2>Fale com a Juliane</h2>
+    <p>
+      Para dúvidas sobre suas informações ou os canais de atendimento, entre em contato pelo{' '}
+      <a href={whatsapp()} target="_blank" rel="noopener noreferrer">
+        WhatsApp {business.phone}
+      </a>
+      .
+    </p>
+  </div>
+</Base>

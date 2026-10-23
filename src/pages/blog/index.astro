@@ -1,0 +1,22 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import ArticleCards from '../../components/ArticleCards.astro';
+import Contact from '../../components/Contact.astro';
+---
+
+<Base
+  title="Conteúdos · Podologia, ILIB e sua primeira visita"
+  description="Conteúdos para conhecer os atendimentos da Juliane Costa, organizar sua visita em Colombo e levar suas dúvidas sobre ILIB à profissional."
+  crumbs={[{ name: 'Conteúdos', href: '/blog/' }]}
+>
+  <PageHero
+    eyebrow="UMA CONVERSA QUE CONTINUA"
+    title="Para conhecer, entender e se preparar."
+    description="Informações sobre o espaço, sua primeira visita e os atendimentos. Conteúdo para ajudar a dar o próximo passo com mais clareza."
+  />
+  <section class="shell page-body" aria-label="Artigos">
+    <ArticleCards />
+  </section>
+  <Contact />
+</Base>

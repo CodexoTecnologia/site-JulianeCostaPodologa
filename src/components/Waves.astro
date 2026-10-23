@@ -1,0 +1,18 @@
+---
+interface Props {
+  dark?: boolean;
+}
+const { dark = false } = Astro.props;
+---
+
+<svg class="brand-waves" viewBox="0 0 1200 850" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M850-50C540 180 1140 340 820 900H1300V-50Z" fill={dark ? '#78498b' : '#eac6fd'} />
+  <path d="M1060-50C760 150 1160 520 990 900H1300V-50Z" fill={dark ? '#865598' : '#e4b3fe'} />
+  <path
+    class="wave-line"
+    d="M1010-80C690 170 1190 430 940 880"
+    stroke={dark ? '#eac6fd' : '#9f6bb8'}
+    stroke-width="1"
+    fill="none"
+  />
+</svg>

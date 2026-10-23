@@ -1,0 +1,69 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Contact from '../components/Contact.astro';
+import Action from '../components/Action.astro';
+import portrait from '../assets/juliane-portrait.webp';
+import { business } from '../data/site';
+---
+
+<Base
+  title="Conheça Juliane Costa · Podóloga em Colombo"
+  description="Conheça a Juliane Costa e sua forma de atender: podologia, ILIB e bem-estar com atenção individual no Centro de Colombo, PR."
+  crumbs={[{ name: 'A Juliane', href: '/sobre/' }]}
+>
+  <PageHero
+    eyebrow="PRAZER, JULIANE COSTA"
+    title="O cuidado começa quando a gente se escuta."
+    description="Um olhar atento para você, para sua rotina e para o que te trouxe até aqui."
+  />
+  <section class="shell content-grid page-body">
+    <div>
+      <Image
+        src={portrait}
+        alt="Juliane Costa, podóloga em Colombo, em seu espaço de atendimento"
+        widths={[480, 800, 1200]}
+        sizes="(max-width:650px) 90vw, 44vw"
+        width={1000}
+        format="webp"
+        quality={85}
+        loading="eager"
+      />
+    </div>
+    <div>
+      <p class="eyebrow">QUEM CUIDA DE VOCÊ</p>
+      <h2 style="margin-top:18px">
+        Sou a Juliane.
+        <br />
+        Seja bem-vinda.
+        <br />
+        Seja bem-vindo.
+      </h2>
+      <p>
+        Atuo com podologia e atendimentos de bem-estar no Centro de Colombo. Aqui, a proposta é
+        receber você com atenção e conversar sobre o cuidado que procura.
+      </p>
+      <p>
+        Meu trabalho reúne cuidados com os pés, atendimento ILIB e opções como spa dos pés,
+        reflexologia e Reiki. Antes de escolher, você tem espaço para perguntar e entender como cada
+        atendimento funciona.
+      </p>
+      <p>
+        Quero que sua visita seja um momento de atenção a você: da primeira conversa ao que
+        combinamos para os próximos passos.
+      </p>
+      <div class="actions" style="margin-top:28px">
+        <Action href="/atendimentos/" label="Conheça os atendimentos" secondary />
+      </div>
+      <p style="font-size:15px">
+        Acompanhe também meu dia a dia no{' '}
+        <a href={business.instagram} target="_blank" rel="noopener noreferrer">
+          {business.instagramHandle}
+        </a>
+        .
+      </p>
+    </div>
+  </section>
+  <Contact />
+</Base>

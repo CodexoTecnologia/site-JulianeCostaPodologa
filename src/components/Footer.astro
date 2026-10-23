@@ -1,0 +1,77 @@
+---
+import { business, whatsapp } from '../data/site';
+import Icon from './Icon.astro';
+---
+
+<footer class="site-footer">
+  <div class="shell footer-top">
+    <div class="footer-brand">
+      <img
+        src="/brand/juliane-signature.webp"
+        alt="Juliane Costa Podóloga"
+        width="320"
+        height="205"
+        loading="lazy"
+      />
+      <p>
+        Cuidado com seus pés.
+        <br />
+        Atenção a você.
+      </p>
+    </div>
+    <div>
+      <span class="eyebrow">VISITE A JULIANE</span>
+      <p>
+        {business.address}
+        <br />
+        {business.neighborhood} · {business.city}, {business.state}
+      </p>
+      <a href={business.maps} target="_blank" rel="noopener noreferrer">
+        Como chegar <Icon size={14} />
+      </a>
+    </div>
+    <div>
+      <span class="eyebrow">VAMOS CONVERSAR?</span>
+      <a href={whatsapp()} target="_blank" rel="noopener noreferrer">
+        {business.phone}
+      </a>
+      <a href={business.instagram} target="_blank" rel="noopener noreferrer">
+        {business.instagramHandle}
+      </a>
+      <p>{business.hours}</p>
+    </div>
+    <div class="footer-links">
+      <span class="eyebrow">EXPLORE</span>
+      <a href="/duvidas/">Dúvidas frequentes</a>
+      <a href="/blog/">Conteúdos</a>
+      <a href={business.google} target="_blank" rel="noopener noreferrer">
+        Avaliações no Google
+      </a>
+      <a href="/privacidade/">Privacidade</a>
+      <button class="motion-toggle" type="button" aria-pressed="false" hidden>
+        Pausar animações
+      </button>
+    </div>
+  </div>
+  <div class="shell codexo-credit">
+    <a
+      href="https://codexo.com.br/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Design e desenvolvimento por Codexo — conheça nosso trabalho"
+    >
+      <span class="eyebrow">DESIGN & DESENVOLVIMENTO</span>
+      <img src="/brand/codexo-white.svg" width="160" height="40" alt="Codexo" loading="lazy" />
+      <span class="codexo-invitation">
+        Conheça nosso trabalho <Icon size={17} />
+      </span>
+    </a>
+    <span>
+      © {new Date().getFullYear()} {business.name}
+    </span>
+  </div>
+</footer>
+<a class="mobile-contact" href={whatsapp()} target="_blank" rel="noopener noreferrer">
+  <span>Agendar pelo WhatsApp</span>
+  <Icon name="whatsapp" />
+</a>

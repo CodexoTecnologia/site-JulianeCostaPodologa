@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Faq from '../components/Faq.astro';
+import Contact from '../components/Contact.astro';
+import { appointmentFaq, ilibFaq } from '../data/faq';
+---
+
+<Base
+  title="Dúvidas sobre agendamento, podologia e ILIB"
+  description="Tire dúvidas sobre agendamento, primeira visita, localização e atendimento ILIB com Juliane Costa Podóloga em Colombo, PR."
+  crumbs={[{ name: 'Dúvidas frequentes', href: '/duvidas/' }]}
+>
+  <PageHero
+    eyebrow="PODE PERGUNTAR"
+    title="Clareza antes de dar o próximo passo."
+    description="Reunimos as dúvidas práticas para ajudar você a organizar sua visita. Se faltar alguma resposta, a Juliane conversa com você."
+  />
+  <section class="shell faq-page">
+    <h2>
+      Agendamento
+      <br />e primeira visita.
+    </h2>
+    <Faq items={appointmentFaq} />
+  </section>
+  <section class="shell faq-page">
+    <h2>
+      Conhecendo
+      <br />o ILIB.
+    </h2>
+    <Faq items={ilibFaq} />
+  </section>
+  <Contact title="Sua pergunta não apareceu aqui?" />
+</Base>

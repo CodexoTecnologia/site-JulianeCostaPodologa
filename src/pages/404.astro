@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Action from '../components/Action.astro';
+---
+
+<Base title="Página não encontrada" noindex>
+  <PageHero
+    eyebrow="PÁGINA NÃO ENCONTRADA"
+    title="Vamos encontrar outro caminho?"
+    description="Esse endereço não está disponível. Você pode voltar ao início ou conhecer os atendimentos da Juliane."
+  >
+    <div class="actions">
+      <Action href="/" label="Voltar ao início" />
+      <Action href="/atendimentos/" label="Ver atendimentos" secondary />
+    </div>
+  </PageHero>
+</Base>

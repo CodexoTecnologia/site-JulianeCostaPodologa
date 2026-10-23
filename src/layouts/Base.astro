@@ -1,0 +1,138 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { business, production, origin } from '../data/site';
+import { seoGraph, jsonLd, type ArticleMetadata } from '../lib/seo';
+import '../styles/tokens.css';
+import '../styles/global.css';
+interface Props {
+  title: string;
+  description?: string;
+  crumbs?: { name: string; href: string }[];
+  noindex?: boolean;
+  article?: ArticleMetadata;
+}
+const {
+  title,
+  description = business.description,
+  crumbs = [],
+  noindex = false,
+  article,
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, origin).href;
+const previewOrigin = import.meta.env.PUBLIC_PREVIEW_URL?.trim();
+const socialImage = production
+  ? new URL('/og-image.jpg', origin).href
+  : previewOrigin
+    ? new URL('/og-image.jpg', previewOrigin).href
+    : '/og-image.jpg';
+const fullTitle = `${title} | Juliane Costa`;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta
+      name="robots"
+      content={
+        !production || noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'
+      }
+    />
+    <meta name="theme-color" content="#f2ddfe" />
+    {!noindex && <link rel="canonical" href={canonical} />}
+    <meta property="og:type" content={article ? 'article' : 'website'} />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content={business.name} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Juliane Costa — Podologia, ILIB e bem-estar em Colombo"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link
+      rel="preload"
+      href="/fonts/league-spartan-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <noscript>
+      <style is:inline>
+        @media (max-width: 800px) {
+          .site-header {
+            position: static;
+            height: auto;
+          }
+          .header-inner {
+            display: block;
+          }
+          .main-nav {
+            display: flex;
+            position: static;
+            flex-wrap: wrap;
+            gap: 8px 20px;
+            padding: 5px 0 20px;
+            max-height: none;
+            box-shadow: none;
+            border: 0;
+          }
+          .main-nav > a {
+            font-size: 16px;
+          }
+          .menu-toggle {
+            display: none;
+          }
+        }
+      </style>
+    </noscript>
+    {!noindex && (
+      <script
+        type="application/ld+json"
+        set:html={jsonLd(seoGraph(Astro.url.pathname, fullTitle, description, crumbs, article))}
+      />
+    )}
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">
+      Pular para o conteúdo
+    </a>
+    <Header />
+    <main id="conteudo">
+      {crumbs.length > 0 && (
+        <nav class="breadcrumbs shell" aria-label="Caminho da página">
+          <a href="/">Início</a>
+          {crumbs.map((c, i) => (
+            <>
+              <span aria-hidden="true">/</span>
+              {i === crumbs.length - 1 ? (
+                <span aria-current="page">{c.name}</span>
+              ) : (
+                <a href={c.href}>{c.name}</a>
+              )}
+            </>
+          ))}
+        </nav>
+      )}
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      import { initSite } from '../scripts/site';
+      initSite();
+    </script>
+  </body>
+</html>

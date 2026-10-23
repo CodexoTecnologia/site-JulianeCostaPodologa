@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/league-spartan-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: Questrial;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/questrial-latin.woff2') format('woff2');
+}
+:root {
+  --paper: #fcf8fe;
+  --white: #fff;
+  --ink: #313131;
+  --muted: #5c5362;
+  --soft: #f2ddfe;
+  --lavender: #eac6fd;
+  --lavender-strong: #e4b3fe;
+  --brand: #ce7cfa;
+  --action: #613176;
+  --action-dark: #4c245e;
+  --line: #ddcfe3;
+  --heading: 'League Spartan', sans-serif;
+  --body: Questrial, sans-serif;
+  --shell: 1200px;
+  --header: 98px;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}

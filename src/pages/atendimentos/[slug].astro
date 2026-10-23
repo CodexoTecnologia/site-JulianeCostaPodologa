@@ -1,0 +1,72 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import Action from '../../components/Action.astro';
+import Faq from '../../components/Faq.astro';
+import Contact from '../../components/Contact.astro';
+import { services } from '../../data/services';
+import { appointmentFaq } from '../../data/faq';
+import { whatsapp } from '../../data/site';
+export function getStaticPaths() {
+  return services.map((service) => ({ params: { slug: service.slug }, props: { service } }));
+}
+const { service } = Astro.props;
+const href = `/atendimentos/${service.slug}/`;
+---
+
+<Base
+  title={`${service.short} em Colombo`}
+  description={service.description}
+  crumbs={[
+    { name: 'Atendimentos', href: '/atendimentos/' },
+    { name: service.short, href },
+  ]}
+>
+  <PageHero eyebrow={service.eyebrow} title={service.title} description={service.description}>
+    <div class="actions">
+      <Action
+        href={whatsapp(`Olá, Ju! Gostaria de conversar sobre ${service.short.toLowerCase()}.`)}
+        label="Conversar com a Juliane"
+        whatsapp
+        external
+      />
+    </div>
+  </PageHero>
+  <section class="shell content-grid page-body">
+    <div>
+      <h2>
+        Entender, avaliar
+        <br />e cuidar.
+      </h2>
+      <p>
+        O atendimento começa com uma conversa sobre o que você procura. A avaliação ajuda a definir
+        a proposta e esclarecer os cuidados envolvidos.
+      </p>
+      <p>
+        Você pode perguntar sobre o procedimento, o tempo previsto e as orientações antes de
+        decidir. Cada visita considera sua necessidade individual.
+      </p>
+    </div>
+    <div>
+      <p class="eyebrow">O QUE VOCÊ ENCONTRA</p>
+      <ul>
+        {service.items.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+      <aside class="info-note">{service.note}</aside>
+    </div>
+  </section>
+  <section class="section shell faq-preview" style="border-top:1px solid var(--line)">
+    <div>
+      <p class="eyebrow">ANTES DA VISITA</p>
+      <h2>
+        Vamos tirar
+        <br />
+        suas dúvidas?
+      </h2>
+    </div>
+    <Faq items={appointmentFaq.slice(0, 3)} />
+  </section>
+  <Contact />
+</Base>

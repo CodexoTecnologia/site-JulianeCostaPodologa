@@ -1,0 +1,88 @@
+# Juliane Costa Podóloga
+
+Nova versão local em Astro estático, com identidade baseada nos materiais do Canva.
+
+## Desenvolvimento
+
+Node 24.x e npm. As versões estão fixadas no lockfile.
+
+```powershell
+npm ci
+npm run dev
+```
+
+Prévia de desenvolvimento: `http://127.0.0.1:4331/`.
+
+```powershell
+npm run verify
+npm run preview
+```
+
+`verify` executa check, build e testes. `preview` serve `dist/` em loopback na porta 4331, com gzip e suporte a Range para vídeo. Não execute dev e preview simultaneamente na mesma porta. Para outra porta de preview, defina `PORT`.
+
+## HOM e produção
+
+**Esta entrega é local. Nenhum push, deploy ou alteração de DNS foi realizado.**
+
+HOM usa o mesmo build estático, mantendo:
+
+```dotenv
+PUBLIC_SITE_MODE=preview
+PUBLIC_SITE_URL=https://julianecostapodologa.com.br
+PUBLIC_ENABLE_VIDEO=false
+```
+
+- Build: `npm run build`; diretório de saída: `dist`.
+- O padrão sem variáveis é preview com `noindex, follow`. O robots permite leitura dessa diretiva e não anuncia sitemap de HOM.
+- Conteúdo e metadados usam a origem canônica confirmada. Ao configurar a HOM, informar `PUBLIC_PREVIEW_URL` com sua origem HTTPS para a imagem de compartilhamento; caso não exista, a prévia usa imagem relativa.
+- Somente na publicação final, explicitamente configurar `PUBLIC_SITE_MODE=production` e a origem HTTPS em `PUBLIC_SITE_URL`. Isso habilita indexação e sitemap.
+- O domínio, redirecionamento www/sem-www e o host final precisam ser conferidos na etapa de publicação. Canonical, schema e sitemap devem usar a mesma origem.
+- A verificação existente do Google está preservada em `public/googlec47846e9ced625ab.html`.
+- URLs antigas de fotos foram preservadas em `public/assets/`. As âncoras principais da home anterior continuam disponíveis.
+- Não há adaptador de servidor, backend, formulário, analytics, pagamentos ou CMS nesta versão.
+
+## Conteúdo e dados
+
+- `src/data/site.ts`: contato, endereço e links do negócio. Fonte central para interface e schema.
+- `src/data/services.ts`: atendimentos e escopo.
+- `src/data/faq.ts`: dúvidas práticas e ILIB.
+- `src/content/blog/*.md`: artigos. `draft: true` impede geração de rota e listagem. A publicação editorial fica com a Codexo.
+- `src/content.config.ts`: validação do conteúdo.
+- `src/lib/seo.ts`: JSON-LD. Sem preços, aggregateRating, estrelas próprias ou títulos profissionais não comprovados.
+- As datas de artigos correspondem à criação desta versão local, em 23/10/2026; ajustar para a data real de publicação antes de PRD.
+- Certificados e textos clínicos detalhados permanecem pendentes. Os artigos iniciais são institucionais; não atribuímos revisão clínica à Juliane.
+
+## Avaliações do Google
+
+A curadoria está em `src/data/reviews.ts`. Três relatos públicos foram conferidos no perfil fornecido pelo usuário em 23/10/2026, com autoria, grafia original, link de origem e data de conferência da nota/quantidade. Não há API, scraping agendado ou atualização automática. Conferir novamente antes de publicar.
+
+O projeto Dom Elii foi usado como referência de organização de dados e links externos. Sua nota cadastrada é do Booksy; ela não foi copiada para este site. Na Juliane, a fonte das avaliações é o Google. A nota não é incluída em schema de avaliações próprias.
+
+Não oferecer recompensa por avaliação nem alterar relatos para inserir palavras-chave. A seleção priorizou ambiente, atendimento, pontualidade, unha encravada e contexto local, presentes naturalmente nos textos.
+
+## Vídeo
+
+`PUBLIC_ENABLE_VIDEO=false` é o padrão. A capa continua visível e não há botão de reprodução enganoso.
+
+- Recorte preparado: `public/media/ilib-demonstracao.mp4`, 12s, 450 × 800, sem áudio, aproximadamente 630 KiB.
+- Origem: primeiros 12 segundos do vídeo ILIB existente. Foram excluídas as telas posteriores de benefícios clínicos e encerramento; não há preços no recorte.
+- Capa otimizada no pipeline do Astro. Nada de iframe de Instagram/YouTube.
+- Com `PUBLIC_ENABLE_VIDEO=true`, aparece o controle progressivo: o elemento `<video>` e sua fonte só são criados depois do clique; com JS indisponível, o link abre o arquivo nativo.
+- O player tem controles, descrição textual, fechamento, pausa ao ocultar a página e retorno de foco.
+- **A ativação depende da comparação de desempenho e aprovação da curadoria.** Não foi prometido impacto zero universal. Nenhum teste local substitui CWV de campo.
+
+## Identidade e movimento
+
+Logo original preservada, com uma cópia que apenas remove margens transparentes para uso legível no cabeçalho. Sem redesenho da marca.
+
+League Spartan e Questrial são fontes oficiais com OFL em `public/fonts`, subconjuntos WOFF2 com português, aproximadamente 39 KB no total. Tons de lavanda e carvão extraídos dos materiais; tom de ação mais escuro para contraste.
+
+CSS para controles e GSAP/ScrollTrigger somente na home. As cenas respeitam movimento reduzido e o controle de pausa no rodapé. Título e conteúdo são visíveis no HTML, sem depender de reveals para leitura. Não há rolagem capturada ou loops contínuos.
+
+## Documentação
+
+- `docs/PLANEJAMENTO.md`: decisões e escopo aprovados antes da implementação.
+- `docs/VERIFICACAO.md`: evidências e limites da verificação local.
+- `archive/legacy/`: cópia do site anterior para consulta; não é publicada pelo Astro.
+
+Metas de projeto: LCP ≤2,5s, INP ≤200ms e CLS ≤0,1 no p75 de campo. Não há score PageSpeed declarado sem medição correspondente.

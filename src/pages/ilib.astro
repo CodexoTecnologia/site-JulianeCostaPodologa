@@ -1,0 +1,100 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Action from '../components/Action.astro';
+import VideoCard from '../components/VideoCard.astro';
+import Faq from '../components/Faq.astro';
+import Contact from '../components/Contact.astro';
+import { ilibFaq } from '../data/faq';
+import { whatsapp } from '../data/site';
+---
+
+<Base
+  title="ILIB em Colombo · Conheça o atendimento"
+  description="Conheça o atendimento ILIB com Juliane Costa no Centro de Colombo. Tire suas dúvidas, entenda a proposta e converse sobre uma avaliação individual."
+  crumbs={[{ name: 'ILIB', href: '/ilib/' }]}
+>
+  <PageHero
+    eyebrow="ILIB COM JULIANE COSTA"
+    title="Um tempo para conhecer. Um cuidado para entender."
+    description="Você já ouviu falar em ILIB? Conheça o atendimento da Juliane e comece pelas suas perguntas."
+  >
+    <div class="actions">
+      <Action
+        href={whatsapp('Olá, Ju! Vi a página de ILIB e gostaria de conhecer o atendimento.')}
+        label="Conversar sobre ILIB"
+        whatsapp
+        external
+      />
+    </div>
+  </PageHero>
+  <section class="shell content-grid page-body">
+    <div>
+      <p class="eyebrow">CONHEÇA DE PERTO</p>
+      <h2 style="margin-top:18px">
+        Mais clareza.
+        <br />
+        Mais atenção a você.
+      </h2>
+      <p>
+        O ILIB faz parte dos atendimentos oferecidos pela Juliane no Centro de Colombo. No registro
+        ao lado, você pode conhecer uma parte da experiência: o posicionamento do equipamento junto
+        ao punho.
+      </p>
+      <p>
+        Antes de escolher um atendimento, vale entender sua proposta. Converse com a Juliane sobre o
+        que você busca, como a sessão acontece e quais informações precisam ser consideradas na
+        avaliação.
+      </p>
+      <p>
+        O número de sessões, a frequência e a adequação do atendimento são conversados
+        individualmente. Um vídeo ou relato de outra pessoa não define o que faz sentido para você.
+      </p>
+      <a class="text-link" href="/blog/ilib-perguntas-para-avaliacao/">
+        Perguntas para levar à sua conversa <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <VideoCard />
+  </section>
+  <section class="process-section section">
+    <div class="shell">
+      <p class="eyebrow">COMO COMEÇAR</p>
+      <h2 style="margin-top:18px;margin-bottom:38px">
+        Da curiosidade
+        <br />à conversa.
+      </h2>
+      <ol class="process-list">
+        <li>
+          <span>01</span>
+          <h3>Conte seu interesse</h3>
+          <p>Envie uma mensagem dizendo que quer conhecer o ILIB e consulte os horários.</p>
+        </li>
+        <li>
+          <span>02</span>
+          <h3>Esclareça suas dúvidas</h3>
+          <p>Pergunte sobre a proposta, como é realizado e o que será considerado na avaliação.</p>
+        </li>
+        <li>
+          <span>03</span>
+          <h3>Entenda os próximos passos</h3>
+          <p>Combine o atendimento com a Juliane e confira as orientações para sua visita.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+  <section class="section shell faq-preview">
+    <div>
+      <p class="eyebrow">SOBRE O ILIB</p>
+      <h2>
+        Suas dúvidas
+        <br />
+        têm espaço.
+      </h2>
+    </div>
+    <Faq items={ilibFaq} />
+  </section>
+  <Contact
+    title="Vamos conversar sobre o ILIB?"
+    message="Olá, Ju! Gostaria de tirar minhas dúvidas sobre o atendimento ILIB."
+  />
+</Base>

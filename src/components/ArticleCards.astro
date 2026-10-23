@@ -1,0 +1,32 @@
+---
+import { publishedArticles } from '../lib/articles';
+import Icon from './Icon.astro';
+interface Props {
+  limit?: number;
+}
+const articles = await publishedArticles();
+const { limit = articles.length } = Astro.props;
+---
+
+<div class="article-grid">
+  {articles.slice(0, limit).map((article, i) => (
+    <article class="article-card" data-reveal>
+      <a href={`/blog/${article.id}/`}>
+        <div class:list={['article-art', `article-art-${i % 3}`]} aria-hidden="true">
+          <span>{String(i + 1).padStart(2, '0')}</span>
+          <Icon name={i === 1 ? 'pin' : 'flower'} size={82} />
+        </div>
+        <div class="article-card-content">
+          <p class="eyebrow">
+            {article.data.category} · {article.data.readingMinutes} MIN DE LEITURA
+          </p>
+          <h3>{article.data.title}</h3>
+          <p>{article.data.description}</p>
+          <span class="read-link">
+            Ler conteúdo <Icon size={16} />
+          </span>
+        </div>
+      </a>
+    </article>
+  ))}
+</div>

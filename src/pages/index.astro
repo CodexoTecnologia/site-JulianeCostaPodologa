@@ -1,0 +1,317 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Action from '../components/Action.astro';
+import Icon from '../components/Icon.astro';
+import Waves from '../components/Waves.astro';
+import VideoCard from '../components/VideoCard.astro';
+import Reviews from '../components/Reviews.astro';
+import Faq from '../components/Faq.astro';
+import Contact from '../components/Contact.astro';
+import ArticleCards from '../components/ArticleCards.astro';
+import { whatsapp, business } from '../data/site';
+import { appointmentFaq } from '../data/faq';
+import portrait from '../assets/juliane-portrait.webp';
+import about from '../assets/juliane_costa_2.avif';
+import studio from '../assets/studio_1.avif';
+---
+
+<Base title="Podóloga em Colombo · Podologia e ILIB">
+  <section class="hero" id="inicio">
+    <Waves />
+    <div class="shell hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">JULIANE COSTA · PODÓLOGA EM COLOMBO</p>
+        <h1>
+          Cuidado com
+          <br />
+          seus pés,
+          <br />
+          <span>atenção a você.</span>
+        </h1>
+        <p class="hero-description">
+          Podologia, ILIB e bem-estar, com um olhar atento para o que você precisa.
+        </p>
+        <div class="actions">
+          <Action href={whatsapp()} label="Agendar meu momento" whatsapp external />
+          <a class="text-link" href="/atendimentos/">
+            Conhecer os atendimentos <Icon size={16} />
+          </a>
+        </div>
+        <p class="hero-location">
+          <Icon name="pin" size={17} />
+          <span>
+            Centro · Colombo, PR
+            <br />
+            Atendimento com hora marcada
+          </span>
+        </p>
+      </div>
+      <figure class="hero-portrait">
+        <div class="portrait-frame">
+          <Image
+            src={portrait}
+            alt="Juliane Costa em seu espaço de atendimento em Colombo"
+            widths={[480, 640, 960, 1200]}
+            sizes="(max-width: 700px) 88vw, (max-width: 1100px) 42vw, 490px"
+            width={980}
+            format="webp"
+            quality={85}
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
+        <figcaption>
+          <Icon name="flower" size={22} />
+          <span>
+            Cuidado próximo.
+            <br />
+            Do primeiro contato à sua visita.
+          </span>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="hero-bottom shell">
+      <span>SEUS PÉS SUSTENTAM SUA HISTÓRIA.</span>
+      <a href="#atendimentos">
+        Um tempo para cuidar de você <span aria-hidden="true">↓</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section shell" id="atendimentos" aria-labelledby="care-title">
+    <span id="procedimentos" class="legacy-anchor"></span>
+    <div class="section-top">
+      <div>
+        <p class="eyebrow">CADA PESSOA, UM CUIDADO</p>
+        <h2 id="care-title" data-reveal>
+          O que faz sentido
+          <br />
+          para você, hoje?
+        </h2>
+      </div>
+      <p>
+        Da rotina de cuidados com os pés a um momento de bem-estar. Conheça os atendimentos e
+        converse com a Juliane.
+      </p>
+    </div>
+    <div class="care-grid">
+      <a href="/atendimentos/cuidados-com-os-pes/" class="care-item" data-reveal>
+        <span class="care-number">01</span>
+        <Icon name="flower" size={40} />
+        <h3>
+          Cuidados
+          <br />
+          com os pés
+        </h3>
+        <p>Podologia preventiva, unhas, calosidades e fissuras, com avaliação individual.</p>
+        <span class="read-link">
+          Conhecer os cuidados <Icon size={16} />
+        </span>
+      </a>
+      <a href="/ilib/" class="care-item care-featured" data-reveal>
+        <span class="care-number">02</span>
+        <span class="care-feature-label">CONHEÇA O ATENDIMENTO</span>
+        <h3>ILIB</h3>
+        <p>Um espaço para entender a proposta, tirar suas dúvidas e conhecer o atendimento.</p>
+        <span class="read-link">
+          Descobrir o ILIB <Icon size={16} />
+        </span>
+      </a>
+      <a href="/atendimentos/bem-estar/" class="care-item" data-reveal>
+        <span class="care-number">03</span>
+        <Icon name="flower" size={40} />
+        <h3>
+          Bem-estar
+          <br />
+          no seu tempo
+        </h3>
+        <p>Spa dos pés, reflexologia e Reiki. Uma pausa para dar atenção a você.</p>
+        <span class="read-link">
+          Encontrar meu momento <Icon size={16} />
+        </span>
+      </a>
+    </div>
+    <p class="care-help">
+      Ainda não sabe por onde começar?{' '}
+      <a
+        href={whatsapp(
+          'Olá, Ju! Quero conhecer os atendimentos e tirar algumas dúvidas antes de agendar.',
+        )}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        A Juliane conversa com você.
+      </a>
+    </p>
+  </section>
+
+  <section class="ilib-feature" id="ilib" aria-labelledby="ilib-title">
+    <Waves dark />
+    <div class="shell ilib-grid">
+      <div class="ilib-copy">
+        <p class="eyebrow">UM OLHAR PARA O SEU BEM-ESTAR</p>
+        <h2 id="ilib-title" data-reveal>
+          Você já
+          <br />
+          conhece o <span>ILIB?</span>
+        </h2>
+        <p>
+          Talvez você tenha visto nas redes. Aqui, o convite é conhecer de perto: entender como
+          funciona o atendimento, conversar sobre sua necessidade e esclarecer suas dúvidas.
+        </p>
+        <div class="ilib-points">
+          <span>Conversa e avaliação individual</span>
+          <span>Atendimento com hora marcada</span>
+          <span>Informações diretamente com a profissional</span>
+        </div>
+        <Action href="/ilib/" label="Quero conhecer o ILIB" light />
+      </div>
+      <VideoCard compact />
+    </div>
+  </section>
+
+  <section class="section shell about-preview" id="sobre">
+    <div class="about-photo" data-reveal>
+      <Image
+        src={about}
+        alt="Retrato de Juliane Costa, podóloga"
+        widths={[480, 720, 960]}
+        sizes="(max-width:700px) 90vw, 40vw"
+        width={850}
+        format="webp"
+        quality={85}
+        loading="lazy"
+      />
+      <span class="photo-flower" aria-hidden="true">
+        <Icon name="flower" size={64} />
+      </span>
+    </div>
+    <div class="about-copy">
+      <p class="eyebrow">QUEM CUIDA DE VOCÊ</p>
+      <h2 data-reveal>
+        Prazer,
+        <br />
+        sou a <span>Juliane.</span>
+      </h2>
+      <p>
+        O cuidado começa na escuta. Quero que você encontre um espaço para conversar, entender seu
+        atendimento e receber atenção aos detalhes.
+      </p>
+      <p>
+        Atuo com podologia e atendimentos de bem-estar no Centro de Colombo. Cada visita é uma
+        oportunidade de dar atenção à sua rotina e aos seus pés.
+      </p>
+      <a class="text-link" href="/sobre/">
+        Conheça mais sobre mim <Icon size={16} />
+      </a>
+    </div>
+  </section>
+
+  <section class="process-section section" aria-labelledby="process-title">
+    <div class="shell">
+      <div class="section-top">
+        <div>
+          <p class="eyebrow">SUA PRIMEIRA VISITA</p>
+          <h2 id="process-title" data-reveal>
+            Um próximo passo
+            <br />
+            de cada vez.
+          </h2>
+        </div>
+        <p>
+          Você não precisa decidir tudo antes de chegar. A primeira conversa já ajuda a encontrar o
+          caminho.
+        </p>
+      </div>
+      <ol class="process-list">
+        <li data-reveal>
+          <span>01</span>
+          <h3>Vamos conversar</h3>
+          <p>Entre em contato pelo WhatsApp, conte o que procura e consulte a agenda.</p>
+        </li>
+        <li data-reveal>
+          <span>02</span>
+          <h3>Um olhar para você</h3>
+          <p>A avaliação orienta a escolha do cuidado e esclarece suas dúvidas.</p>
+        </li>
+        <li data-reveal>
+          <span>03</span>
+          <h3>Cuidado e orientação</h3>
+          <p>Entenda o que foi combinado e converse sobre os próximos passos.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <Reviews />
+
+  <section class="space-preview section shell" id="galeria">
+    <div class="space-copy" id="localizacao">
+      <p class="eyebrow">UM ESPAÇO PARA RECEBER VOCÊ</p>
+      <h2 data-reveal>
+        Aqui em
+        <br />
+        <span>Colombo.</span>
+      </h2>
+      <p>Um ambiente preparado para o seu momento de cuidado, no Centro da cidade.</p>
+      <p class="address-line">
+        {business.address}
+        <br />
+        Centro · Colombo, PR
+      </p>
+      <Action href="/localizacao/" label="Conheça o espaço" secondary />
+    </div>
+    <div class="space-photo" data-reveal>
+      <Image
+        src={studio}
+        alt="Sala da Juliane, com cadeira de atendimento e bancada organizada"
+        widths={[480, 800, 1200]}
+        sizes="(max-width:700px) 90vw, 50vw"
+        width={1100}
+        format="webp"
+        quality={82}
+        loading="lazy"
+      />
+    </div>
+  </section>
+
+  <section class="blog-preview section" aria-labelledby="blog-title">
+    <div class="shell">
+      <div class="section-top">
+        <div>
+          <p class="eyebrow">PARA CONHECER, ANTES DE CHEGAR</p>
+          <h2 id="blog-title" data-reveal>
+            Uma boa conversa
+            <br />
+            também começa aqui.
+          </h2>
+        </div>
+        <a class="text-link" href="/blog/">
+          Todos os conteúdos <Icon size={16} />
+        </a>
+      </div>
+      <ArticleCards limit={3} />
+    </div>
+  </section>
+
+  <section class="section shell faq-preview" id="faq">
+    <div>
+      <p class="eyebrow">PODE PERGUNTAR</p>
+      <h2 data-reveal>
+        Antes de
+        <br />
+        agendar.
+      </h2>
+      <a class="text-link" href="/duvidas/">
+        Ver todas as dúvidas <Icon size={16} />
+      </a>
+    </div>
+    <Faq items={appointmentFaq.slice(0, 3)} />
+  </section>
+  <Contact />
+</Base>
+<script>
+  import { initMotion } from '../scripts/motion';
+  initMotion();
+</script>

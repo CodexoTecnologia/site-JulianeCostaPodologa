@@ -1,0 +1,29 @@
+---
+import Icon from './Icon.astro';
+interface Props {
+  href: string;
+  label: string;
+  secondary?: boolean;
+  light?: boolean;
+  external?: boolean;
+  whatsapp?: boolean;
+}
+const {
+  href,
+  label,
+  secondary = false,
+  light = false,
+  external = false,
+  whatsapp = false,
+} = Astro.props;
+---
+
+<a
+  class:list={['button', { 'button-secondary': secondary, 'button-light': light }]}
+  href={href}
+  target={external ? '_blank' : undefined}
+  rel={external ? 'noopener noreferrer' : undefined}
+>
+  <span>{label}</span>
+  <Icon name={whatsapp ? 'whatsapp' : 'arrow'} />
+</a>
