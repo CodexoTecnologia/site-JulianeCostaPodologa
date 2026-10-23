@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets';
+import Icon from './Icon.astro';
+import { products } from '../data/products';
+import { whatsapp } from '../data/site';
+---
+
+{products.map((product) => (
+  <article class="product-card" id={`produto-${product.id}`}>
+    <div class="product-photo">
+      <Image
+        src={product.image}
+        alt={`Embalagem de ${product.name}`}
+        widths={[280, 420, 600]}
+        sizes="(max-width:700px) 75vw, 350px"
+        width={600}
+        height={600}
+        format="webp"
+        quality={82}
+        loading="lazy"
+      />
+    </div>
+    <div class="product-copy">
+      <p class="eyebrow">{product.category}</p>
+      <h3>{product.name}</h3>
+      <p>{product.description}</p>
+      <span class="product-detail">{product.detail}</span>
+      <a
+        class="text-link"
+        href={whatsapp(
+          `Olá, Ju! Vi o ${product.name} no seu site. Gostaria de saber mais e consultar a disponibilidade.`,
+        )}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Consultar ${product.name} pelo WhatsApp`}
+      >
+        Quero saber mais <Icon size={16} />
+      </a>
+    </div>
+  </article>
+))}

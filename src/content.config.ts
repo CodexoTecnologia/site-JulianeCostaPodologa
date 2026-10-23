@@ -13,6 +13,7 @@ const blog = defineCollection({
     service: z.string(),
     serviceLabel: z.string(),
     order: z.number(),
+    editorial: z.enum(['institucional', 'educativo']).default('institucional'),
   }),
 });
 export const collections = { blog };

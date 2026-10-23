@@ -10,10 +10,12 @@ import Faq from '../components/Faq.astro';
 import Contact from '../components/Contact.astro';
 import ArticleCards from '../components/ArticleCards.astro';
 import { whatsapp, business } from '../data/site';
-import { appointmentFaq } from '../data/faq';
+import { homeFaq } from '../data/faq';
 import portrait from '../assets/juliane-portrait.webp';
 import about from '../assets/juliane_costa_2.avif';
-import studio from '../assets/studio_1.avif';
+import SpaceGallery from '../components/SpaceGallery.astro';
+import GoogleMap from '../components/GoogleMap.astro';
+import Products from '../components/Products.astro';
 ---
 
 <Base title="Podóloga em Colombo · Podologia e ILIB">
@@ -91,42 +93,73 @@ import studio from '../assets/studio_1.avif';
         </h2>
       </div>
       <p>
-        Da rotina de cuidados com os pés a um momento de bem-estar. Conheça os atendimentos e
-        converse com a Juliane.
+        Podologia preventiva, atenção à unha encravada, ILIB e bem-estar. Encontre o cuidado que
+        você procura e veja como funciona cada atendimento.
       </p>
     </div>
-    <div class="care-grid">
+    <div class="care-grid care-grid-expanded">
       <a href="/atendimentos/cuidados-com-os-pes/" class="care-item" data-reveal>
         <span class="care-number">01</span>
-        <Icon name="flower" size={40} />
-        <h3>
-          Cuidados
-          <br />
-          com os pés
-        </h3>
-        <p>Podologia preventiva, unhas, calosidades e fissuras, com avaliação individual.</p>
+        <p class="eyebrow">SAÚDE DOS PÉS</p>
+        <h3>Podologia preventiva</h3>
+        <p>
+          Unhas, calosidades ou pele ressecada? Um cuidado atento aos detalhes que fazem parte da
+          sua rotina.
+        </p>
+        <ul class="care-tags">
+          <li>Corte técnico</li>
+          <li>Calos e calosidades</li>
+          <li>Fissuras</li>
+        </ul>
         <span class="read-link">
-          Conhecer os cuidados <Icon size={16} />
+          Ver o que está incluído <Icon size={16} />
+        </span>
+      </a>
+      <a href="/atendimentos/unha-encravada/" class="care-item" data-reveal>
+        <span class="care-number">02</span>
+        <p class="eyebrow">ATENÇÃO AO DESCONFORTO</p>
+        <h3>Unha encravada</h3>
+        <p>
+          O incômodo para calçar ou caminhar merece atenção. A avaliação orienta o procedimento e os
+          próximos cuidados.
+        </p>
+        <ul class="care-tags">
+          <li>Avaliação individual</li>
+          <li>Orientação para sua rotina</li>
+        </ul>
+        <span class="read-link">
+          Conhecer o atendimento <Icon size={16} />
         </span>
       </a>
       <a href="/ilib/" class="care-item care-featured" data-reveal>
-        <span class="care-number">02</span>
-        <span class="care-feature-label">CONHEÇA O ATENDIMENTO</span>
+        <span class="care-number">03</span>
+        <p class="eyebrow">CONHEÇA DE PERTO</p>
         <h3>ILIB</h3>
-        <p>Um espaço para entender a proposta, tirar suas dúvidas e conhecer o atendimento.</p>
+        <p>
+          Um dos atendimentos da Juliane para você conhecer: entenda a proposta e converse sobre a
+          sua necessidade antes de agendar.
+        </p>
+        <ul class="care-tags">
+          <li>Conversa e avaliação</li>
+          <li>Hora marcada</li>
+        </ul>
         <span class="read-link">
           Descobrir o ILIB <Icon size={16} />
         </span>
       </a>
       <a href="/atendimentos/bem-estar/" class="care-item" data-reveal>
-        <span class="care-number">03</span>
-        <Icon name="flower" size={40} />
-        <h3>
-          Bem-estar
-          <br />
-          no seu tempo
-        </h3>
-        <p>Spa dos pés, reflexologia e Reiki. Uma pausa para dar atenção a você.</p>
+        <span class="care-number">04</span>
+        <p class="eyebrow">UM TEMPO PARA VOCÊ</p>
+        <h3>Spa dos pés e bem-estar</h3>
+        <p>
+          Uma pausa na rotina. Conheça o spa dos pés e as outras opções de bem-estar oferecidas no
+          espaço.
+        </p>
+        <ul class="care-tags">
+          <li>Esfoliação e hidratação</li>
+          <li>Reflexologia</li>
+          <li>Reiki</li>
+        </ul>
         <span class="read-link">
           Encontrar meu momento <Icon size={16} />
         </span>
@@ -144,31 +177,6 @@ import studio from '../assets/studio_1.avif';
         A Juliane conversa com você.
       </a>
     </p>
-  </section>
-
-  <section class="ilib-feature" id="ilib" aria-labelledby="ilib-title">
-    <Waves dark />
-    <div class="shell ilib-grid">
-      <div class="ilib-copy">
-        <p class="eyebrow">UM OLHAR PARA O SEU BEM-ESTAR</p>
-        <h2 id="ilib-title" data-reveal>
-          Você já
-          <br />
-          conhece o <span>ILIB?</span>
-        </h2>
-        <p>
-          Talvez você tenha visto nas redes. Aqui, o convite é conhecer de perto: entender como
-          funciona o atendimento, conversar sobre sua necessidade e esclarecer suas dúvidas.
-        </p>
-        <div class="ilib-points">
-          <span>Conversa e avaliação individual</span>
-          <span>Atendimento com hora marcada</span>
-          <span>Informações diretamente com a profissional</span>
-        </div>
-        <Action href="/ilib/" label="Quero conhecer o ILIB" light />
-      </div>
-      <VideoCard compact />
-    </div>
   </section>
 
   <section class="section shell about-preview" id="sobre">
@@ -244,6 +252,31 @@ import studio from '../assets/studio_1.avif';
     </div>
   </section>
 
+  <section class="ilib-feature" id="ilib" aria-labelledby="ilib-title">
+    <Waves dark />
+    <div class="shell ilib-grid">
+      <div class="ilib-copy">
+        <p class="eyebrow">UM OLHAR PARA O SEU BEM-ESTAR</p>
+        <h2 id="ilib-title" data-reveal>
+          Você já
+          <br />
+          conhece o <span>ILIB?</span>
+        </h2>
+        <p>
+          Talvez você tenha visto nas redes. Aqui, o convite é conhecer de perto: entender como
+          funciona o atendimento, conversar sobre sua necessidade e esclarecer suas dúvidas.
+        </p>
+        <div class="ilib-points">
+          <span>Conversa e avaliação individual</span>
+          <span>Atendimento com hora marcada</span>
+          <span>Informações diretamente com a profissional</span>
+        </div>
+        <Action href="/ilib/" label="Quero conhecer o ILIB" light />
+      </div>
+      <VideoCard compact />
+    </div>
+  </section>
+
   <Reviews />
 
   <section class="space-preview section shell" id="galeria">
@@ -262,19 +295,11 @@ import studio from '../assets/studio_1.avif';
       </p>
       <Action href="/localizacao/" label="Conheça o espaço" secondary />
     </div>
-    <div class="space-photo" data-reveal>
-      <Image
-        src={studio}
-        alt="Sala da Juliane, com cadeira de atendimento e bancada organizada"
-        widths={[480, 800, 1200]}
-        sizes="(max-width:700px) 90vw, 50vw"
-        width={1100}
-        format="webp"
-        quality={82}
-        loading="lazy"
-      />
-    </div>
+    <SpaceGallery />
+    <GoogleMap />
   </section>
+
+  <Products />
 
   <section class="blog-preview section" aria-labelledby="blog-title">
     <div class="shell">
@@ -307,7 +332,7 @@ import studio from '../assets/studio_1.avif';
         Ver todas as dúvidas <Icon size={16} />
       </a>
     </div>
-    <Faq items={appointmentFaq.slice(0, 3)} />
+    <Faq items={homeFaq} />
   </section>
   <Contact />
 </Base>

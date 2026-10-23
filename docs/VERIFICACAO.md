@@ -1,4 +1,18 @@
-# Verificação local — 23/10/2026
+# Verificação local — segunda iteração, 23/10/2026
+
+- Home reorganizada: quatro entradas de atendimento, ILIB depois da primeira visita, 20 avaliações, galeria com quatro fotos, Google Maps, seis produtos e sete perguntas frequentes.
+- Localização com mapa real e carrossel de fotos. Catálogo `/produtos/`, FAQ com 22 perguntas e blog com nove artigos. Build com **22 páginas**.
+- Check Astro: zero erros, avisos ou hints. Formatação verificada. **Oito testes passam** em preview e no build de produção isolado; sitemap de produção com 21 URLs. A pasta `dist/` permanece no modo preview, sem indexação.
+- QA no navegador: home e componentes em 1000/1280px; produtos e localização em 390px; home, produtos, localização, blog e FAQ em 320px, sem overflow horizontal do documento. Artigo novo inspecionado em 320px.
+- Carrosséis de avaliações, produtos e fotos responderam aos botões. Setas no teclado mudam o produto; End chega à avaliação 20 e desabilita o botão seguinte. FAQ abre por Espaço. Nenhum erro/aviso no console observado nessa jornada.
+- Mapas Google carregaram com o nome e endereço atuais, em português, na home e na página de localização. Identificador público do negócio retornado pelo mapa: `52133834769892366`.
+- Fotos dos seis produtos foram conferidas visualmente; todas carregaram na home. Os CTAs específicos foram verificados pelo destino e texto, sem enviar mensagens.
+- Payload local gerado: home 13.301 bytes gzip, CSS 8.367 bytes gzip, soma dos chunks JS 46.020 bytes gzip. Esses números não são um teste de velocidade, não incluem recursos externos do Google e não representam o download inicial de todos os chunks.
+- Sem push, deploy ou alteração de domínio. Vídeo continua desativado. PageSpeed e CWV precisam ser avaliados na HOM; não há promessa de impacto zero de mapas ou mídia.
+
+Fontes das fotografias, decisões editoriais e motivo da ampliação da home: `docs/ITERACAO-HOME.md`.
+
+## Histórico da primeira versão
 
 Branch de implementação: `feat/identidade-canva-astro`. Sem push ou deploy.
 

@@ -2,6 +2,7 @@
 import { business } from '../data/site';
 import { googleSnapshot, reviews } from '../data/reviews';
 import Icon from './Icon.astro';
+import Carousel from './Carousel.astro';
 ---
 
 <section class="reviews-section section" aria-labelledby="reviews-title">
@@ -27,14 +28,17 @@ import Icon from './Icon.astro';
         </span>
       </a>
     </div>
-    <div class="review-grid">
+    <Carousel id="avaliacoes-google" label="Avaliações de quem já foi atendido">
       {reviews.map((review) => (
-        <figure class="review-card" data-reveal>
+        <figure class="review-card">
           <span class="quote-mark" aria-hidden="true">
             “
           </span>
           <blockquote>
-            <p>{review.text}</p>
+            <p>
+              {review.text}
+              {review.excerpt && ' […]'}
+            </p>
           </blockquote>
           <figcaption>
             <span class="review-initials" aria-hidden="true">
@@ -42,14 +46,14 @@ import Icon from './Icon.astro';
             </span>
             <div>
               <strong>{review.author}</strong>
-              <a href={review.url} target="_blank" rel="noopener noreferrer">
-                Ver perfil de avaliações no Google <Icon size={12} />
-              </a>
+              <span class="review-source">
+                Google · {review.excerpt ? 'Trecho da avaliação' : 'Avaliação pública'}
+              </span>
             </div>
           </figcaption>
         </figure>
       ))}
-    </div>
+    </Carousel>
     <div class="review-footnote">
       <p>Avaliações selecionadas. Fonte: Google · conferido em {googleSnapshot.checked}.</p>
       <a href={business.google} target="_blank" rel="noopener noreferrer">

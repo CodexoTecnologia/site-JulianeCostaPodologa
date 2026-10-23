@@ -7,7 +7,7 @@ readingMinutes: 2
 draft: false
 service: '/localizacao/'
 serviceLabel: 'Veja a localização e as fotos'
-order: 2
+order: 9
 ---
 
 O atendimento da Juliane fica no **Centro de Colombo**, na Rua Venâncio Trevisan, número 137, sala 01. Reunimos as informações principais para você conferir o endereço e organizar sua chegada.

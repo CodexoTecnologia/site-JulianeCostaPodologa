@@ -1,0 +1,49 @@
+---
+import { Image } from 'astro:assets';
+import Carousel from './Carousel.astro';
+import room from '../assets/studio_1.avif';
+import bench from '../assets/studio_2.avif';
+import details from '../assets/studio_3.avif';
+import coffee from '../assets/studio_4.avif';
+const { id = 'fotos-do-espaco' } = Astro.props;
+const photos = [
+  {
+    image: room,
+    alt: 'Cadeira e bancada da sala de atendimento da Juliane',
+    caption: 'Seu espaço de cuidado.',
+  },
+  {
+    image: bench,
+    alt: 'Outro ângulo da sala da Juliane, com bancada e certificados na parede',
+    caption: 'Um olhar para cada detalhe.',
+  },
+  {
+    image: details,
+    alt: 'Detalhes da cadeira e da bancada do espaço de podologia',
+    caption: 'Preparado para sua visita.',
+  },
+  {
+    image: coffee,
+    alt: 'Cantinho do café no espaço da Juliane',
+    caption: 'Uma pausa para receber você.',
+  },
+];
+---
+
+<Carousel id={id} label="Fotos do espaço da Juliane" kind="photos">
+  {photos.map((photo) => (
+    <figure class="space-slide">
+      <Image
+        src={photo.image}
+        alt={photo.alt}
+        widths={[400, 640, 900, 1200]}
+        sizes="(max-width:800px) 90vw, 55vw"
+        width={1000}
+        format="webp"
+        quality={80}
+        loading="lazy"
+      />
+      <figcaption>{photo.caption}</figcaption>
+    </figure>
+  ))}
+</Carousel>

@@ -20,7 +20,7 @@ const html = await Promise.all(
   pages.map(async (file) => ({ file, body: await readFile(file, 'utf8') })),
 );
 test('todas as páginas entregam título, conteúdo, sem preços nem dados antigos', () => {
-  assert.equal(pages.length, 15);
+  assert.equal(pages.length, 22);
   for (const { file, body } of html) {
     assert.match(body, /<h1[ >]/, file);
     assert.match(body, /<title>[^<]+<\/title>/, file);
@@ -75,7 +75,7 @@ test('HOM fica fora do índice por padrão, e 404 continua sem indexação', asy
   if (process.env.PUBLIC_SITE_MODE === 'production') {
     assert.match(robots, /Sitemap: https:\/\/julianecostapodologa.com.br\/sitemap-index.xml/);
     const sitemap = await readFile(join(root, 'sitemap-0.xml'), 'utf8');
-    assert.equal([...sitemap.matchAll(/<loc>/g)].length, 14);
+    assert.equal([...sitemap.matchAll(/<loc>/g)].length, 21);
     assert.doesNotMatch(sitemap, /404|localhost|127\.0\.0\.1/);
   } else {
     assert.doesNotMatch(robots, /Sitemap:/);
@@ -96,7 +96,7 @@ test('dados estruturados são válidos, sem estrelas próprias, preços ou crede
   }
 });
 test('vídeo não cria mídia para baixar na abertura, artigos têm autoria real', () => {
-  for (const { body } of html) assert.doesNotMatch(body, /<video|<iframe|<source[^>]+mp4/);
+  for (const { body } of html) assert.doesNotMatch(body, /<video|<source[^>]+mp4/);
   for (const { file, body } of html.filter((x) => /blog[\\/].+[\\/]index\.html$/.test(x.file))) {
     assert.match(body, /Equipe Codexo/);
     assert.match(body, /BlogPosting/);
@@ -107,7 +107,8 @@ test('Google tem origem e data explícitas; recursos de marca e fontes estão co
   const home = await readFile(join(root, 'index.html'), 'utf8');
   assert.match(home, /58 avaliações no Google/);
   assert.match(home, /23\/10\/2026/);
-  assert.match(home, /maps\/contrib/);
+  assert.doesNotMatch(home, /maps\/contrib|Ver perfil de avaliações no Google/);
+  assert.equal([...home.matchAll(/<blockquote>/g)].length, 20);
   assert.match(home, /Avaliações selecionadas/);
   const og = await sharp(join(root, 'og-image.jpg')).metadata();
   assert.equal(og.width, 1200);
@@ -122,4 +123,43 @@ test('Google tem origem e data explícitas; recursos de marca e fontes estão co
     await readFile(join(root, 'googlec47846e9ced625ab.html'), 'utf8'),
     /google-site-verification/,
   );
+});
+test('mapas integrados são adiados e os produtos abrem uma consulta específica', async () => {
+  for (const pathname of ['index.html', 'localizacao/index.html']) {
+    const body = await readFile(join(root, pathname), 'utf8');
+    const iframe = body.match(/<iframe\b[^>]+>/)?.[0];
+    assert.ok(iframe, pathname);
+    assert.match(iframe, /src="https:\/\/www.google.com\/maps\?/);
+    assert.match(iframe, /loading="lazy"/);
+    assert.match(iframe, /title="Google Maps: Juliane Costa/);
+    assert.match(iframe, /Trevisan/);
+  }
+  const catalog = await readFile(join(root, 'produtos/index.html'), 'utf8');
+  for (const name of [
+    'Maxiderm',
+    'Psorin Unhas',
+    'Ônico Blend',
+    'Nutri Derm',
+    'Smell Feet',
+    'Blend Spray',
+  ]) {
+    assert.match(catalog, new RegExp(`<h3>${name}</h3>`));
+    assert.ok(catalog.includes(encodeURIComponent(`Vi o ${name}`)), name);
+  }
+});
+test('conteúdos educativos indicam fontes e a home mantém uma decisão clara', async () => {
+  const home = await readFile(join(root, 'index.html'), 'utf8');
+  assert.ok(home.indexOf('SUA PRIMEIRA VISITA') < home.indexOf('id="ilib"'));
+  assert.equal([...home.matchAll(/<details>/g)].length, 7);
+  const faq = await readFile(join(root, 'duvidas/index.html'), 'utf8');
+  assert.equal([...faq.matchAll(/<details>/g)].length, 22);
+  const educational = html.filter(({ body }) => body.includes('conteúdo educativo'));
+  assert.equal(educational.length, 6);
+  for (const { body } of educational) {
+    assert.match(body, /Referência/);
+    assert.match(
+      body,
+      /https:\/\/(www\.(sbd\.org\.br|aad\.org|nhs\.uk|guysandstthomas\.nhs\.uk)|www\.gov\.br)/,
+    );
+  }
 });

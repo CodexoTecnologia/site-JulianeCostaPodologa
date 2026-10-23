@@ -7,7 +7,7 @@ readingMinutes: 3
 draft: false
 service: '/ilib/'
 serviceLabel: 'Conheça o atendimento ILIB'
-order: 3
+order: 8
 ---
 
 O ILIB faz parte dos atendimentos oferecidos pela Juliane em Colombo. Se você viu o nome nas redes sociais e quer entender melhor, uma boa primeira etapa é organizar as perguntas que gostaria de fazer à profissional.

@@ -72,7 +72,7 @@ export function seoGraph(
           ? 'AboutPage'
           : path === '/localizacao/'
             ? 'ContactPage'
-            : path === '/blog/'
+            : path === '/blog/' || path === '/produtos/'
               ? 'CollectionPage'
               : 'WebPage',
       '@id': url(`${path}#pagina`),

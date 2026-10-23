@@ -42,6 +42,11 @@ import { services } from '../../data/services';
         </div>
         <div>
           <p>{s.description}</p>
+          <ul>
+            {s.items.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
           <a class="text-link" href={`/atendimentos/${s.slug}/`}>
             Conhecer o atendimento <Icon size={16} />
           </a>

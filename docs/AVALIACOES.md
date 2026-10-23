@@ -4,7 +4,7 @@ Fonte indicada pelo usuário: https://share.google/yRPq4t2PnpVCY6pa3
 
 Conferência: 23/10/2026. Perfil: Juliane Costa Podóloga, Rua Venâncio Trevisan, 137, Colombo. Nota visível 5,0, com 58 avaliações.
 
-Foram lidos relatos no agrupamento “Mais relevantes” e os dois resultados do tema “ingrown nail”. Seleção final:
+Foram lidos relatos no agrupamento “Mais relevantes” e os dois resultados do tema “ingrown nail”. A primeira seleção tinha três relatos; na segunda iteração, passou a 20, conforme `src/data/reviews.ts` e `docs/ITERACAO-HOME.md`. Seleção inicial para referência:
 
 | Pessoa | Motivo da seleção | Origem |
 | --- | --- | --- |
@@ -14,7 +14,7 @@ Foram lidos relatos no agrupamento “Mais relevantes” e os dois resultados do
 
 Textos mantidos em `src/data/reviews.ts`, sem inserir palavras-chave, corrigir a grafia dos autores ou usar relatos como garantia de resultado. Espaços provenientes da marcação de destaque do Google foram normalizados.
 
-Não foram copiados avatares. Os links individuais levam ao perfil público de avaliações do autor; a ação principal da seção abre o perfil comercial completo. A seção informa que é uma seleção e mostra data de conferência, sem alegar atualização automática.
+Não foram copiados avatares. Os links individuais ficam somente no arquivo de dados para auditoria, conforme pedido do usuário. A ação principal da seção abre o perfil comercial completo. A seção informa que é uma seleção e mostra data de conferência, sem alegar atualização automática. Trechos são identificados; os comentários não recebem palavras-chave novas.
 
 O Dom Elii não tem integração dinâmica com Google Places na versão inspecionada. `src/data/negocio.ts` contém nota e quantidade do Booksy, e links para Google Maps. `src/lib/schema.ts` separa a exibição visual das notas do JSON-LD. Reaproveitamos o princípio de fonte central e links atribuídos, sem copiar seus dados ou sua stack Next.js.
 

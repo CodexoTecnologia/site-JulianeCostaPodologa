@@ -14,7 +14,7 @@ const { limit = articles.length } = Astro.props;
       <a href={`/blog/${article.id}/`}>
         <div class:list={['article-art', `article-art-${i % 3}`]} aria-hidden="true">
           <span>{String(i + 1).padStart(2, '0')}</span>
-          <Icon name={i === 1 ? 'pin' : 'flower'} size={82} />
+          <Icon name={article.id === 'como-chegar' ? 'pin' : 'flower'} size={82} />
         </div>
         <div class="article-card-content">
           <p class="eyebrow">

@@ -30,7 +30,7 @@ const href = `/blog/${article.id}/`;
     <h1>{data.title}</h1>
     <p class="lead">{data.description}</p>
     <div class="article-meta">
-      <span>Por Equipe Codexo · conteúdo institucional</span>
+      <span>Por Equipe Codexo · conteúdo {data.editorial}</span>
       <time datetime={data.published}>{dateLabel(data.published)}</time>
       <span>{data.readingMinutes} min de leitura</span>
     </div>
@@ -39,8 +39,9 @@ const href = `/blog/${article.id}/`;
     <article class="prose">
       <Content />
       <p class="article-footer-note">
-        Conteúdo institucional organizado pela Codexo a partir das informações do atendimento. Para
-        orientações individuais e dúvidas sobre procedimentos, converse diretamente com a Juliane.
+        {data.editorial === 'educativo'
+          ? 'Conteúdo educativo organizado pela Codexo com base nas referências indicadas. Não substitui avaliação, diagnóstico ou orientação individual de um profissional de saúde.'
+          : 'Conteúdo institucional organizado pela Codexo a partir das informações do atendimento. Para orientações individuais e dúvidas sobre procedimentos, converse diretamente com a Juliane.'}
       </p>
     </article>
     <aside class="article-sidebar">

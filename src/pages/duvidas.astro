@@ -3,12 +3,12 @@ import Base from '../layouts/Base.astro';
 import PageHero from '../components/PageHero.astro';
 import Faq from '../components/Faq.astro';
 import Contact from '../components/Contact.astro';
-import { appointmentFaq, ilibFaq } from '../data/faq';
+import { appointmentFaq, ilibFaq, careFaq, routineFaq } from '../data/faq';
 ---
 
 <Base
   title="Dúvidas sobre agendamento, podologia e ILIB"
-  description="Tire dúvidas sobre agendamento, primeira visita, localização e atendimento ILIB com Juliane Costa Podóloga em Colombo, PR."
+  description="Respostas sobre agendamento, unha encravada, calosidades, cuidados com os pés, ILIB, spa e produtos com Juliane Costa Podóloga em Colombo."
   crumbs={[{ name: 'Dúvidas frequentes', href: '/duvidas/' }]}
 >
   <PageHero
@@ -25,10 +25,30 @@ import { appointmentFaq, ilibFaq } from '../data/faq';
   </section>
   <section class="shell faq-page">
     <h2>
+      Podologia
+      <br />e seus pés.
+    </h2>
+    <Faq items={careFaq} />
+  </section>
+  <section class="shell faq-page">
+    <h2>
       Conhecendo
       <br />o ILIB.
     </h2>
     <Faq items={ilibFaq} />
   </section>
+  <section class="shell faq-page">
+    <h2>
+      Bem-estar
+      <br />e cuidado em casa.
+    </h2>
+    <Faq items={routineFaq} />
+  </section>
+  <div class="shell page-body">
+    <p class="product-note">
+      As respostas gerais sobre saúde não substituem uma avaliação. Você encontra as referências e
+      explicações nos <a href="/blog/">conteúdos do blog</a>.
+    </p>
+  </div>
   <Contact title="Sua pergunta não apareceu aqui?" />
 </Base>

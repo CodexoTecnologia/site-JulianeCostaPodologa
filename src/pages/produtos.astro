@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import ProductCards from '../components/ProductCards.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<Base
+  title="Produtos para pés e unhas · Juliane Costa em Colombo"
+  description="Conheça Maxiderm, Psorin Unhas, Ônico Blend, Nutri Derm, Smell Feet e Blend Spray. Consulte a Juliane sobre orientação de uso e disponibilidade em Colombo."
+  crumbs={[{ name: 'Produtos', href: '/produtos/' }]}
+>
+  <PageHero
+    eyebrow="SEU CUIDADO, TODOS OS DIAS"
+    title="Um pouco desse cuidado vai com você."
+    description="Conheça os produtos disponíveis com a Juliane. Pelo WhatsApp, você conversa sobre a sua necessidade, recebe orientação e consulta a disponibilidade."
+  />
+  <section class="shell product-grid" aria-label="Catálogo de produtos">
+    <ProductCards />
+  </section>
+  <div class="shell page-body">
+    <aside class="info-note">
+      As fotos são do catálogo da marca. Confirme com a Juliane a apresentação disponível e o modo
+      de uso. Produtos cosméticos não substituem a avaliação ou o tratamento de alterações nas unhas
+      e na pele.
+    </aside>
+  </div>
+  <Contact title="Vamos escolher seu próximo cuidado?" />
+</Base>
