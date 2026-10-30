@@ -22,13 +22,13 @@ A escolha de um hidratante precisa considerar a sua pele e as orientações de u
 
 Fissuras intensas, persistentes ou que não melhoram merecem avaliação dermatológica. Algumas condições de saúde, como o diabetes, podem estar envolvidas. Uma lesão não deve ser tratada como um problema apenas estético.
 
-Ao conversar com a Juliane, conte se há desconforto, quando o ressecamento começou e quais produtos já usa. Se houver ferida ou outra alteração de saúde, informe isso antes de agendar.
+Durante a avaliação, conte se há desconforto, quando o ressecamento começou e quais produtos já usa. Se houver ferida ou outra alteração de saúde, informe isso antes de agendar.
 
 ## O atendimento e o cuidado em casa se complementam
 
 No espaço, fissuras e ressecamento podem ser conversados na [avaliação de podologia](/atendimentos/cuidados-com-os-pes/). Aproveite para perguntar qual rotina foi combinada e em quais situações é necessário outro acompanhamento.
 
-A Juliane também disponibiliza [produtos para os pés e as unhas](/produtos/), como Maxiderm e Nutri Derm. Eles têm propostas e fórmulas diferentes. O catálogo ajuda a conhecer as opções; a escolha deve ser conversada considerando sua necessidade e as informações do fabricante.
+No espaço, você também encontra [produtos para os pés e as unhas](/produtos/), como Maxiderm e Nutri Derm. Eles têm propostas e fórmulas diferentes. O catálogo ajuda a conhecer as opções; a escolha deve ser conversada considerando sua necessidade e as informações do fabricante.
 
 ## Perguntas para levar à sua visita
 

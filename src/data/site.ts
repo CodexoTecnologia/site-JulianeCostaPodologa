@@ -2,7 +2,7 @@ export const business = {
   name: 'Juliane Costa Podóloga',
   person: 'Juliane Costa',
   description:
-    'Podologia, ILIB e bem-estar no Centro de Colombo, PR. Conheça a Juliane, os atendimentos e o espaço. Agende sua avaliação pelo WhatsApp.',
+    'Podologia, ILIB e bem-estar no Centro de Colombo, PR. Conheça os atendimentos e o espaço. Agende sua avaliação pelo WhatsApp.',
   phone: '(41) 99572-6923',
   telephone: '+5541995726923',
   whatsapp: '5541995726923',
@@ -23,14 +23,14 @@ export const production = import.meta.env.PUBLIC_SITE_MODE === 'production';
 export const origin =
   import.meta.env.PUBLIC_SITE_URL?.trim() || 'https://julianecostapodologa.com.br';
 export function whatsapp(
-  message = 'Olá, Ju! Encontrei seu site e gostaria de saber mais sobre o atendimento.',
+  message = 'Olá! Encontrei seu site e gostaria de saber mais sobre o atendimento.',
 ) {
   return `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(message)}`;
 }
 export const navigation = [
   { href: '/atendimentos/', label: 'Atendimentos' },
   { href: '/ilib/', label: 'ILIB' },
-  { href: '/sobre/', label: 'A Juliane' },
+  { href: '/sobre/', label: 'Sobre mim' },
   { href: '/blog/', label: 'Conteúdos' },
   { href: '/localizacao/', label: 'Localização' },
 ];

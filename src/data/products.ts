@@ -12,7 +12,7 @@ export const products = [
     category: 'HIDRATAÇÃO E NUTRIÇÃO',
     image: maxiderm,
     description:
-      'Creme hidratante nutritivo para o cuidado da pele seca e áspera dos pés. Uma opção para conversar com a Juliane sobre a sua rotina de hidratação.',
+      'Creme hidratante nutritivo para o cuidado da pele seca e áspera dos pés. Uma opção para incluir na rotina de hidratação, com orientação de uso.',
     detail: 'Creme nutritivo · RHR Rivera',
     source: 'https://www.vmrivera.com.br/creme-hidratante-nutritivo-maxiderm-100gr/p',
   },
@@ -32,7 +32,7 @@ export const products = [
     category: 'UNHAS E CUTÍCULAS',
     image: onico,
     description:
-      'Blend de óleos essenciais voltado ao cuidado e à hidratação de unhas e cutículas. Saiba com a Juliane se ele faz sentido para o seu acompanhamento.',
+      'Blend de óleos essenciais voltado ao cuidado e à hidratação de unhas e cutículas. Consulte se ele faz sentido para o seu acompanhamento.',
     detail: 'Cuidado das unhas · RHR Rivera',
     source: 'https://www.vmrivera.com.br/fortalecedor-para-unhas-onico-blend-10ml-conta-gotas/p',
   },

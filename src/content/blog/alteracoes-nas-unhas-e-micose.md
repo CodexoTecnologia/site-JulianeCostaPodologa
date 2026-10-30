@@ -37,9 +37,9 @@ Leve essas informações ao profissional responsável pela avaliação. Elas aju
 
 ## E os produtos do catálogo?
 
-Os [produtos para cuidado das unhas](/produtos/) apresentados no site são opções para conhecer e conversar com a Juliane. Não são uma prescrição e não substituem o tratamento orientado pelo dermatologista.
+Os [produtos para cuidado das unhas](/produtos/) apresentados no site são opções para conhecer e conversar sobre o cuidado em casa. Não são uma prescrição e não substituem o tratamento orientado pelo dermatologista.
 
-No espaço, a Juliane oferece [cuidados de podologia](/atendimentos/cuidados-com-os-pes/). Diga qual é sua necessidade antes da visita para entender a proposta do atendimento e seus limites.
+No espaço, você encontra [cuidados de podologia](/atendimentos/cuidados-com-os-pes/). Diga qual é sua necessidade antes da visita para entender a proposta do atendimento e seus limites.
 
 ## Referência
 

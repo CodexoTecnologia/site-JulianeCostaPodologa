@@ -1,5 +1,5 @@
 ---
-title: 'Sua primeira visita à Juliane: da conversa ao atendimento'
+title: 'Sua primeira visita: da conversa ao atendimento'
 description: 'Saiba como entrar em contato, esclarecer suas dúvidas e organizar sua primeira visita no Centro de Colombo.'
 category: 'Primeira visita'
 published: '2026-10-23'
@@ -10,13 +10,13 @@ serviceLabel: 'Conheça os atendimentos'
 order: 1
 ---
 
-Marcar um atendimento fica mais simples quando você sabe por onde começar. Você não precisa chegar com o nome de um procedimento escolhido: a primeira conversa pode ser justamente para entender os serviços oferecidos pela Juliane.
+Marcar um atendimento fica mais simples quando você sabe por onde começar. Você não precisa chegar com o nome de um procedimento escolhido: a primeira conversa pode ser justamente para entender os serviços disponíveis no espaço.
 
 ## Comece pelo WhatsApp
 
-O contato para agendamento é **(41) 99572-6923**. Ao enviar sua mensagem, diga que encontrou a Juliane pelo site e conte, de forma breve, o que você procura. Pode ser um cuidado com os pés, interesse em conhecer o ILIB ou um momento de bem-estar.
+O contato para agendamento é **(41) 99572-6923**. Ao enviar sua mensagem, diga que encontrou o atendimento pelo site e conte, de forma breve, o que você procura. Pode ser um cuidado com os pés, interesse em conhecer o ILIB ou um momento de bem-estar.
 
-Você também pode perguntar sobre a disponibilidade e esclarecer dúvidas práticas. A mensagem inicia uma conversa; o horário só estará combinado depois da confirmação da Juliane.
+Você também pode perguntar sobre a disponibilidade e esclarecer dúvidas práticas. A mensagem inicia uma conversa; o horário só estará combinado depois da confirmação pelo WhatsApp.
 
 ## Entenda o atendimento antes de decidir
 
@@ -28,7 +28,7 @@ Se você não souber por onde começar, fale isso na conversa. A proposta é ent
 
 O endereço é **Rua Venâncio Trevisan, 137, sala 01, Centro, Colombo — PR**. Confira a sala ao chegar e abra o link de rota na [página de localização](/localizacao/).
 
-Antes de sair, confirme o horário combinado. Se precisar de alguma informação sobre entrada, deslocamento ou acesso ao espaço, pergunte à Juliane com antecedência. Assim, ela pode responder considerando sua necessidade concreta.
+Antes de sair, confirme o horário combinado. Se precisar de alguma informação sobre entrada, deslocamento ou acesso ao espaço, peça orientação com antecedência, considerando sua necessidade.
 
 ## Leve suas perguntas
 
@@ -40,4 +40,4 @@ A duração, a escolha do procedimento e a necessidade de retorno devem ser conv
 
 Avise com pelo menos 24 horas de antecedência sempre que precisar cancelar ou reagendar. Se surgir um imprevisto ou perceber que vai se atrasar, entre em contato para verificar como reorganizar a visita.
 
-Para outras dúvidas práticas, consulte as [perguntas frequentes](/duvidas/) ou converse diretamente com a Juliane.
+Para outras dúvidas práticas, consulte as [perguntas frequentes](/duvidas/) ou entre em contato pelo WhatsApp.

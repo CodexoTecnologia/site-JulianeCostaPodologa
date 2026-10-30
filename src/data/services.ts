@@ -11,7 +11,7 @@ export const services = [
       'Calos, calosidades e fissuras',
       'Acompanhamento e orientações individuais',
     ],
-    note: 'A escolha do procedimento é feita após avaliação. Se houver necessidade de outro acompanhamento, converse com a Juliane sobre o encaminhamento adequado.',
+    note: 'A escolha do procedimento é feita após avaliação. Se houver necessidade de outro acompanhamento, converse sobre o encaminhamento adequado durante a avaliação.',
   },
   {
     slug: 'unha-encravada',
@@ -19,7 +19,7 @@ export const services = [
     title: 'Unha encravada merece atenção.',
     short: 'Unha encravada',
     description:
-      'Converse com a Juliane sobre o desconforto nas unhas e conheça o atendimento. Cada situação é avaliada antes da definição do cuidado.',
+      'Conte sobre o desconforto nas unhas e conheça o atendimento. Cada situação é avaliada antes da definição do cuidado.',
     items: [
       'Conversa sobre seu histórico e desconforto',
       'Avaliação da unha e da região ao redor',
@@ -33,7 +33,7 @@ export const services = [
     title: 'Bem-estar, no seu tempo.',
     short: 'Spa e bem-estar',
     description:
-      'Spa dos pés, esfoliação, hidratação, reflexologia e Reiki fazem parte dos atendimentos oferecidos pela Juliane. Conheça as opções e escolha seu momento de cuidado.',
+      'Spa dos pés, esfoliação, hidratação, reflexologia e Reiki fazem parte dos atendimentos disponíveis no espaço. Conheça as opções e escolha seu momento de cuidado.',
     items: ['Spa dos pés, esfoliação e hidratação', 'Reflexologia podal', 'Terapia Reiki'],
     note: 'São propostas de cuidado e bem-estar distintas. Pergunte como funciona cada atendimento e qual opção faz sentido para o que você procura.',
   },

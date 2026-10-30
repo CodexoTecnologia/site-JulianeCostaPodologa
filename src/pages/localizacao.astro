@@ -29,7 +29,7 @@ import SpaceGallery from '../components/SpaceGallery.astro';
         <br />
         CEP {business.postalCode}
       </p>
-      <p>{business.hours}. Consulte a disponibilidade diretamente com a Juliane.</p>
+      <p>{business.hours}. Consulte a disponibilidade pelo WhatsApp.</p>
       <div class="actions">
         <Action href={business.maps} label="Traçar minha rota" external />
         <a class="text-link" href={whatsapp()} target="_blank" rel="noopener noreferrer">
@@ -44,8 +44,8 @@ import SpaceGallery from '../components/SpaceGallery.astro';
   </section>
   <div class="shell page-body">
     <aside class="info-note">
-      Precisa de informações sobre acesso ao espaço ou ajuda para encontrar a sala? Converse com a
-      Juliane antes da visita pelo{' '}
+      Precisa de informações sobre acesso ao espaço ou ajuda para encontrar a sala? Peça orientação
+      antes da visita pelo{' '}
       <a href={whatsapp()} target="_blank" rel="noopener noreferrer">
         WhatsApp {business.phone}
       </a>

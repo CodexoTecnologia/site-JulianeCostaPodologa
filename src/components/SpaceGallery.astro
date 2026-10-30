@@ -9,12 +9,12 @@ const { id = 'fotos-do-espaco' } = Astro.props;
 const photos = [
   {
     image: room,
-    alt: 'Cadeira e bancada da sala de atendimento da Juliane',
+    alt: 'Cadeira e bancada da sala de atendimento',
     caption: 'Seu espaço de cuidado.',
   },
   {
     image: bench,
-    alt: 'Outro ângulo da sala da Juliane, com bancada e certificados na parede',
+    alt: 'Outro ângulo da sala de atendimento, com bancada e certificados na parede',
     caption: 'Um olhar para cada detalhe.',
   },
   {
@@ -24,13 +24,13 @@ const photos = [
   },
   {
     image: coffee,
-    alt: 'Cantinho do café no espaço da Juliane',
+    alt: 'Cantinho do café no espaço de atendimento',
     caption: 'Uma pausa para receber você.',
   },
 ];
 ---
 
-<Carousel id={id} label="Fotos do espaço da Juliane" kind="photos">
+<Carousel id={id} label="Fotos do espaço de atendimento" kind="photos">
   {photos.map((photo) => (
     <figure class="space-slide">
       <Image

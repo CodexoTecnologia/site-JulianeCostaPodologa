@@ -2,7 +2,7 @@ export const appointmentFaq = [
   {
     question: 'Como faço para agendar?',
     answer:
-      'O agendamento é feito diretamente com a Juliane pelo WhatsApp (41) 99572-6923. Conte o atendimento que procura, tire suas dúvidas e consulte os horários disponíveis.',
+      'O agendamento é feito pelo WhatsApp (41) 99572-6923. Conte o atendimento que procura, tire suas dúvidas e consulte os horários disponíveis.',
   },
   {
     question: 'Onde fica o espaço?',
@@ -12,12 +12,12 @@ export const appointmentFaq = [
   {
     question: 'Preciso saber qual atendimento escolher?',
     answer:
-      'Não. Você pode entrar em contato, explicar o que está buscando e conversar com a Juliane antes de agendar. O procedimento é definido de acordo com a avaliação.',
+      'Não. Você pode entrar em contato, explicar o que está buscando e tirar suas dúvidas antes de agendar. O procedimento é definido de acordo com a avaliação.',
   },
   {
     question: 'O atendimento é com hora marcada?',
     answer:
-      'Sim. Os horários são combinados diretamente com a Juliane, para que cada pessoa tenha seu momento de atendimento. Consulte a disponibilidade pelo WhatsApp.',
+      'Sim. Cada pessoa tem um horário reservado para seu atendimento. Consulte a disponibilidade e combine sua visita pelo WhatsApp.',
   },
   {
     question: 'Como funciona o reagendamento?',
@@ -27,24 +27,24 @@ export const appointmentFaq = [
   {
     question: 'Quanto tempo devo reservar para a visita?',
     answer:
-      'A duração depende do atendimento e da avaliação. Ao agendar, informe o cuidado que procura e confirme com a Juliane o tempo previsto para organizar sua rotina.',
+      'A duração depende do atendimento e da avaliação. Ao agendar, informe o cuidado que procura e confirme o tempo previsto para organizar sua rotina.',
   },
   {
     question: 'O que preciso contar antes do atendimento?',
     answer:
-      'Conte qual é sua dúvida, se já faz algum acompanhamento e se há alguma condição de saúde ou orientação profissional que deva ser considerada. Informações pessoais podem ser conversadas diretamente com a Juliane, sem exposição no site.',
+      'Conte qual é sua dúvida, se já faz algum acompanhamento e se há alguma condição de saúde ou orientação profissional que deva ser considerada. Informações pessoais são conversadas em particular, sem exposição no site.',
   },
 ];
 export const ilibFaq = [
   {
     question: 'Como conhecer o atendimento ILIB?',
     answer:
-      'Você pode conversar com a Juliane pelo WhatsApp e tirar suas dúvidas antes de marcar. No espaço, ela explica o atendimento e avalia sua necessidade individual.',
+      'Você pode tirar suas dúvidas pelo WhatsApp antes de marcar. Durante a visita, a profissional explica o atendimento e avalia sua necessidade individual.',
   },
   {
     question: 'ILIB e laser local são a mesma coisa?',
     answer:
-      'São nomes usados para aplicações diferentes. Informe à Juliane qual atendimento você procura para que ela explique a proposta e o que está disponível para o seu caso.',
+      'São nomes usados para aplicações diferentes. Informe qual atendimento você procura para entender a proposta e o que está disponível para o seu caso.',
   },
   {
     question: 'Quantas sessões vou precisar?',
@@ -54,24 +54,24 @@ export const ilibFaq = [
   {
     question: 'Posso agendar ILIB diretamente pelo WhatsApp?',
     answer:
-      'Sim. Envie uma mensagem dizendo que quer conhecer o ILIB. A Juliane poderá explicar como funciona, responder suas perguntas e consultar os horários disponíveis.',
+      'Sim. Envie uma mensagem dizendo que quer conhecer o ILIB. Pelo WhatsApp, você recebe informações sobre como funciona, tira suas dúvidas e consulta os horários disponíveis.',
   },
 ];
 export const careFaq = [
   {
     question: 'Preciso sentir dor para procurar podologia?',
     answer:
-      'Você pode procurar a Juliane para cuidados preventivos com os pés e corte técnico das unhas, além de conversar sobre um desconforto específico. A avaliação ajuda a entender o cuidado adequado para a sua rotina.',
+      'Você pode procurar a podologia para cuidados preventivos com os pés e corte técnico das unhas, além de conversar sobre um desconforto específico. A avaliação ajuda a entender o cuidado adequado para a sua rotina.',
   },
   {
-    question: 'A Juliane atende unha encravada?',
+    question: 'Há atendimento para unha encravada?',
     answer:
       'Sim. Há um atendimento dedicado à avaliação da unha encravada e da região ao redor. Explique seu desconforto ao agendar. O procedimento e as orientações são definidos após avaliação, sem promessa de um resultado igual para todas as pessoas.',
   },
   {
     question: 'Também posso procurar por calos, calosidades e fissuras?',
     answer:
-      'Sim. Esses cuidados fazem parte dos atendimentos de podologia oferecidos pela Juliane. Conte onde está o incômodo e como ele interfere na sua rotina para conversar sobre a avaliação.',
+      'Sim. Esses cuidados fazem parte dos atendimentos de podologia disponíveis no espaço. Conte onde está o incômodo e como ele interfere na sua rotina para conversar sobre a avaliação.',
   },
   {
     question: 'Unha amarelada é sempre micose?',
@@ -86,7 +86,7 @@ export const careFaq = [
   {
     question: 'Com que frequência devo voltar?',
     answer:
-      'O intervalo é individual e depende do atendimento e da avaliação. Combine com a Juliane quando retornar e quais cuidados manter entre as visitas, sem seguir um prazo genérico do site.',
+      'O intervalo é individual e depende do atendimento e da avaliação. Durante a visita, combine quando retornar e quais cuidados manter em casa, sem seguir um prazo genérico do site.',
   },
   {
     question: 'E se houver pus, febre ou dor intensa?',
@@ -98,17 +98,17 @@ export const routineFaq = [
   {
     question: 'O que está incluído nas opções de bem-estar?',
     answer:
-      'A Juliane oferece spa dos pés, esfoliação e hidratação, além de reflexologia podal e Reiki. São propostas diferentes; pergunte como funciona cada uma antes de escolher o seu momento.',
+      'Estão disponíveis spa dos pés, esfoliação e hidratação, além de reflexologia podal e Reiki. São propostas diferentes; pergunte como funciona cada uma antes de escolher o seu momento.',
   },
   {
     question: 'Posso comprar os produtos pelo WhatsApp?',
     answer:
-      'Sim. Na página de produtos, cada opção tem um link que abre a conversa com o nome do produto. Confirme com a Juliane a disponibilidade, a apresentação e como combinar a compra.',
+      'Sim. Na página de produtos, cada opção tem um link que abre a conversa com o nome do produto. Confirme a disponibilidade, a apresentação e como combinar a compra pelo WhatsApp.',
   },
   {
     question: 'Como escolher o produto para meus pés ou unhas?',
     answer:
-      'Converse com a Juliane sobre sua necessidade e siga o rótulo e as orientações de uso. O catálogo apresenta opções de cuidado cosmético; não define diagnóstico ou tratamento de uma alteração na pele ou nas unhas.',
+      'Peça orientação sobre sua necessidade e siga o rótulo e as orientações de uso. O catálogo apresenta opções de cuidado cosmético; não define diagnóstico ou tratamento de uma alteração na pele ou nas unhas.',
   },
   {
     question: 'Spa dos pés substitui um atendimento de podologia?',

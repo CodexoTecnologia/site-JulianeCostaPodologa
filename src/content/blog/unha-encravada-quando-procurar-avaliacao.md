@@ -36,9 +36,9 @@ Na visita, você pode perguntar:
 - Qual cuidado está sendo proposto e por quê?
 - O que devo observar depois e quando retornar?
 
-## Como é o atendimento com a Juliane?
+## Como funciona a avaliação?
 
-A Juliane oferece [avaliação de unha encravada em Colombo](/atendimentos/unha-encravada/). O procedimento é discutido depois de conhecer a região e sua necessidade. Não há uma promessa de duração, ausência de dor ou resultado igual para todas as pessoas.
+Você encontra [avaliação de unha encravada em Colombo](/atendimentos/unha-encravada/). O procedimento é discutido depois de conhecer a região e sua necessidade. Não há uma promessa de duração, ausência de dor ou resultado igual para todas as pessoas.
 
 O espaço fica no Centro de Colombo. Veja a [localização e a rota](/localizacao/) e combine seu horário diretamente com a profissional.
 

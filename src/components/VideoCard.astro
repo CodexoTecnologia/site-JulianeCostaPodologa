@@ -6,7 +6,7 @@ interface Props {
   compact?: boolean;
 }
 const { compact = false } = Astro.props;
-const enabled = import.meta.env.PUBLIC_ENABLE_VIDEO === 'true';
+const enabled = import.meta.env.PUBLIC_ENABLE_VIDEO !== 'false';
 ---
 
 <figure class:list={['video-card', { 'video-compact': compact }]} data-video-card>
@@ -38,16 +38,16 @@ const enabled = import.meta.env.PUBLIC_ENABLE_VIDEO === 'true';
       </a>
     )}
   </div>
-  <figcaption>Um registro do atendimento ILIB com a Juliane.</figcaption>
+  <figcaption>Um registro do atendimento ILIB no espaço.</figcaption>
   {enabled && (
     <>
       <p class="video-status sr-only" aria-live="polite"></p>
       <details class="video-description">
         <summary>Descrição do vídeo</summary>
         <p>
-          Juliane posiciona um equipamento sobre uma pulseira azul junto ao punho. O vídeo pergunta
-          “Você conhece o ILIB? Laserterapia. Para que serve?”. É um registro demonstrativo, sem
-          áudio. Tire suas dúvidas sobre a proposta do atendimento diretamente com a Juliane.
+          A profissional posiciona um equipamento sobre uma pulseira azul junto ao punho. O vídeo
+          pergunta “Você conhece o ILIB? Laserterapia. Para que serve?”. É um registro
+          demonstrativo, sem áudio. Tire suas dúvidas sobre a proposta antes de agendar.
         </p>
       </details>
       <noscript>
@@ -72,7 +72,7 @@ const enabled = import.meta.env.PUBLIC_ENABLE_VIDEO === 'true';
       video.playsInline = true;
       video.preload = 'none';
       video.tabIndex = 0;
-      video.setAttribute('aria-label', 'Demonstração de ILIB com Juliane Costa, sem áudio');
+      video.setAttribute('aria-label', 'Demonstração do atendimento ILIB, sem áudio');
       video.src = trigger.href;
       const close = document.createElement('button');
       close.type = 'button';

@@ -33,11 +33,11 @@ Na sua visita, vale contar:
 - Se já houve feridas ou tentativas de remoção no local.
 - Se existe alguma condição de saúde ou acompanhamento em andamento.
 
-Essas informações ajudam a Juliane a conhecer sua rotina e explicar o que pode ser feito dentro do atendimento.
+Essas informações ajudam a profissional a conhecer sua rotina e explicar o que pode ser feito dentro do atendimento.
 
 ## O cuidado oferecido no espaço
 
-Calos e calosidades fazem parte dos [cuidados com os pés](/atendimentos/cuidados-com-os-pes/) oferecidos pela Juliane. A escolha do procedimento depende da avaliação. Você também pode perguntar sobre orientações para casa e sobre quando faz sentido retornar.
+Calos e calosidades fazem parte dos [cuidados com os pés](/atendimentos/cuidados-com-os-pes/) disponíveis no espaço. A escolha do procedimento depende da avaliação. Você também pode perguntar sobre orientações para casa e sobre quando faz sentido retornar.
 
 Se sua dúvida principal é a pele seca do calcanhar, leia também sobre [hidratação e fissuras](/blog/hidratacao-dos-pes-e-calcanhares/). São assuntos relacionados, mas cada alteração merece ser compreendida.
 

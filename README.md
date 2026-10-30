@@ -22,14 +22,14 @@ npm run preview
 
 ## HOM e produção
 
-**Esta entrega é local. Nenhum push, deploy ou alteração de DNS foi realizado.**
+A versão Astro está no GitHub nas branches `feat/identidade-canva-astro` e `develop`. A publicação e o domínio são configurados separadamente na Cloudflare.
 
 HOM usa o mesmo build estático, mantendo:
 
 ```dotenv
 PUBLIC_SITE_MODE=preview
 PUBLIC_SITE_URL=https://julianecostapodologa.com.br
-PUBLIC_ENABLE_VIDEO=false
+PUBLIC_ENABLE_VIDEO=true
 ```
 
 - Build: `npm run build`; diretório de saída: `dist`.
@@ -65,14 +65,14 @@ Os dez comentários mais detalhados têm texto integral no HTML e botão “Ver 
 
 ## Vídeo
 
-`PUBLIC_ENABLE_VIDEO=false` é o padrão. A capa continua visível e não há botão de reprodução enganoso.
+`PUBLIC_ENABLE_VIDEO=true` é o padrão, inclusive quando a variável não está definida. Use `false` para exibir somente a capa. Na Cloudflare, altere uma configuração antiga com valor `false` para `true` e refaça o deploy.
 
 - Recorte preparado: `public/media/ilib-demonstracao.mp4`, 12s, 450 × 800, sem áudio, aproximadamente 630 KiB.
 - Origem: primeiros 12 segundos do vídeo ILIB existente. Foram excluídas as telas posteriores de benefícios clínicos e encerramento; não há preços no recorte.
 - Capa otimizada no pipeline do Astro. Nada de iframe de Instagram/YouTube.
 - Com `PUBLIC_ENABLE_VIDEO=true`, aparece o controle progressivo: o elemento `<video>` e sua fonte só são criados depois do clique; com JS indisponível, o link abre o arquivo nativo.
 - O player tem controles, descrição textual, fechamento, pausa ao ocultar a página e retorno de foco.
-- **A ativação depende da comparação de desempenho e aprovação da curadoria.** Não foi prometido impacto zero universal. Nenhum teste local substitui CWV de campo.
+- Ativado a pedido do cliente em 29/10/2026, mantendo reprodução voluntária. Nenhum teste local substitui CWV de campo; não há promessa de impacto zero universal.
 
 ## Identidade e movimento
 

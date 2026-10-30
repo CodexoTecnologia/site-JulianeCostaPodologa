@@ -14,8 +14,8 @@ const { title = 'O próximo passo é uma conversa.', message } = Astro.props;
     <div>
       <p class="eyebrow">SEU MOMENTO DE CUIDADO</p>
       <h2 data-reveal>{title}</h2>
-      <p>Conte o que você procura e tire suas dúvidas diretamente com a Juliane.</p>
-      <Action href={whatsapp(message)} label="Conversar com a Juliane" whatsapp external />
+      <p>Conte o que você procura, tire suas dúvidas e consulte os horários disponíveis.</p>
+      <Action href={whatsapp(message)} label="Conversar pelo WhatsApp" whatsapp external />
     </div>
     <div class="contact-address">
       <Icon name="pin" size={30} />

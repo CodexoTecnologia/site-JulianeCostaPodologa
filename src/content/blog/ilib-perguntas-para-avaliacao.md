@@ -1,6 +1,6 @@
 ---
 title: 'Quer conhecer o ILIB? Perguntas para levar à sua conversa'
-description: 'Organize suas dúvidas sobre o atendimento ILIB da Juliane: proposta, avaliação, sessões e próximos passos.'
+description: 'Organize suas dúvidas sobre o atendimento ILIB: proposta, avaliação, sessões e próximos passos.'
 category: 'Conheça o ILIB'
 published: '2026-10-23'
 readingMinutes: 3
@@ -10,13 +10,13 @@ serviceLabel: 'Conheça o atendimento ILIB'
 order: 8
 ---
 
-O ILIB faz parte dos atendimentos oferecidos pela Juliane em Colombo. Se você viu o nome nas redes sociais e quer entender melhor, uma boa primeira etapa é organizar as perguntas que gostaria de fazer à profissional.
+O ILIB faz parte dos atendimentos disponíveis no espaço, em Colombo. Se você viu o nome nas redes sociais e quer entender melhor, uma boa primeira etapa é organizar as perguntas que gostaria de fazer à profissional.
 
 Este conteúdo ajuda nessa conversa. Ele não define indicação, quantidade de sessões ou resultado esperado para uma pessoa específica.
 
 ## Qual é a proposta do atendimento?
 
-Peça à Juliane que explique como o ILIB é realizado no espaço e o que será considerado na avaliação. No material demonstrativo da profissional, é possível ver um equipamento posicionado na região do punho. A imagem mostra parte da experiência, mas não explica sozinha todos os cuidados envolvidos.
+Peça à profissional que explique como o ILIB é realizado no espaço e o que será considerado na avaliação. No material demonstrativo da profissional, é possível ver um equipamento posicionado na região do punho. A imagem mostra parte da experiência, mas não explica sozinha todos os cuidados envolvidos.
 
 Uma pergunta simples pode abrir a conversa: **“Tenho interesse em conhecer o ILIB. Como funciona o atendimento com você?”**
 
@@ -28,7 +28,7 @@ Evite decidir apenas a partir de uma lista genérica de benefícios ou de uma ex
 
 ## ILIB é o atendimento que estou procurando?
 
-O site também apresenta outros serviços de podologia e bem-estar. Se você está em dúvida entre ILIB e outro atendimento com laser, diga isso à Juliane. Os nomes podem aparecer juntos em materiais de divulgação, mas é importante esclarecer qual aplicação está sendo discutida.
+O site também apresenta outros serviços de podologia e bem-estar. Se você está em dúvida entre ILIB e outro atendimento com laser, esclareça essa dúvida antes de escolher. Os nomes podem aparecer juntos em materiais de divulgação, mas é importante esclarecer qual aplicação está sendo discutida.
 
 Pergunte como cada serviço se relaciona com o motivo da sua procura e quais são os limites da proposta apresentada. Não é necessário dominar os termos técnicos para pedir uma explicação clara.
 
@@ -38,7 +38,7 @@ Antes de marcar, você pode perguntar sobre a duração prevista, como consultar
 
 Também vale esclarecer como entrar em contato depois da visita e quais orientações devem ser seguidas. Procure sair da conversa entendendo o que foi combinado.
 
-## Onde conversar com a Juliane?
+## Como tirar suas dúvidas?
 
 O WhatsApp é **(41) 99572-6923**. O atendimento acontece com hora marcada na Rua Venâncio Trevisan, 137, sala 01, no Centro de Colombo.
 

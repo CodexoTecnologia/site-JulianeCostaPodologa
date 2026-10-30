@@ -1,5 +1,5 @@
 ---
-title: 'Como chegar ao espaço da Juliane no Centro de Colombo'
+title: 'Como chegar ao espaço de atendimento no Centro de Colombo'
 description: 'Endereço, sala e rota no mapa: organize sua visita à Juliane Costa Podóloga em Colombo, Paraná.'
 category: 'Aqui em Colombo'
 published: '2026-10-23'
@@ -10,7 +10,7 @@ serviceLabel: 'Veja a localização e as fotos'
 order: 9
 ---
 
-O atendimento da Juliane fica no **Centro de Colombo**, na Rua Venâncio Trevisan, número 137, sala 01. Reunimos as informações principais para você conferir o endereço e organizar sua chegada.
+O espaço de atendimento fica no **Centro de Colombo**, na Rua Venâncio Trevisan, número 137, sala 01. Reunimos as informações principais para você conferir o endereço e organizar sua chegada.
 
 ## Confira o endereço completo
 
@@ -20,7 +20,7 @@ O atendimento da Juliane fica no **Centro de Colombo**, na Rua Venâncio Trevisa
 - **Cidade:** Colombo, Paraná.
 - **CEP:** 83414-020.
 
-Use o número da rua e a sala para conferir o destino. Se tiver um material antigo da Juliane com outro endereço ou telefone, considere as informações atuais desta página e confirme pelo WhatsApp **(41) 99572-6923**.
+Use o número da rua e a sala para conferir o destino. Se tiver um material antigo com outro endereço ou telefone, considere as informações atuais desta página e confirme pelo WhatsApp **(41) 99572-6923**.
 
 ## Abra a rota no Google Maps
 
@@ -30,12 +30,12 @@ O tempo de trajeto depende de onde você sai e das condições do dia. Por isso,
 
 ## A visita é com hora marcada
 
-Os horários são combinados diretamente com a Juliane. Antes de se deslocar, confira a confirmação recebida pelo WhatsApp. Se chegar ao endereço e precisar de ajuda para encontrar a sala, use o mesmo contato.
+Os horários são combinados pelo WhatsApp. Antes de se deslocar, confira a confirmação recebida pelo WhatsApp. Se chegar ao endereço e precisar de ajuda para encontrar a sala, use o mesmo contato.
 
-Se precisar de informações sobre estacionamento ou acesso ao espaço, pergunte antes de sair. A Juliane poderá esclarecer suas dúvidas e ajudar você a organizar a visita.
+Se precisar de informações sobre estacionamento ou acesso ao espaço, pergunte antes de sair. Assim, você esclarece suas dúvidas e organiza a visita com antecedência.
 
 ## Conheça o espaço antes de ir
 
-As fotos da [localização](/localizacao/) mostram o ambiente de atendimento. Você também pode conhecer mais sobre a profissional na página [A Juliane](/sobre/) e explorar os [atendimentos disponíveis](/atendimentos/).
+As fotos da [localização](/localizacao/) mostram o ambiente de atendimento. Você também pode conhecer mais sobre a profissional na página [Sobre mim](/sobre/) e explorar os [atendimentos disponíveis](/atendimentos/).
 
 Caso precise mudar seu horário, avise com antecedência. A conversa direta ajuda a manter o atendimento organizado e evita um deslocamento sem o agendamento confirmado.

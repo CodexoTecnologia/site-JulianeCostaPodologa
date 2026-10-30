@@ -32,7 +32,7 @@ Dor, calor, vermelhidão, inchaço ou secreção merecem avaliação. Pessoas co
 
 ## Construa uma rotina que faça sentido para você
 
-Na [podologia preventiva](/atendimentos/cuidados-com-os-pes/), você pode conversar com a Juliane sobre corte técnico das unhas, calosidades e orientações individuais. Conte como é o seu dia, quais calçados usa e o que dificulta o cuidado em casa.
+Na [podologia preventiva](/atendimentos/cuidados-com-os-pes/), você pode receber orientações sobre corte técnico das unhas, calosidades e orientações individuais. Conte como é o seu dia, quais calçados usa e o que dificulta o cuidado em casa.
 
 Pergunte o que manter entre as visitas e quando retornar. A rotina não precisa copiar a de outra pessoa: ela deve ser compreensível e possível de seguir.
 

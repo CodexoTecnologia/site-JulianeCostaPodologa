@@ -98,6 +98,16 @@ test('dados estruturados são válidos, sem estrelas próprias, preços ou crede
 });
 test('vídeo não cria mídia para baixar na abertura, artigos têm autoria real', () => {
   for (const { body } of html) assert.doesNotMatch(body, /<video|<source[^>]+mp4/);
+  for (const pathname of ['index.html', 'ilib/index.html']) {
+    const { body } = html.find(({ file }) => file === join(root, pathname));
+    if (process.env.PUBLIC_ENABLE_VIDEO === 'false') {
+      assert.doesNotMatch(body, /data-video-trigger/);
+    } else {
+      assert.match(body, /<a[^>]+href="\/media\/ilib-demonstracao\.mp4"[^>]+data-video-trigger/);
+      assert.match(body, /12 segundos/);
+      assert.match(body, /Descrição do vídeo/);
+    }
+  }
   for (const { file, body } of html.filter((x) => /blog[\\/].+[\\/]index\.html$/.test(x.file))) {
     assert.match(body, /Equipe Codexo/);
     assert.match(body, /BlogPosting/);
