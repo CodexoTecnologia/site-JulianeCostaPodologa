@@ -45,7 +45,7 @@ PUBLIC_ENABLE_VIDEO=true
 
 - `src/data/site.ts`: contato, endereço e links do negócio. Fonte central para interface e schema.
 - `src/data/services.ts`: atendimentos e escopo.
-- `src/data/faq.ts`: sete dúvidas da home e 22 na página completa, organizadas por tema.
+- `src/data/faq.ts`: sete dúvidas da home e 25 na página completa, organizadas por tema.
 - `src/data/products.ts`: seis produtos, fotos locais e origem do catálogo VM/Rivera; compra por conversa no WhatsApp, sem preços e sem checkout.
 - `src/content/blog/*.md`: artigos. `draft: true` impede geração de rota e listagem. A publicação editorial fica com a Codexo.
 - `src/content.config.ts`: validação do conteúdo.

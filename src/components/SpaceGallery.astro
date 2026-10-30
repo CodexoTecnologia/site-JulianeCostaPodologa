@@ -5,8 +5,22 @@ import room from '../assets/studio_1.avif';
 import bench from '../assets/studio_2.avif';
 import details from '../assets/studio_3.avif';
 import coffee from '../assets/studio_4.avif';
-const { id = 'fotos-do-espaco' } = Astro.props;
+import facade from '../assets/fachada.png';
+interface Props {
+  id?: string;
+  includeFacade?: boolean;
+}
+const { id = 'fotos-do-espaco', includeFacade = true } = Astro.props;
 const photos = [
+  ...(includeFacade
+    ? [
+        {
+          image: facade,
+          alt: 'Fachada do imóvel no endereço de atendimento, com portas de vidro e placa Malleabile',
+          caption: 'A fachada do imóvel, para ajudar na sua chegada.',
+        },
+      ]
+    : []),
   {
     image: room,
     alt: 'Cadeira e bancada da sala de atendimento',
@@ -35,6 +49,7 @@ const photos = [
     <figure class="space-slide">
       <Image
         src={photo.image}
+        class:list={{ 'space-photo-facade': photo.image === facade }}
         alt={photo.alt}
         widths={[400, 640, 900, 1200]}
         sizes="(max-width:800px) 90vw, 55vw"

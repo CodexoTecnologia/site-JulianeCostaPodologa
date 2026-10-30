@@ -1,4 +1,5 @@
 import { business, origin } from '../data/site';
+import { services } from '../data/services';
 
 export interface ArticleMetadata {
   title: string;
@@ -102,7 +103,11 @@ export function seoGraph(
       '@id': url(`${path}#atendimento`),
       name: title,
       description,
-      serviceType: path === '/ilib/' ? 'Atendimento ILIB' : 'Podologia e bem-estar',
+      serviceType:
+        path === '/ilib/'
+          ? 'Atendimento ILIB'
+          : services.find((service) => path === `/atendimentos/${service.slug}/`)?.short ||
+            'Podologia e bem-estar',
       provider: id('/#negocio'),
       url: url(path),
       areaServed: { '@type': 'City', name: 'Colombo, PR' },

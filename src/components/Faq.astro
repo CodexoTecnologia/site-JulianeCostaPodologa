@@ -1,7 +1,7 @@
 ---
 import Icon from './Icon.astro';
 interface Props {
-  items: { question: string; answer: string }[];
+  items: ReadonlyArray<{ question: string; answer: string }>;
 }
 const { items } = Astro.props;
 ---

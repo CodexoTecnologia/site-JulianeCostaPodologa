@@ -4,8 +4,8 @@ import PageHero from '../../components/PageHero.astro';
 import Action from '../../components/Action.astro';
 import Faq from '../../components/Faq.astro';
 import Contact from '../../components/Contact.astro';
+import ServiceGallery from '../../components/ServiceGallery.astro';
 import { services } from '../../data/services';
-import { appointmentFaq } from '../../data/faq';
 import { whatsapp } from '../../data/site';
 export function getStaticPaths() {
   return services.map((service) => ({ params: { slug: service.slug }, props: { service } }));
@@ -26,7 +26,7 @@ const href = `/atendimentos/${service.slug}/`;
     <div class="actions">
       <Action
         href={whatsapp(`Olá! Gostaria de conversar sobre ${service.short.toLowerCase()}.`)}
-        label="Conversar sobre o atendimento"
+        label="Consultar horários pelo WhatsApp"
         whatsapp
         external
       />
@@ -34,18 +34,10 @@ const href = `/atendimentos/${service.slug}/`;
   </PageHero>
   <section class="shell content-grid page-body">
     <div>
-      <h2>
-        Entender, avaliar
-        <br />e cuidar.
-      </h2>
-      <p>
-        O atendimento começa com uma conversa sobre o que você procura. A avaliação ajuda a definir
-        a proposta e esclarecer os cuidados envolvidos.
-      </p>
-      <p>
-        Você pode perguntar sobre o procedimento, o tempo previsto e as orientações antes de
-        decidir. Cada visita considera sua necessidade individual.
-      </p>
+      <h2>{service.leadTitle}</h2>
+      {service.paragraphs.map((paragraph) => (
+        <p>{paragraph}</p>
+      ))}
     </div>
     <div>
       <p class="eyebrow">O QUE VOCÊ ENCONTRA</p>
@@ -57,16 +49,43 @@ const href = `/atendimentos/${service.slug}/`;
       <aside class="info-note">{service.note}</aside>
     </div>
   </section>
+  <section class="shell service-details" aria-label="Mais sobre o atendimento">
+    {service.sections.map((section) => (
+      <article id={section.id}>
+        <h2>{section.title}</h2>
+        <p>{section.body}</p>
+      </article>
+    ))}
+    {service.slug === 'bem-estar' && <ServiceGallery kinds={['spa', 'reflexologia', 'reiki']} />}
+  </section>
   <section class="section shell faq-preview" style="border-top:1px solid var(--line)">
     <div>
       <p class="eyebrow">ANTES DA VISITA</p>
       <h2>
-        Vamos tirar
+        Dúvidas sobre
         <br />
-        suas dúvidas?
+        este cuidado.
       </h2>
     </div>
-    <Faq items={appointmentFaq.slice(0, 3)} />
+    <Faq items={service.faqs} />
   </section>
   <Contact />
 </Base>
+<style>
+  .service-details {
+    padding-bottom: 64px;
+  }
+  .service-details article {
+    padding: 32px 0;
+    border-top: 1px solid var(--line);
+    scroll-margin-top: calc(var(--header) + 24px);
+  }
+  .service-details article h2 {
+    font-size: clamp(28px, 3vw, 38px);
+    max-width: 850px;
+  }
+  .service-details article p {
+    max-width: 780px;
+    margin-top: 18px;
+  }
+</style>

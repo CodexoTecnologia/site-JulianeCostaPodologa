@@ -486,3 +486,23 @@ body.review-modal-open {
     gap: 23px;
   }
 }
+
+/* Fachada inteira: as portas e a identificação do imóvel ajudam a reconhecer o endereço. */
+.space-slide img.space-photo-facade {
+  object-fit: contain;
+  background: var(--soft);
+}
+.location-facade {
+  margin: 26px 0 50px;
+}
+.location-facade img {
+  width: 100%;
+  height: auto;
+  border-radius: 22px;
+}
+.location-facade figcaption {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}

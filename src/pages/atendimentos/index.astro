@@ -4,11 +4,12 @@ import PageHero from '../../components/PageHero.astro';
 import Contact from '../../components/Contact.astro';
 import Icon from '../../components/Icon.astro';
 import { services } from '../../data/services';
+import ServiceGallery from '../../components/ServiceGallery.astro';
 ---
 
 <Base
   title="Atendimentos de podologia e bem-estar em Colombo"
-  description="Conheça os cuidados com os pés, o atendimento de unha encravada, ILIB, spa e bem-estar oferecidos por Juliane Costa em Colombo."
+  description="Podologia para crianças, adultos e idosos, órteses nas unhas, unha encravada, ILIB e bem-estar no Centro de Colombo. Conheça os atendimentos."
   crumbs={[{ name: 'Atendimentos', href: '/atendimentos/' }]}
 >
   <PageHero
@@ -53,6 +54,9 @@ import { services } from '../../data/services';
         </div>
       </article>
     ))}
+  </section>
+  <section class="shell page-body" aria-label="Imagens dos atendimentos">
+    <ServiceGallery />
   </section>
   <Contact />
 </Base>

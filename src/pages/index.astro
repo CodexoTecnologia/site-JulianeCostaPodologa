@@ -16,6 +16,7 @@ import about from '../assets/juliane_costa_2.avif';
 import SpaceGallery from '../components/SpaceGallery.astro';
 import GoogleMap from '../components/GoogleMap.astro';
 import Products from '../components/Products.astro';
+import ServiceGallery from '../components/ServiceGallery.astro';
 ---
 
 <Base title="Podóloga em Colombo · Podologia e ILIB">
@@ -32,10 +33,10 @@ import Products from '../components/Products.astro';
           <span>atenção a você.</span>
         </h1>
         <p class="hero-description">
-          Podologia, ILIB e bem-estar, com um olhar atento para o que você precisa.
+          Podologia e ILIB no Centro de Colombo. Atendimento individual, com hora marcada.
         </p>
         <div class="actions">
-          <Action href={whatsapp()} label="Agendar meu momento" whatsapp external />
+          <Action href={whatsapp()} label="Agendar pelo WhatsApp" whatsapp external />
           <a class="text-link" href="/atendimentos/">
             Conhecer os atendimentos <Icon size={16} />
           </a>
@@ -110,6 +111,9 @@ import Products from '../components/Products.astro';
           <li>Corte técnico</li>
           <li>Calos e calosidades</li>
           <li>Fissuras</li>
+          <li>Podopediatria</li>
+          <li>Podogeriatria</li>
+          <li>Órteses nas unhas</li>
         </ul>
         <span class="read-link">
           Ver o que está incluído <Icon size={16} />
@@ -176,6 +180,7 @@ import Products from '../components/Products.astro';
         Tire suas dúvidas pelo WhatsApp.
       </a>
     </p>
+    <ServiceGallery />
   </section>
 
   <section class="section shell about-preview" id="sobre">

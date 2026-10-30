@@ -7,6 +7,8 @@ import Icon from '../components/Icon.astro';
 import { business, whatsapp } from '../data/site';
 import GoogleMap from '../components/GoogleMap.astro';
 import SpaceGallery from '../components/SpaceGallery.astro';
+import { Image } from 'astro:assets';
+import facade from '../assets/fachada.png';
 ---
 
 <Base
@@ -40,7 +42,25 @@ import SpaceGallery from '../components/SpaceGallery.astro';
     <GoogleMap />
   </section>
   <section class="shell location-photos" aria-label="Fotos do espaço de atendimento">
-    <SpaceGallery id="espaco-localizacao" />
+    <h2>Reconheça a fachada.</h2>
+    <figure class="location-facade">
+      <Image
+        src={facade}
+        alt="Fachada do imóvel com placa Malleabile, referência para encontrar o endereço de atendimento"
+        widths={[400, 680]}
+        sizes="(max-width: 800px) 90vw, 680px"
+        width={680}
+        format="webp"
+        quality={85}
+        loading="lazy"
+      />
+      <figcaption>
+        Referência da fachada no endereço de atendimento. Confira o número 137 e a sala 01 antes da
+        visita.
+      </figcaption>
+    </figure>
+    <h2>Conheça a sala.</h2>
+    <SpaceGallery id="espaco-localizacao" includeFacade={false} />
   </section>
   <div class="shell page-body">
     <aside class="info-note">

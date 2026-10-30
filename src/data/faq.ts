@@ -37,14 +37,14 @@ export const appointmentFaq = [
 ];
 export const ilibFaq = [
   {
-    question: 'Como conhecer o atendimento ILIB?',
+    question: 'O que é o ILIB mostrado no site?',
     answer:
-      'Você pode tirar suas dúvidas pelo WhatsApp antes de marcar. Durante a visita, a profissional explica o atendimento e avalia sua necessidade individual.',
+      'É uma aplicação de luz de laser sobre a pele, na região do punho. O aplicador fica preso a uma pulseira, como mostra o vídeo. Antes da sessão, a profissional conversa sobre sua necessidade e explica como será o atendimento.',
   },
   {
     question: 'ILIB e laser local são a mesma coisa?',
     answer:
-      'São nomes usados para aplicações diferentes. Informe qual atendimento você procura para entender a proposta e o que está disponível para o seu caso.',
+      'O ILIB mostrado no vídeo é aplicado na região do punho. Em outros atendimentos com laser, a aplicação pode ser em uma região diferente. Pergunte qual é a proposta antes de escolher.',
   },
   {
     question: 'Quantas sessões vou precisar?',
@@ -94,6 +94,23 @@ export const careFaq = [
       'Procure atendimento médico, especialmente se houver secreção, febre ou piora rápida. Não espere uma resposta pelo WhatsApp nem tente retirar a unha ou cortar a pele em casa. Em caso de diabetes, alterações nos pés exigem atenção especial.',
   },
 ];
+careFaq.push(
+  {
+    question: 'Há atendimento de podopediatria?',
+    answer:
+      'Sim. Há cuidado de podologia para crianças até 12 anos. Informe a idade, conte o motivo da visita e combine a participação do responsável ao agendar.',
+  },
+  {
+    question: 'Há atendimento de podogeriatria?',
+    answer:
+      'Sim. Há cuidado de podologia para pessoas a partir de 60 anos. Conte sobre a necessidade e os acompanhamentos de saúde já realizados.',
+  },
+  {
+    question: 'Há correção com órteses nas unhas?',
+    answer:
+      'Sim. A avaliação ajuda a definir se essa opção faz sentido para a unha. O tipo de cuidado e os retornos são combinados individualmente.',
+  },
+);
 export const routineFaq = [
   {
     question: 'O que está incluído nas opções de bem-estar?',

@@ -165,7 +165,7 @@ test('conteúdos educativos indicam fontes e a home mantém uma decisão clara',
   assert.ok(faqSection);
   assert.equal([...faqSection.matchAll(/<details>/g)].length, 7);
   const faq = await readFile(join(root, 'duvidas/index.html'), 'utf8');
-  assert.equal([...faq.matchAll(/<details>/g)].length, 22);
+  assert.equal([...faq.matchAll(/<details>/g)].length, 25);
   const educational = html.filter(({ body }) => body.includes('conteúdo educativo'));
   assert.equal(educational.length, 6);
   for (const { body } of educational) {
