@@ -8,6 +8,7 @@ export const services = [
       'Podologia preventiva, corte técnico, calosidades e fissuras. Atendimento para crianças, adultos e idosos, com avaliação para correção com órteses nas unhas.',
     items: [
       'Podologia preventiva e corte técnico',
+      'Avaliação e atendimento de unha encravada',
       'Calos, calosidades e fissuras',
       'Podopediatria · crianças até 12 anos',
       'Podogeriatria · pessoas a partir de 60 anos',
