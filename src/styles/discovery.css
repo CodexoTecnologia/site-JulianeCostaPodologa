@@ -489,8 +489,12 @@ body.review-modal-open {
 
 /* Fachada inteira: as portas e a identificação do imóvel ajudam a reconhecer o endereço. */
 .space-slide img.space-photo-facade {
-  object-fit: contain;
-  background: var(--soft);
+  object-fit: cover;
+  object-position: center center;
+}
+.space-slide img.space-photo-entrance {
+  object-fit: cover;
+  object-position: center 52%;
 }
 .location-facade {
   margin: 26px 0 50px;

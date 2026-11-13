@@ -55,7 +55,7 @@ const photos = [
     <figure class="space-slide">
       <Image
         src={photo.image}
-        class:list={{ 'space-photo-facade': photo.image === facade || photo.image === entrance }}
+        class:list={{ 'space-photo-facade': photo.image === facade, 'space-photo-entrance': photo.image === entrance }}
         alt={photo.alt}
         widths={[400, 640, 900, 1200]}
         sizes="(max-width:800px) 90vw, 55vw"
