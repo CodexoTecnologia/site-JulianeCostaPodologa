@@ -1,0 +1,31 @@
+{
+  "name": "site-juliane-costa",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1 --port 4331",
+    "check": "astro check",
+    "build": "node scripts/build-social.mjs && astro build",
+    "preview": "node scripts/serve.mjs",
+    "test": "node --test tests/site.test.mjs",
+    "verify": "npm run check && npm run build && npm test",
+    "format": "prettier --write src scripts tests *.mjs *.json",
+    "format:check": "prettier --check src scripts tests *.mjs *.json"
+  },
+  "dependencies": {
+    "astro": "7.4.2",
+    "gsap": "3.15.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.12",
+    "@astrojs/sitemap": "3.7.4",
+    "prettier": "^3.9.10",
+    "prettier-plugin-astro": "^1.1.1",
+    "sharp": "0.35.5",
+    "typescript": "6.0.3"
+  }
+}

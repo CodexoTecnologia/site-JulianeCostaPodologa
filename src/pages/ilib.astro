@@ -1,0 +1,114 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Action from '../components/Action.astro';
+import VideoCard from '../components/VideoCard.astro';
+import Faq from '../components/Faq.astro';
+import Contact from '../components/Contact.astro';
+import { ilibFaq } from '../data/faq';
+import { whatsapp } from '../data/site';
+---
+
+<Base
+  title="ILIB em Colombo · Entenda como funciona"
+  description="Entenda o ILIB de um jeito simples: aplicação de laser na região do punho, com pulseira. Veja o vídeo e tire suas dúvidas antes de agendar em Colombo."
+  crumbs={[{ name: 'ILIB', href: '/ilib/' }]}
+>
+  <PageHero
+    eyebrow="ILIB EM COLOMBO"
+    title="ILIB: entenda como funciona."
+    description="Uma explicação simples para você conhecer o atendimento antes de marcar."
+  >
+    <div class="actions">
+      <Action
+        href={whatsapp('Olá! Vi a página de ILIB e gostaria de conhecer o atendimento.')}
+        label="Conversar sobre ILIB"
+        whatsapp
+        external
+      />
+    </div>
+  </PageHero>
+  <section class="shell content-grid page-body">
+    <div>
+      <p class="eyebrow">O QUE ACONTECE NA SESSÃO</p>
+      <h2 style="margin-top:18px">
+        Uma pulseira no punho.
+        <br />
+        Um aplicador de laser.
+      </h2>
+      <p>
+        O ILIB é uma técnica terapêutica que utiliza laser de baixa intensidade, geralmente com luz
+        vermelha ou infravermelha, aplicado sobre a pele na região do punho, sobre a artéria radial.
+        O aplicador fica preso a uma pulseira, como você pode ver no vídeo.
+      </p>
+      <p>
+        Antes de começar, você conta o que procura e conversa sobre seu histórico de saúde. A
+        profissional explica a proposta e avalia se o atendimento faz sentido para você.
+      </p>
+      <p>
+        O tempo da sessão e a quantidade de visitas são combinados nessa conversa. Você pode
+        perguntar tudo isso antes de agendar.
+      </p>
+      <a class="text-link" href="/blog/ilib-perguntas-para-avaliacao/">
+        Veja o que perguntar antes da visita <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <VideoCard />
+  </section>
+  <section class="process-section section">
+    <div class="shell">
+      <p class="eyebrow">PASSO A PASSO</p>
+      <h2 style="margin-top:18px;margin-bottom:38px">
+        Como começa
+        <br />o atendimento.
+      </h2>
+      <ol class="process-list">
+        <li>
+          <span>01</span>
+          <h3>Uma conversa</h3>
+          <p>
+            Conte o que procura, tire suas dúvidas e informe os acompanhamentos de saúde que já
+            realiza.
+          </p>
+        </li>
+        <li>
+          <span>02</span>
+          <h3>Explicação e avaliação</h3>
+          <p>Entenda como a sessão acontece e se ela é adequada para a sua necessidade.</p>
+        </li>
+        <li>
+          <span>03</span>
+          <h3>Combinamos a visita</h3>
+          <p>Confirme o horário, o tempo previsto e as orientações antes de ir ao espaço.</p>
+        </li>
+      </ol>
+      <p class="ilib-care-note">
+        Os resultados e a quantidade de sessões variam. O atendimento não substitui os
+        acompanhamentos de saúde que você já faz.
+      </p>
+    </div>
+  </section>
+  <section class="section shell faq-preview">
+    <div>
+      <p class="eyebrow">SEM COMPLICAÇÃO</p>
+      <h2>
+        Suas dúvidas
+        <br />
+        sobre o ILIB.
+      </h2>
+    </div>
+    <Faq items={ilibFaq} />
+  </section>
+  <Contact
+    title="Quer saber se faz sentido para você?"
+    message="Olá! Gostaria de tirar minhas dúvidas sobre o atendimento ILIB."
+  />
+</Base>
+<style>
+  .ilib-care-note {
+    max-width: 760px;
+    margin-top: 32px;
+    color: var(--muted);
+    font-size: 16px;
+  }
+</style>

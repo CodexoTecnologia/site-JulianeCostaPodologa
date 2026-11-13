@@ -1,0 +1,70 @@
+---
+import ServicePhoto from './ServicePhoto.astro';
+import { servicePhotos, type ServicePhotoKind } from '../data/service-photos';
+interface Props {
+  kinds?: ServicePhotoKind[];
+}
+const { kinds = ['podologia', 'reflexologia', 'spa', 'reiki'] } = Astro.props;
+---
+
+<div class="service-gallery" style={`--photo-columns:${kinds.length}`}>
+  <div class="service-photo-grid">
+    {kinds.map((kind) => (
+      <a href={servicePhotos[kind].href} class="service-photo-link">
+        <ServicePhoto kind={kind} />
+        <span>{servicePhotos[kind].label}</span>
+      </a>
+    ))}
+  </div>
+  <p class="service-photo-note">
+    Imagens ilustrativas dos atendimentos, presentes no material de divulgação.
+  </p>
+</div>
+<style>
+  .service-gallery {
+    margin-top: 42px;
+  }
+  .service-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--photo-columns), minmax(0, 1fr));
+    gap: clamp(20px, 4vw, 60px);
+  }
+  .service-photo-link {
+    display: grid;
+    gap: 16px;
+    justify-items: center;
+    text-align: center;
+    color: var(--ink);
+    text-decoration: none;
+    font: 600 23px/1.25 var(--heading);
+  }
+  .service-photo-link > :global(.service-photo) {
+    max-width: 210px;
+    border: 5px solid var(--soft);
+  }
+  .service-photo-link:hover {
+    color: var(--action);
+  }
+  .service-photo-note {
+    margin-top: 24px;
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+  }
+  @media (max-width: 600px) {
+    .service-photo-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px 22px;
+    }
+    .service-photo-link {
+      font-size: 20px;
+      gap: 12px;
+    }
+    .service-photo-link > :global(.service-photo) {
+      max-width: 170px;
+    }
+    .service-photo-note {
+      line-height: 1.5;
+    }
+  }
+</style>

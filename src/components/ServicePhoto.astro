@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+import artwork from '../assets/servicos-canva.png';
+import { servicePhotos, type ServicePhotoKind } from '../data/service-photos';
+interface Props {
+  kind: ServicePhotoKind;
+}
+const photo = servicePhotos[Astro.props.kind];
+// O enquadramento em CSS reaproveita as fotos da arte aprovada, sem recriar imagens.
+const frame = `width:${(1080 / photo.size) * 100}%;height:${(1920 / photo.size) * 100}%;left:${(-photo.x / photo.size) * 100}%;top:${(-photo.y / photo.size) * 100}%`;
+---
+
+<div class="service-photo" data-service-photo={Astro.props.kind}>
+  <Image
+    src={artwork}
+    width={1080}
+    height={1920}
+    format="webp"
+    quality={80}
+    loading="lazy"
+    alt={photo.alt}
+    style={frame}
+  />
+</div>
+<style>
+  .service-photo {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--soft);
+  }
+  .service-photo img {
+    display: block;
+    position: absolute;
+    max-width: none;
+    object-fit: fill;
+  }
+</style>

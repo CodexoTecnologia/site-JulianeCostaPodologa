@@ -1,0 +1,70 @@
+---
+import { Image } from 'astro:assets';
+import Carousel from './Carousel.astro';
+import room from '../assets/studio_1.avif';
+import bench from '../assets/studio_2.avif';
+import details from '../assets/studio_3.avif';
+import coffee from '../assets/studio_4.avif';
+import facade from '../assets/fachada.png';
+import entrance from '../assets/entrada-espaco.png';
+interface Props {
+  id?: string;
+  includeFacade?: boolean;
+}
+const { id = 'fotos-do-espaco', includeFacade = true } = Astro.props;
+const photos = [
+  {
+    image: entrance,
+    alt: 'Entrada do imóvel com placa Malleabile e identificação da Juliane Costa Podóloga',
+    caption: 'A entrada do espaço: procure a identificação da Juliane.',
+  },
+  ...(includeFacade
+    ? [
+        {
+          image: facade,
+          alt: 'Fachada do imóvel no endereço de atendimento, com portas de vidro e placa Malleabile',
+          caption: 'A fachada do imóvel, para ajudar na sua chegada.',
+        },
+      ]
+    : []),
+  {
+    image: room,
+    alt: 'Cadeira e bancada da sala de atendimento',
+    caption: 'Seu espaço de cuidado.',
+  },
+  {
+    image: bench,
+    alt: 'Outro ângulo da sala de atendimento, com bancada e certificados na parede',
+    caption: 'Um olhar para cada detalhe.',
+  },
+  {
+    image: details,
+    alt: 'Detalhes da cadeira e da bancada do espaço de podologia',
+    caption: 'Preparado para sua visita.',
+  },
+  {
+    image: coffee,
+    alt: 'Cantinho do café no espaço de atendimento',
+    caption: 'Uma pausa para receber você.',
+  },
+];
+---
+
+<Carousel id={id} label="Fotos do espaço de atendimento" kind="photos">
+  {photos.map((photo) => (
+    <figure class="space-slide">
+      <Image
+        src={photo.image}
+        class:list={{ 'space-photo-facade': photo.image === facade || photo.image === entrance }}
+        alt={photo.alt}
+        widths={[400, 640, 900, 1200]}
+        sizes="(max-width:800px) 90vw, 55vw"
+        width={1000}
+        format="webp"
+        quality={80}
+        loading="lazy"
+      />
+      <figcaption>{photo.caption}</figcaption>
+    </figure>
+  ))}
+</Carousel>

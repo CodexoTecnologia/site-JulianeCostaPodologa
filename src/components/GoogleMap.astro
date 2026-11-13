@@ -1,0 +1,19 @@
+---
+import { business } from '../data/site';
+import Icon from './Icon.astro';
+---
+
+<div class="google-map">
+  <iframe
+    src="https://www.google.com/maps?q=Juliane+Costa+Pod%C3%B3loga+Rua+Ven%C3%A2ncio+Trevisan+137+Colombo+PR&output=embed&hl=pt-BR"
+    title="Google Maps: Juliane Costa, Rua Venâncio Trevisan, 137, Centro de Colombo"
+    width="800"
+    height="420"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    allowfullscreen
+  ></iframe>
+  <a href={business.maps} target="_blank" rel="noopener noreferrer">
+    Traçar rota até o espaço <Icon size={16} />
+  </a>
+</div>

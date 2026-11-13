@@ -1,0 +1,76 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Action from '../components/Action.astro';
+import Contact from '../components/Contact.astro';
+import Icon from '../components/Icon.astro';
+import { business, whatsapp } from '../data/site';
+import GoogleMap from '../components/GoogleMap.astro';
+import SpaceGallery from '../components/SpaceGallery.astro';
+import { Image } from 'astro:assets';
+import facade from '../assets/fachada.png';
+---
+
+<Base
+  title="Localização · Podóloga no Centro de Colombo"
+  description="Juliane Costa Podóloga: Rua Venâncio Trevisan, 137, sala 01, Centro, Colombo — PR. Veja fotos, abra a rota e agende sua visita pelo WhatsApp."
+  crumbs={[{ name: 'Localização', href: '/localizacao/' }]}
+>
+  <PageHero
+    eyebrow="AQUI EM COLOMBO"
+    title="Um espaço para receber você."
+    description="No Centro da cidade, com um momento reservado para seu atendimento."
+  />
+  <section class="shell location-grid">
+    <div>
+      <h2>Venha conhecer.</h2>
+      <p>
+        {business.address}
+        <br />
+        {business.neighborhood} · {business.city}, {business.state}
+        <br />
+        CEP {business.postalCode}
+      </p>
+      <p>{business.hours}. Consulte a disponibilidade pelo WhatsApp.</p>
+      <div class="actions">
+        <Action href={business.maps} label="Traçar minha rota" external />
+        <a class="text-link" href={whatsapp()} target="_blank" rel="noopener noreferrer">
+          Combinar minha visita <Icon size={16} />
+        </a>
+      </div>
+    </div>
+    <GoogleMap />
+  </section>
+  <section class="shell location-photos" aria-label="Fotos do espaço de atendimento">
+    <h2>Reconheça a fachada.</h2>
+    <figure class="location-facade">
+      <Image
+        src={facade}
+        alt="Fachada do imóvel com placa Malleabile, referência para encontrar o endereço de atendimento"
+        widths={[400, 680]}
+        sizes="(max-width: 800px) 90vw, 680px"
+        width={680}
+        format="webp"
+        quality={85}
+        loading="lazy"
+      />
+      <figcaption>
+        Referência da fachada no endereço de atendimento. Confira o número 137 e a sala 01 antes da
+        visita.
+      </figcaption>
+    </figure>
+    <h2>Conheça a sala.</h2>
+    <SpaceGallery id="espaco-localizacao" includeFacade={false} />
+  </section>
+  <div class="shell page-body">
+    <aside class="info-note">
+      Precisa de informações sobre acesso ao espaço ou ajuda para encontrar a sala? Peça orientação
+      antes da visita pelo{' '}
+      <a href={whatsapp()} target="_blank" rel="noopener noreferrer">
+        WhatsApp {business.phone}
+      </a>
+      .
+    </aside>
+  </div>
+  <Contact />
+</Base>

@@ -1,0 +1,30 @@
+---
+import Icon from './Icon.astro';
+interface Props {
+  id: string;
+  label: string;
+  kind?: 'reviews' | 'photos' | 'products';
+}
+const { id, label, kind = 'reviews' } = Astro.props;
+---
+
+<div class:list={['carousel', `carousel-${kind}`]} data-carousel>
+  <div class="carousel-track" id={id} tabindex="0" role="region" aria-label={label}>
+    <slot />
+  </div>
+  <div class="carousel-controls" hidden>
+    <span class="carousel-status" aria-live="polite" aria-atomic="true"></span>
+    <div class="carousel-buttons">
+      <button type="button" data-previous aria-controls={id} aria-label={`Anterior: ${label}`}>
+        <Icon size={20} />
+      </button>
+      <button type="button" data-next aria-controls={id} aria-label={`Próximo: ${label}`}>
+        <Icon size={20} />
+      </button>
+    </div>
+  </div>
+</div>
+<script>
+  import { initCarousels } from '../scripts/carousels';
+  initCarousels();
+</script>
