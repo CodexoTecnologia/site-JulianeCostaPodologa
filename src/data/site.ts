@@ -14,6 +14,7 @@ export const business = {
   hours: 'Atendimento com hora marcada',
   instagram: 'https://www.instagram.com/jupodologa46/',
   instagramHandle: '@jupodologa46',
+  links: 'https://links.codexo.com.br/julianecostapodologa',
   google: 'https://share.google/yRPq4t2PnpVCY6pa3',
   reviewUrl: 'https://g.page/r/CQ4EPU5yN7kAEAE/review',
   maps: 'https://www.google.com/maps/search/?api=1&query=Juliane+Costa+Pod%C3%B3loga+Rua+Ven%C3%A2ncio+Trevisan+137+Colombo',
